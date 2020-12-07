@@ -17,9 +17,9 @@ export const TeacherClasses=()=>{
 
     return (
         <>
-        <h1>what?</h1>
+        <h1>My Classes</h1>
         {filterClasses(classLists).map(singleClass=>{
-            return <h2 key={singleClass.id}>{singleClass.name}</h2>
+            return <h3 key={singleClass.id}>{singleClass.name}</h3>
         })}
         </>
     )

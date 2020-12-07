@@ -9,7 +9,7 @@ export const TeacherNavBar = (props) => {
                 <Link className="navbar__link" to="/teachers">My Classes</Link>
             </li>
             <li className="navbar__item">
-                <Link className="navbar__link" to="/Supplies">Supplies</Link>
+                <Link className="navbar__link" to="/teachers/addClass">Add a Class</Link>
             </li>
         </ul>
     )

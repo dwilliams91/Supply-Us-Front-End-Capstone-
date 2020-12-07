@@ -13,7 +13,7 @@ function App() {
             if (localStorage.getItem("app_user_id")) {
                 return (
                     <>
-                        <Route render={props => <Teacher {...props} />} />
+                        <Route exact path="/teachers" render={props => <Teacher {...props} />} />
                     </>
                 )
             } else {

@@ -1,8 +1,8 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
-export const Teacher=()=>{
-    return(
-        <h1>Hi</h1>
+export const Teacher = (props) => {
+    return (
+       <h1>hi</h1>
     )
-
 }

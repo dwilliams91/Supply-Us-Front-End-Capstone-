@@ -8,7 +8,7 @@ export const TeacherSupplyForm=(props)=>{
 
     const [Type, setType] = useState(0)
     const [Item, setItem] = useState(0)
-
+    const [ItemName,setItemName]=useState("")
     useEffect(() => {
         getSupplyTypes()
     }, [])
@@ -28,12 +28,20 @@ export const TeacherSupplyForm=(props)=>{
         console.log(Type)
     }, [Type, SupplyItems])
 
-   
     useEffect(()=>{
         console.log(Item)
-        let ItemName=SupplyItems.find(e=>e.id==parseInt(Item))
-        console.log(ItemName)
+        // this stuff runs so it will work on render
+        if (Item!==0){
+        setItemName(SupplyItems.find(e=>e.id==parseInt(Item)).name)
+
+        } else {
+            let ItemName=SupplyItems.find(e=>e.id==parseInt(Item))
+
+        }
+        
+        
     },[Item])
+
     const [filteredSupplyItems, setFilteredSupplyItems] = useState([])
 
     const FirstHandleFieldChange = (event) => {
@@ -75,7 +83,7 @@ return (
                 </div>
             </fieldset>
             <fieldset>
-                        <label>Number of {Item}</label>
+                        <label>Number of {ItemName}</label>
                 <input></input>
 
             </fieldset>

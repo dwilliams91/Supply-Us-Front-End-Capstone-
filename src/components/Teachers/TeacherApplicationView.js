@@ -13,13 +13,11 @@ export const TeacherApplicationView = (props) => {
                 </Route>
             </ClassListProvider>
             <ClassListProvider>
-
-            <Route exact path="/teachers/addClass">
-                <TeacherClassForm></TeacherClassForm>
-            </Route>
-                
+                <Route exact path="/teachers/addClass">
+                    <TeacherClassForm></TeacherClassForm>
+                </Route>
             </ClassListProvider>
-            
+
         </>
 
     )

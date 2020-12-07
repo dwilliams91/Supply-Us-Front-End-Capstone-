@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react"
 import { ClassListContext } from "../../DataProviders/ClassListProvider"
-
+import {TeacherClass} from "./TeacherClass"
 export const TeacherClasses=()=>{
     // gets the classes
     const {classLists, getClassLists}=useContext(ClassListContext)
@@ -21,8 +21,9 @@ export const TeacherClasses=()=>{
     return (
         <>
         <h1>My Classes</h1>
+        
         {filterClasses(classLists).map(singleClass=>{
-            return <h3 key={singleClass.id}>{singleClass.name}</h3>
+            return <TeacherClass key={singleClass.id} myClass={singleClass}></TeacherClass>
         })}
         </>
     )

@@ -3,6 +3,7 @@ import { Route, Redirect } from "react-router-dom"
 import React from "react"
 import { Login } from "./components/auth/Login"
 import { Register } from "./components/auth/Register"
+import { Teacher } from './components/Teachers/Teacher';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
             if (localStorage.getItem("app_user_id")) {
                 return (
                     <>
-                        //Components that are rendered when the user is authenticated go inside this React fragment
+                        <Route render={props => <Teacher {...props} />} />
                     </>
                 )
             } else {

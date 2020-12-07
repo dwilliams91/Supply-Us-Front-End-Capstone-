@@ -16,19 +16,27 @@
             "email":"david@david.com",
             "password":"password",
             "userType":1
+        },
+        {
+            "id":2,
+            "name":"customer",
+            "email":"customer@customer.com",
+            "password":"password",
+            "userType":2
         }
     ],
     "userClasses":[
        {
         "id":1,
-        "userId":1,
+        "userId":2,
         "classListId":1
        } 
     ],
     "classLists":[
         {
          "id":1,
-        "name":"5th Grade English"
+        "name":"5th Grade English",
+        "userId":1
         } 
      ],
      "supplyType":[

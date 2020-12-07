@@ -8,10 +8,17 @@ export const TeacherClasses=()=>{
         getClassLists()
     },[])
 
+    const filterClasses=(allClasses)=>{
+        const user=parseInt(localStorage.getItem("app_user_id"))
+        const myClasses=allClasses.filter(singleClass=> parseInt(singleClass.userId)===user)
+        console.log(myClasses)
+        return myClasses
+    }
+
     return (
         <>
         <h1>what?</h1>
-        {classLists.map(singleClass=>{
+        {filterClasses(classLists).map(singleClass=>{
             return <h2 key={singleClass.id}>{singleClass.name}</h2>
         })}
         </>

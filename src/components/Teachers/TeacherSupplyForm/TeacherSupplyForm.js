@@ -99,6 +99,10 @@ return (
                 <input></input>
 
             </fieldset>
+            <fieldset>
+            <label> Description</label>
+            <textarea placeholder="Example: Red binders, 3 ring, "></textarea>
+            </fieldset>
 
     </>
 )

@@ -25,10 +25,15 @@ export const TeacherSupplyForm=(props)=>{
         } else {
             setFilteredSupplyItems(SupplyItems.filter(e => e.typeId === selectTypeParsed))
         }
+        console.log(Type)
     }, [Type, SupplyItems])
 
    
-
+    useEffect(()=>{
+        console.log(Item)
+        let ItemName=SupplyItems.find(e=>e.id==parseInt(Item))
+        console.log(ItemName)
+    },[Item])
     const [filteredSupplyItems, setFilteredSupplyItems] = useState([])
 
     const FirstHandleFieldChange = (event) => {
@@ -36,14 +41,12 @@ export const TeacherSupplyForm=(props)=>{
     }
     const SecondHandleFieldChange=(event)=>{
         setItem(event.target.value)
-        let ItemName=SupplyItems.find(e=>e.id==parseInt(Item))
-
+        
     }
 
 
 return (
     <>
-    {console.log(SupplyTypes)}
             <fieldset>
                 <div className="form-group">
                     <label>Select Type </label>
@@ -59,7 +62,6 @@ return (
                 </div>
             </fieldset>
             <fieldset>
-                {console.log(SupplyItems)}
                 <div className="form-group">
                     <label>Select Type </label>
                     <select value={Item} id="SupplyItem" className="form-control" onChange={SecondHandleFieldChange}>

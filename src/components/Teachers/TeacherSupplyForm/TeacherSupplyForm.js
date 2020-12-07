@@ -9,6 +9,7 @@ export const TeacherSupplyForm=(props)=>{
     const [Type, setType] = useState(0)
     const [Item, setItem] = useState(0)
     const [ItemName,setItemName]=useState("")
+    const [packageType,setPackType]=useState("Number of")
     useEffect(() => {
         getSupplyTypes()
     }, [])
@@ -31,16 +32,27 @@ export const TeacherSupplyForm=(props)=>{
     useEffect(()=>{
         console.log(Item)
         // this stuff runs so it will work on render
+        // if the item is not 0, then 
         if (Item!==0){
-        setItemName(SupplyItems.find(e=>e.id==parseInt(Item)).name)
-
+        setItemName(SupplyItems.find(e=>e.id==parseInt(Item)))
+       
         } else {
-            let ItemName=SupplyItems.find(e=>e.id==parseInt(Item))
-
+           
         }
         
         
     },[Item])
+
+    useEffect(()=>{
+        if (ItemName.packaging===true){
+            setPackType("Packs of ")
+        } else {
+            setPackType("Number of ")
+        }
+        console.log(packageType)
+
+    },[ItemName])
+
 
     const [filteredSupplyItems, setFilteredSupplyItems] = useState([])
 
@@ -83,7 +95,7 @@ return (
                 </div>
             </fieldset>
             <fieldset>
-                        <label>Number of {ItemName}</label>
+                        <label>{packageType} {ItemName.name}</label>
                 <input></input>
 
             </fieldset>

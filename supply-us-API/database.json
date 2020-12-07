@@ -52,29 +52,29 @@
   "supplyType": [
     {
       "id": 1,
-      "type": "This should be 1"
+      "type": "Writing Utencil"
     },
     {
       "id": 2,
-      "type": "This should be 2"
+      "type": "Organizer"
     }
   ],
   "supplyItems": [
     {
       "id": 1,
-      "name": "pencils 1",
+      "name": "pencils",
       "packaging": true,
       "typeId": 1
     },
     {
       "id": 2,
-      "name": "pens 2",
+      "name": "pens",
       "packaging": true,
       "typeId": 1
     },
     {
       "id": 3,
-      "name": "binders 3",
+      "name": "binders",
       "packaging": false,
       "typeId": 2
     }

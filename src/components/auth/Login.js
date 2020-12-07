@@ -13,7 +13,9 @@ export const Login = props => {
         // If your json-server URL is different, please change it below!
         return fetch(`http://localhost:8088/users?email=${email.current.value}`)
             .then(_ => _.json())
-            .then(user => user.length ? user[0] : false)
+            .then(user => {
+                console.log("hi")
+                return user.length ? user[0] : false})
     }
 
     const handleLogin = (e) => {
@@ -21,10 +23,11 @@ export const Login = props => {
 
         existingUserCheck()
             .then(exists => {
+                console.log(exists)
                 if (exists && exists.password === password.current.value) {
                     // The user id is saved under the key app_user_id in local Storage. Change below if needed!
                     localStorage.setItem("app_user_id", exists.id)
-                    props.history.push("/")
+                    props.history.push("/teachers")
                 } else if (exists && exists.password !== password.current.value) {
                     passwordDialog.current.showModal()
                 } else if (!exists) {

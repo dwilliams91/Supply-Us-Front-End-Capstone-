@@ -9,17 +9,21 @@ import {SupplyTypeProvider} from "../DataProviders/SupplyTypeProvider"
 export const TeacherApplicationView = (props) => {
     return (
         <>
+        <SupplyTypeProvider>
+                <SupplyItemsProvider>
             <ClassListProvider>
                 <Route exact path="/teachers">
                     <TeacherClasses></TeacherClasses>
-                    {/* <TeacherClassForm></TeacherClassForm> */}
+                    <TeacherClassForm></TeacherClassForm>
                     <TeacherSupplyForm></TeacherSupplyForm>
                 </Route>
             </ClassListProvider>
+            </SupplyItemsProvider>
+            </SupplyTypeProvider>
 
 
             <ClassListProvider>
-                <Route exact path="/teachers/addClass">
+                <Route  exact path="/teachers/addclass">
                     <TeacherClassForm></TeacherClassForm>
                 </Route>
             </ClassListProvider>

@@ -18,7 +18,7 @@ export const TeacherApplicationView = (props) => {
                     <SupplyItemsProvider>
                         <ClassListProvider>
                             <Route exact path="/teachers">
-                                <Testing></Testing>
+                                {/* <Testing></Testing> */}
                                 <TeacherClasses></TeacherClasses>
                                 <TeacherClassForm></TeacherClassForm>
                                 {/* <TeacherSupplyForm></TeacherSupplyForm> */}

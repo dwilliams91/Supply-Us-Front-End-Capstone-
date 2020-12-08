@@ -14,7 +14,7 @@ export const TeacherSupplyTableList = (props) => {
 
     return (
         <>
-        {console.log("classId",classId)}
+        {/* {console.log("classId",classId)} */}
             <table>
                 <thead>
                     <tr>

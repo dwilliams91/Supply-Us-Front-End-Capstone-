@@ -8,7 +8,9 @@ export const TeacherClass = ({myClass}) => (
             <Link to={{
                 pathname:`/teachers/class${myClass.id}`,
                 state:{
-                chosenClass:myClass}
+                chosenClassName:myClass.name,
+                chosenClass:myClass
+            }
                 }}>
                 { myClass.name }
             </Link>

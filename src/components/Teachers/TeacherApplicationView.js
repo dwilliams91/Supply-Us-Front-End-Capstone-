@@ -7,6 +7,8 @@ import { TeacherSupplyForm } from "./TeacherSupplyForm/TeacherSupplyForm"
 import { SupplyItemsProvider } from "../DataProviders/SupplyItemProvider"
 import { SupplyTypeProvider } from "../DataProviders/SupplyTypeProvider"
 import { ClassListSupplyItemProvider } from "../DataProviders/ClassListSupplyItemProvider"
+import { TeacherSupplyTableList } from "./TeacherSupplyForm/TeacherSupplyTableList"
+import { Testing } from "./testing"
 export const TeacherApplicationView = (props) => {
 
     return (
@@ -16,10 +18,13 @@ export const TeacherApplicationView = (props) => {
                     <SupplyItemsProvider>
                         <ClassListProvider>
                             <Route exact path="/teachers">
+                                <Testing></Testing>
                                 <TeacherClasses></TeacherClasses>
                                 <TeacherClassForm></TeacherClassForm>
                                 {/* <TeacherSupplyForm></TeacherSupplyForm> */}
+                                <TeacherSupplyTableList></TeacherSupplyTableList>
                             </Route>
+                            
                             <Route path="/teachers" render={
                                 props => <TeacherSupplyForm {...props} />
                             } />
@@ -34,6 +39,9 @@ export const TeacherApplicationView = (props) => {
                 </Route>
             </ClassListProvider>
 
+            <Route exact path="/teachers/addClassaddClass">
+                    <Testing></Testing>
+                </Route>
 
             <ClassListSupplyItemProvider>
                 <SupplyTypeProvider>
@@ -41,6 +49,7 @@ export const TeacherApplicationView = (props) => {
                     <Route path="/teachers/class:ClassListId(\d+)" render={
                                 props => <TeacherSupplyForm {...props} />
                             } />
+
                     </SupplyItemsProvider>
                 </SupplyTypeProvider>
             </ClassListSupplyItemProvider>

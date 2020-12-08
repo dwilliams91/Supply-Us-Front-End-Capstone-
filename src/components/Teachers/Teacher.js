@@ -8,7 +8,7 @@ export const Teacher = (props) => {
         <>
             <h1>hi</h1>
             <TeacherNavBar></TeacherNavBar>
-            <TeacherApplicationView></TeacherApplicationView>
+            <TeacherApplicationView {...props}></TeacherApplicationView>
         </>
     )
 }

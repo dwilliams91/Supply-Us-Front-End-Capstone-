@@ -1,7 +1,7 @@
 import React, { useContext, useRef } from "react"
 import { ClassListContext } from "../../DataProviders/ClassListProvider"
 
-export const TeacherClassForm=(props)=>{
+export const TeacherClassForm=()=>{
     // get the add class function
     const { addClassList}=useContext(ClassListContext)
 

@@ -4,14 +4,19 @@ import { SupplyItemContext } from "../../DataProviders/SupplyItemProvider"
 import { SupplyTypeContext } from "../../DataProviders/SupplyTypeProvider"
 
 export const TeacherSupplyForm = (props) => {
+    // getting the items from the providers
     const { SupplyTypes, getSupplyTypes } = useContext(SupplyTypeContext)
     const { SupplyItems, getSupplyItems } = useContext(SupplyItemContext)
     const {addClassListSupplyItem} = useContext(ClassListSupplyItemContext)
 
+    // defining the type and Item variables
     const [Type, setType] = useState(0)
     const [Item, setItem] = useState(0)
     const [ItemName, setItemName] = useState("")
     const [packageType, setPackType] = useState("Number of")
+    const [filteredSupplyItems, setFilteredSupplyItems] = useState([])
+
+    // initial render
     useEffect(() => {
         getSupplyTypes()
     }, [])
@@ -19,6 +24,11 @@ export const TeacherSupplyForm = (props) => {
         getSupplyItems()
     }, [])
 
+    // check to see if the type bar has changed, if it has set the type
+    const FirstHandleFieldChange = (event) => {
+        setType(event.target.value)
+    }
+    // re-rendering when the type changes. If the type is not 0, filter the item bar
     useEffect(() => {
         const selectTypeParsed = parseInt(Type)
         if (selectTypeParsed === 0) {
@@ -29,6 +39,12 @@ export const TeacherSupplyForm = (props) => {
         console.log(Type)
     }, [Type, SupplyItems])
 
+    // check to see if the item bar has change, if it has change the item. 
+    const SecondHandleFieldChange = (event) => {
+        setItem(event.target.value)
+    }
+
+    // re-render when there is a change in the item. Find the item to render on the dom
     useEffect(() => {
         console.log(Item)
         // this stuff runs so it will work on render
@@ -40,6 +56,7 @@ export const TeacherSupplyForm = (props) => {
 
         }
     }, [Item])
+    // re-render when there is a change in item name, check to see if the item comes in packaging
     useEffect(() => {
         if (ItemName.packaging === true) {
             setPackType("Packs of ")
@@ -50,16 +67,7 @@ export const TeacherSupplyForm = (props) => {
 
     }, [ItemName])
 
-    const [filteredSupplyItems, setFilteredSupplyItems] = useState([])
-
-    const FirstHandleFieldChange = (event) => {
-        setType(event.target.value)
-    }
-    const SecondHandleFieldChange = (event) => {
-        setItem(event.target.value)
-
-    }
-
+    // define number and description to be used later
     const number=useRef(null)
     const description=useRef(null)
     // const classListId=props.location.state.chosenClass.id

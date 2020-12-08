@@ -177,7 +177,7 @@
     },
     {
       "id": 2,
-      "classListId": 1,
+      "classListId": 2,
       "supplyItemId": 2,
       "number": 1,
       "description": "ballpoint"
@@ -188,13 +188,6 @@
       "supplyItemId": 3,
       "number": 2,
       "description": "A red binder and a blue binder"
-    },
-    {
-      "number": "2",
-      "supplyItemId": "10",
-      "description": "",
-      "classListId": 2,
-      "id": 4
     }
   ]
 }

@@ -7,6 +7,7 @@ import { TeacherSupplyForm } from "./TeacherSupplyForm/TeacherSupplyForm"
 import { SupplyItemsProvider } from "../DataProviders/SupplyItemProvider"
 import { SupplyTypeProvider } from "../DataProviders/SupplyTypeProvider"
 import { ClassListSupplyItemProvider } from "../DataProviders/ClassListSupplyItemProvider"
+import { TeacherSupplyTableList } from "./TeacherSupplyForm/TeacherSupplyTableList"
 export const TeacherApplicationView = (props) => {
 
     return (
@@ -19,6 +20,7 @@ export const TeacherApplicationView = (props) => {
                                 <TeacherClasses></TeacherClasses>
                                 <TeacherClassForm></TeacherClassForm>
                                 {/* <TeacherSupplyForm></TeacherSupplyForm> */}
+                                <TeacherSupplyTableList></TeacherSupplyTableList>
                             </Route>
                             <Route path="/teachers" render={
                                 props => <TeacherSupplyForm {...props} />
@@ -41,6 +43,7 @@ export const TeacherApplicationView = (props) => {
                     <Route path="/teachers/class:ClassListId(\d+)" render={
                                 props => <TeacherSupplyForm {...props} />
                             } />
+
                     </SupplyItemsProvider>
                 </SupplyTypeProvider>
             </ClassListSupplyItemProvider>

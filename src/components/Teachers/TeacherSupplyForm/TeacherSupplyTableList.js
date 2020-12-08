@@ -4,21 +4,17 @@ import { TeacherSupplyTable } from "./TeacherSupplyTable"
 
 export const TeacherSupplyTableList = (props) => {
     const { classListSupplyItem, getClassListSupplyItem } = useContext(ClassListSupplyItemContext)
+    const classId=props.location.state.chosenClass.id
 
     useEffect(() => {
+
         getClassListSupplyItem()
     }, [])
-
-    const findClass=(myArray)=>{
-        // // const classId=props.location.state.chosenClass.id
-        // const foundClass=myArray.find(singleItem=>singleItem.classList.id===classId)
-        // console.log("found class", foundClass)
-        // return foundClass
-    }
 
 
     return (
         <>
+        {console.log("classId",classId)}
             <table>
                 <thead>
                     <tr>
@@ -35,7 +31,7 @@ export const TeacherSupplyTableList = (props) => {
                 </thead>
                 <tbody>
                     {/* {findClass()} */}
-                    {classListSupplyItem.map(singleItem=>{
+                    {classListSupplyItem.filter(singleItem=>singleItem.classList.id===parseInt(classId)).map(singleItem=>{
                         return <TeacherSupplyTable key={singleItem.id} myItem={singleItem}/>
                     })}
 

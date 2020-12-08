@@ -7,7 +7,8 @@ export const TeacherClass = ({myClass}) => (
         <h3 className="animal__name">
             <Link to={{
                 pathname:`/teachers/class${myClass.id}`,
-                state:{chosenClass:myClass}
+                state:{
+                chosenClass:myClass}
                 }}>
                 { myClass.name }
             </Link>

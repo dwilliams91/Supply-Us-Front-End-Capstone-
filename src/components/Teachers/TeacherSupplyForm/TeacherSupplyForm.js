@@ -16,7 +16,7 @@ export const TeacherSupplyForm = (props) => {
     const [ItemName, setItemName] = useState("")
     const [packageType, setPackType] = useState("Number of")
     const [filteredSupplyItems, setFilteredSupplyItems] = useState([])
-    const [className, setClassName]= useState("")
+    const [className, setClassName]= useState("class")
     const classId=props.location.state.chosenClass.id
     
     // getClassLists().then(()=>{
@@ -31,7 +31,13 @@ export const TeacherSupplyForm = (props) => {
         .then(getSupplyTypes)
         .then(getSupplyItems)
     }, [])
-    
+
+    useEffect(()=>{
+        const foundClass=classLists.find(singleItem=>singleItem.id===classId)
+        console.log("found class", foundClass)
+        setClassName(foundClass.name)
+
+    },[classLists])
 
     
 
@@ -97,9 +103,8 @@ export const TeacherSupplyForm = (props) => {
 
     return (
         <>      
-          {console.log("this should be the classList", classLists)}
-          {console.log("found class", classLists.find(singleItem=>singleItem.id===classId))}
-    <h2></h2>
+          
+    <h2>{className}</h2>
             <form>
                 <fieldset>
                     <div className="form-group">

@@ -18,46 +18,38 @@ export const TeacherApplicationView = (props) => {
                     <SupplyItemsProvider>
                         <ClassListProvider>
                             <Route exact path="/teachers">
-                                <Testing></Testing>
                                 <TeacherClasses></TeacherClasses>
-                                <TeacherClassForm></TeacherClassForm>
-                                {/* <TeacherSupplyForm></TeacherSupplyForm> */}
-                                <TeacherSupplyTableList></TeacherSupplyTableList>
                             </Route>
-                            
-                            <Route path="/teachers" render={
-                                props => <TeacherSupplyForm {...props} />
-                            } />
                         </ClassListProvider>
                     </SupplyItemsProvider>
                 </SupplyTypeProvider>
             </ClassListSupplyItemProvider>
 
             <ClassListProvider>
-                <Route exact path="/teachers/addClass">
+                <Route exact path="/teachers/addClass" >
                     <TeacherClassForm></TeacherClassForm>
                 </Route>
             </ClassListProvider>
 
-            <Route exact path="/teachers/addClassaddClass">
-                    <Testing></Testing>
-                </Route>
 
+            <ClassListProvider>
             <ClassListSupplyItemProvider>
                 <SupplyTypeProvider>
                     <SupplyItemsProvider>
                     <Route path="/teachers/class:ClassListId(\d+)" render={
                                 props => <TeacherSupplyForm {...props} />
                             } />
+                            <Route path="/teachers/class:ClassListId(\d+)" render={
+                                props => <TeacherSupplyTableList {...props} />
+                            } />
 
                     </SupplyItemsProvider>
                 </SupplyTypeProvider>
             </ClassListSupplyItemProvider>
+            </ClassListProvider>
         </>
 
     )
 
 }
-{/* <Route exact path="/teachers/addClass" render={
-                props => <TeacherClassForm {...props}/>
-            }/> */}
+

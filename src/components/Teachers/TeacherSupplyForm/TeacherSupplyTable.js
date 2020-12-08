@@ -1,7 +1,7 @@
 import React from "react"
 
 export const TeacherSupplyTable=({myItem})=>{
-    console.log(myItem.classList)
+    // console.log(myItem.classList)
     return(
         <>
         <tr className="TableRow">

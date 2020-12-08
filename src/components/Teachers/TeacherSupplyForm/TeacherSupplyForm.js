@@ -2,12 +2,13 @@ import React, { useContext, useEffect, useRef, useState } from "react"
 import { ClassListSupplyItemContext } from "../../DataProviders/ClassListSupplyItemProvider"
 import { SupplyItemContext } from "../../DataProviders/SupplyItemProvider"
 import { SupplyTypeContext } from "../../DataProviders/SupplyTypeProvider"
-
+import {ClassListContext} from "../../DataProviders/ClassListProvider"
 export const TeacherSupplyForm = (props) => {
     // getting the items from the providers
     const { SupplyTypes, getSupplyTypes } = useContext(SupplyTypeContext)
     const { SupplyItems, getSupplyItems } = useContext(SupplyItemContext)
     const {addClassListSupplyItem} = useContext(ClassListSupplyItemContext)
+    const {classLists, getClassLists}=useContext(ClassListContext)
 
     // defining the type and Item variables
     const [Type, setType] = useState(0)
@@ -15,14 +16,25 @@ export const TeacherSupplyForm = (props) => {
     const [ItemName, setItemName] = useState("")
     const [packageType, setPackType] = useState("Number of")
     const [filteredSupplyItems, setFilteredSupplyItems] = useState([])
+    const [className, setClassName]= useState("")
 
     // initial render
     useEffect(() => {
-        getSupplyTypes()
+        getClassLists()
+        
+        .then(getSupplyTypes)
+        .then(getSupplyItems)
+        // this is to get the class name
+        // .then(()=>{
+        //     
+        //     const myClassName=classLists.find(singleClass=>parseInt(singleClass.id)===parseInt(props.location.state.chosenClass.id))
+        //     console.log(myClassName)
+        //     return myClassName
+        // })
     }, [])
-    useEffect(() => {
-        getSupplyItems()
-    }, [])
+    
+
+    
 
     // check to see if the type bar has changed, if it has set the type
     const FirstHandleFieldChange = (event) => {
@@ -77,12 +89,9 @@ export const TeacherSupplyForm = (props) => {
             number: number.current.value,
             supplyItemId: Item,
             description: description.current.value,
-            // classListId:classListId
-
+            classListId:classListId
         }
-        console.log(newItem)
-        console.log("look here", props.match.param)
-        // addClassListSupplyItem(newItem)
+        addClassListSupplyItem(newItem).then()
     }
     
 
@@ -90,6 +99,8 @@ export const TeacherSupplyForm = (props) => {
 
     return (
         <>
+        {console.log(className)}
+        {/* <h2>{className.name}</h2> */}
             <form>
                 <fieldset>
                     <div className="form-group">

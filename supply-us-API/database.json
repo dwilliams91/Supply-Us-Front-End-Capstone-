@@ -59,9 +59,9 @@
       "type": "Organizer"
     },
     {
-        "id": 3,
-        "type": "Paper"
-      }
+      "id": 3,
+      "type": "Paper"
+    }
   ],
   "supplyItems": [
     {
@@ -83,90 +83,89 @@
       "typeId": 1
     },
     {
-        "id": 4,
-        "name": "crayons",
-        "packaging": true,
-        "typeId": 1
-      },
-      {
-        "id": 5,
-        "name": "colored pencils",
-        "packaging": true,
-        "typeId": 1
-      },
-      {
-        "id": 6,
-        "name": "highlighters",
-        "packaging": true,
-        "typeId": 1
-      },
-      {
-        "id": 7,
-        "name": "erasers",
-        "packaging": false,
-        "typeId": 1
-      },
-      {
-        "id": 8,
-        "name": "pencil sharpener",
-        "packaging": false,
-        "typeId": 1
-      },
-      {
-        "id": 9,
-        "name": "binders",
-        "packaging": false,
-        "typeId": 2
-      },
-      {
-        "id": 10,
-        "name": "folders",
-        "packaging": false,
-        "typeId": 2
-      },
-      {
-        "id": 11,
-        "name": "spiral notebooks",
-        "packaging": false,
-        "typeId": 3
-      },
-      {
-        "id": 12,
-        "name": "composition notebooks",
-        "packaging": false,
-        "typeId": 2
-      },
-      {
-        "id": 13,
-        "name": "binder dividers",
-        "packaging": true,
-        "typeId": 2
-      },
-      {
-        "id": 14,
-        "name": "notecard box",
-        "packaging": false,
-        "typeId": 2
-      },
-      {
-        "id": 15,
-        "name": "notecard box dividers",
-        "packaging": true,
-        "typeId": 2
-      },
-      {
-        "id": 16,
-        "name": "pencil case",
-        "packaging": false,
-        "typeId": 2
-      },
-      {
-        "id": 17,
-        "name": "pencil packet",
-        "packaging": false,
-        "typeId": 2
-      }
-
+      "id": 4,
+      "name": "crayons",
+      "packaging": true,
+      "typeId": 1
+    },
+    {
+      "id": 5,
+      "name": "colored pencils",
+      "packaging": true,
+      "typeId": 1
+    },
+    {
+      "id": 6,
+      "name": "highlighters",
+      "packaging": true,
+      "typeId": 1
+    },
+    {
+      "id": 7,
+      "name": "erasers",
+      "packaging": false,
+      "typeId": 1
+    },
+    {
+      "id": 8,
+      "name": "pencil sharpener",
+      "packaging": false,
+      "typeId": 1
+    },
+    {
+      "id": 9,
+      "name": "binders",
+      "packaging": false,
+      "typeId": 2
+    },
+    {
+      "id": 10,
+      "name": "folders",
+      "packaging": false,
+      "typeId": 2
+    },
+    {
+      "id": 11,
+      "name": "spiral notebooks",
+      "packaging": false,
+      "typeId": 3
+    },
+    {
+      "id": 12,
+      "name": "composition notebooks",
+      "packaging": false,
+      "typeId": 2
+    },
+    {
+      "id": 13,
+      "name": "binder dividers",
+      "packaging": true,
+      "typeId": 2
+    },
+    {
+      "id": 14,
+      "name": "notecard box",
+      "packaging": false,
+      "typeId": 2
+    },
+    {
+      "id": 15,
+      "name": "notecard box dividers",
+      "packaging": true,
+      "typeId": 2
+    },
+    {
+      "id": 16,
+      "name": "pencil case",
+      "packaging": false,
+      "typeId": 2
+    },
+    {
+      "id": 17,
+      "name": "pencil packet",
+      "packaging": false,
+      "typeId": 2
+    }
   ],
   "classListSupplyItems": [
     {
@@ -189,6 +188,13 @@
       "supplyItemId": 3,
       "number": 2,
       "description": "A red binder and a blue binder"
+    },
+    {
+      "number": "2",
+      "supplyItemId": "10",
+      "description": "",
+      "classListId": 2,
+      "id": 4
     }
   ]
 }

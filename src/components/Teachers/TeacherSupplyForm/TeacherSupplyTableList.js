@@ -11,10 +11,6 @@ export const TeacherSupplyTableList = (props) => {
         getClassListSupplyItem()
     }, [])
 
-   
-    
-    
-
 
     return (
         <>

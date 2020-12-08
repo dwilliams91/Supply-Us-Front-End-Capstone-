@@ -17,20 +17,19 @@ export const TeacherSupplyForm = (props) => {
     const [packageType, setPackType] = useState("Number of")
     const [filteredSupplyItems, setFilteredSupplyItems] = useState([])
     const [className, setClassName]= useState("")
+    const classId=props.location.state.chosenClass.id
+    
+    // getClassLists().then(()=>{
+    //     console.log("is this empty",classLists)
+    //     const FoundClass=classLists.find(singleItem=>singleItem.id===parseInt(classId))
+    //     return FoundClass
+    // })
 
     // initial render
     useEffect(() => {
         getClassLists()
-        
         .then(getSupplyTypes)
         .then(getSupplyItems)
-        // this is to get the class name
-        // .then(()=>{
-        //     
-        //     const myClassName=classLists.find(singleClass=>parseInt(singleClass.id)===parseInt(props.location.state.chosenClass.id))
-        //     console.log(myClassName)
-        //     return myClassName
-        // })
     }, [])
     
 
@@ -48,7 +47,7 @@ export const TeacherSupplyForm = (props) => {
         } else {
             setFilteredSupplyItems(SupplyItems.filter(e => e.typeId === selectTypeParsed))
         }
-        console.log(Type)
+        // console.log(Type)
     }, [Type, SupplyItems])
 
     // check to see if the item bar has change, if it has change the item. 
@@ -58,7 +57,7 @@ export const TeacherSupplyForm = (props) => {
 
     // re-render when there is a change in the item. Find the item to render on the dom
     useEffect(() => {
-        console.log(Item)
+        // console.log(Item)
         // this stuff runs so it will work on render
         // if the item is not 0, then 
         if (Item !== 0) {
@@ -82,25 +81,25 @@ export const TeacherSupplyForm = (props) => {
     // define number and description to be used later
     const number=useRef(null)
     const description=useRef(null)
-    const classListId=props.location.state.chosenClass.id
 
     const SaveItem = () => {
         const newItem={
             number: number.current.value,
             supplyItemId: Item,
             description: description.current.value,
-            classListId:classListId
+            classListId:classId
         }
-        addClassListSupplyItem(newItem).then()
+        addClassListSupplyItem(newItem)
     }
     
 
 
 
     return (
-        <>
-        {console.log(className)}
-        {/* <h2>{className.name}</h2> */}
+        <>      
+          {console.log("this should be the classList", classLists)}
+          {console.log("found class", classLists.find(singleItem=>singleItem.id===classId))}
+    <h2></h2>
             <form>
                 <fieldset>
                     <div className="form-group">

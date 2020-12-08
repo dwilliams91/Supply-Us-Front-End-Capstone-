@@ -70,7 +70,7 @@ export const TeacherSupplyForm = (props) => {
     // define number and description to be used later
     const number=useRef(null)
     const description=useRef(null)
-    // const classListId=props.location.state.chosenClass.id
+    const classListId=props.location.state.chosenClass.id
 
     const SaveItem = () => {
         const newItem={
@@ -81,7 +81,7 @@ export const TeacherSupplyForm = (props) => {
 
         }
         console.log(newItem)
-        console.log(props.match.param)
+        console.log("look here", props.match.param)
         // addClassListSupplyItem(newItem)
     }
     

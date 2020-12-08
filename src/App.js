@@ -3,6 +3,8 @@ import React from "react"
 import { Login } from "./components/auth/Login"
 import { Register } from "./components/auth/Register"
 import { Teacher } from './components/Teachers/Teacher';
+import { TeacherNavBar } from "./components/Teachers/TeacherNavBar/TeacherNavBar";
+import { TeacherApplicationView } from "./components/Teachers/TeacherApplicationView";
 
 function App() {
   return (
@@ -12,7 +14,8 @@ function App() {
             if (localStorage.getItem("app_user_id")) {
                 return (
                     <>
-                        <Route exact path="/teachers" render={props => <Teacher {...props} />} />
+                        <Route render={props=><TeacherNavBar {...props}/>}/> 
+                        <Route render={props => <TeacherApplicationView {...props} />} />
                     </>
                 )
             } else {

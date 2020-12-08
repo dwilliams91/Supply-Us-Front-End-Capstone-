@@ -18,30 +18,20 @@ export const TeacherApplicationView = (props) => {
                     <SupplyItemsProvider>
                         <ClassListProvider>
                             <Route exact path="/teachers">
-                                {/* <Testing></Testing> */}
                                 <TeacherClasses></TeacherClasses>
-                                <TeacherClassForm></TeacherClassForm>
-                                {/* <TeacherSupplyForm></TeacherSupplyForm> */}
-                                <TeacherSupplyTableList></TeacherSupplyTableList>
                             </Route>
-                            
-                            <Route path="/teachers" render={
-                                props => <TeacherSupplyForm {...props} />
-                            } />
                         </ClassListProvider>
                     </SupplyItemsProvider>
                 </SupplyTypeProvider>
             </ClassListSupplyItemProvider>
 
             <ClassListProvider>
-                <Route exact path="/teachers/addClass">
+                <Route exact path="/teachers/addClass" >
                     <TeacherClassForm></TeacherClassForm>
                 </Route>
             </ClassListProvider>
 
-            <Route exact path="/teachers/addClassaddClass">
-                    <Testing></Testing>
-                </Route>
+
 
             <ClassListSupplyItemProvider>
                 <SupplyTypeProvider>
@@ -58,6 +48,4 @@ export const TeacherApplicationView = (props) => {
     )
 
 }
-{/* <Route exact path="/teachers/addClass" render={
-                props => <TeacherClassForm {...props}/>
-            }/> */}
+

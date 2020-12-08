@@ -62,15 +62,17 @@ export const TeacherSupplyForm = (props) => {
 
     const number=useRef(null)
     const description=useRef(null)
-    const supplyItemId=useRef(null)
-
     
     const SaveItem = () => {
         const newItem={
-            number:number.current.value,
-            supplyItemId: Item
+            number: number.current.value,
+            supplyItemId: Item,
+            description: description.current.value
+
         }
         console.log(newItem)
+        console.log(props.match.param)
+        // addClassListSupplyItem(newItem)
     }
     
 
@@ -114,7 +116,7 @@ export const TeacherSupplyForm = (props) => {
                 <fieldset>
 
                     <label> Description</label>
-                    <textarea placeholder="Example: Red binders, 3 ring, "></textarea>
+                    <textarea ref={description} placeholder="Example: Red binders, 3 ring, "></textarea>
                     <p>Here is where you can add any specific information. If they need three binders, here is where you put the colors, or 3 inches or 1 inch </p>
                 </fieldset>
                 <button type="submit" onClick={evt => {

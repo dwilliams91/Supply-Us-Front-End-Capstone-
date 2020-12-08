@@ -9,7 +9,7 @@ export const SupplyTypeProvider = (props) => {
     const [SupplyTypes, setSupplyType] = useState([])
 
     const getSupplyTypes = () => {
-        return fetch("http://localhost:8088/supplyType")
+        return fetch("http://localhost:8088/supplyTypes")
             .then(res => res.json())
             .then(setSupplyType)
     }

@@ -62,12 +62,14 @@ export const TeacherSupplyForm = (props) => {
 
     const number=useRef(null)
     const description=useRef(null)
-    
+    // const classListId=props.location.state.chosenClass.id
+
     const SaveItem = () => {
         const newItem={
             number: number.current.value,
             supplyItemId: Item,
-            description: description.current.value
+            description: description.current.value,
+            // classListId:classListId
 
         }
         console.log(newItem)

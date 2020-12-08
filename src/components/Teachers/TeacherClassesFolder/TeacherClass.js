@@ -5,8 +5,12 @@ import { Link } from "react-router-dom"
 export const TeacherClass = ({myClass}) => (
     
         <h3 className="animal__name">
-            <Link to={`/teachers/${myClass.id}`}>
+            <Link to={{
+                pathname:`/teachers/class${myClass.id}`,
+                state:{chosenClass:myClass}
+                }}>
                 { myClass.name }
             </Link>
         </h3>
 )
+

@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useRef } from "react"
-import { ClassListContext, ClassListProvider } from "../../DataProviders/ClassListProvider"
+import React, { useContext, useRef } from "react"
+import { ClassListContext } from "../../DataProviders/ClassListProvider"
 
 export const TeacherClassForm=(props)=>{
     // get the add class function

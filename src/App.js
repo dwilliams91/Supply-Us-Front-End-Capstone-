@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import { Route, Redirect } from "react-router-dom"
 import React from "react"
 import { Login } from "./components/auth/Login"

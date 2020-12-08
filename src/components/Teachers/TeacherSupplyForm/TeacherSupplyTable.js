@@ -1,17 +1,17 @@
 import React from "react"
 
-export const TeacherSupplyTable=(myItem)=>{
-    console.log(myItem.myItem)
-    let myTest=myItem.myItem.description
+export const TeacherSupplyTable=({myItem})=>{
     return(
         <>
         <tr className="TableRow">
-            
-            <td>
-                {myTest}
+            <td className="tableColumn Name">
+                {myItem.supplyItemId}
             </td>
-            <td>
-               <p> hi</p> 
+            <td className="tableColumn Number">
+               {myItem.number}
+            </td>
+            <td className="tableColumn Description">
+               {myItem.description}
             </td>
         </tr>
         </>

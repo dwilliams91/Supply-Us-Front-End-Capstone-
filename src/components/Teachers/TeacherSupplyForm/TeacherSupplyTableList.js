@@ -13,6 +13,19 @@ export const TeacherSupplyTableList = () => {
         <>
         {/* {console.log(classListSupplyItem)} */}
             <table>
+                <thead>
+                    <tr>
+                        <th>
+                            Item
+                        </th>
+                        <th>
+                            Number
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                    </tr>
+                </thead>
                 <tbody>
                     {classListSupplyItem.map(singleItem=>{
                         return <TeacherSupplyTable key={singleItem.id} myItem={singleItem}/>

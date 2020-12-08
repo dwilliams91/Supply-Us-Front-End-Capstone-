@@ -16,7 +16,7 @@ export const TeacherSupplyForm = (props) => {
     const [ItemName, setItemName] = useState("")
     const [packageType, setPackType] = useState("Number of")
     const [filteredSupplyItems, setFilteredSupplyItems] = useState([])
-    const [className, setClassName]= useState("class")
+    const [className, setClassName]= useState("")
     const classId=props.location.state.chosenClass.id
     
     // getClassLists().then(()=>{
@@ -33,11 +33,12 @@ export const TeacherSupplyForm = (props) => {
     }, [])
 
     useEffect(()=>{
+        console.log(classLists)
         const foundClass=classLists.find(singleItem=>singleItem.id===classId)
         console.log("found class", foundClass)
-        setClassName(foundClass.name)
+        setClassName(foundClass)
 
-    },[classLists])
+    },[])
 
     
 

@@ -6,9 +6,12 @@ import { TeacherClassForm } from "./TeacherClassesFolder/TeacherClassForm"
 import { TeacherSupplyForm } from "./TeacherSupplyForm/TeacherSupplyForm"
 import {SupplyItemsProvider} from "../DataProviders/SupplyItemProvider"
 import {SupplyTypeProvider} from "../DataProviders/SupplyTypeProvider"
+import { ClassListSupplyItemProvider } from "../DataProviders/ClassListSupplyItemProvider"
 export const TeacherApplicationView = (props) => {
+
     return (
         <>
+        <ClassListSupplyItemProvider>
         <SupplyTypeProvider>
                 <SupplyItemsProvider>
             <ClassListProvider>
@@ -20,15 +23,15 @@ export const TeacherApplicationView = (props) => {
             </ClassListProvider>
             </SupplyItemsProvider>
             </SupplyTypeProvider>
-
+            </ClassListSupplyItemProvider>
 
             <ClassListProvider>
-                <Route  exact path="/teachers/addclass">
+                <Route  exact path="/teachers/addClass">
                     <TeacherClassForm></TeacherClassForm>
                 </Route>
             </ClassListProvider>
 
-
+            <ClassListSupplyItemProvider>
             <SupplyTypeProvider>
                 <SupplyItemsProvider>
                     <Route exact path="/teachers/1">
@@ -36,9 +39,7 @@ export const TeacherApplicationView = (props) => {
                     </Route>
                 </SupplyItemsProvider>
             </SupplyTypeProvider>
-
-
-
+            </ClassListSupplyItemProvider>
         </>
 
     )

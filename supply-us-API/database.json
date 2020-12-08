@@ -73,11 +73,23 @@
       "typeId": 1
     },
     {
-      "id": 3,
+        "id": 3,
+        "name": "markers",
+        "packaging": true,
+        "typeId": 1
+      },
+    {
+      "id": 4,
       "name": "binders",
       "packaging": false,
       "typeId": 2
-    }
+    },
+    {
+        "id": 5,
+        "name": "folders",
+        "packaging": false,
+        "typeId": 2
+      }
   ],
   "classListSupplyItem": [
     {

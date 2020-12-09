@@ -27,8 +27,16 @@
     {
       "email": "kelly@kelly.com",
       "password": "password",
-      "name": "Kelly L",
+      "userType": 1,
+      "name": "Kelly kelly",
       "id": 3
+    },
+    {
+      "email": "linda@linda.com",
+      "password": "password",
+      "userType": 2,
+      "name": "linda linda",
+      "id": 4
     }
   ],
   "userClasses": [
@@ -53,11 +61,6 @@
       "name": "5th Grade Science",
       "userId": 1,
       "id": 2
-    },
-    {
-      "name": "3rd Grade English",
-      "userId": 3,
-      "id": 4
     }
   ],
   "supplyTypes": [
@@ -227,13 +230,6 @@
       "description": "3 inch blue",
       "classListId": 1,
       "id": 8
-    },
-    {
-      "number": "2",
-      "supplyItemId": "10",
-      "description": "Any color",
-      "classListId": 4,
-      "id": 9
     }
   ]
 }

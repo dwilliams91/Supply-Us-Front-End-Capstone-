@@ -9,7 +9,7 @@ export const Register = (props) => {
     const verifyPassword = useRef()
     const passwordDialog = useRef()
     const conflictDialog = useRef()
-    const [userType, setUserType]=useState(2)
+    const [userType, setUserType] = useState(2)
 
     const existingUserCheck = () => {
         // If your json-server URL is different, please change it below!
@@ -42,7 +42,12 @@ export const Register = (props) => {
                                 if (createdUser.hasOwnProperty("id")) {
                                     // The user id is saved under the key app_user_id in local Storage. Change below if needed!
                                     localStorage.setItem("app_user_id", createdUser.id)
-                                    props.history.push("/")
+                                    localStorage.setItem("userType", createdUser.userType)
+                                    if (createdUser.userType === 1) {
+                                        props.history.push("/teachers")
+                                    } else {
+                                        props.history.push("/customers")
+                                    }
                                 }
                             })
                     }
@@ -54,7 +59,7 @@ export const Register = (props) => {
             passwordDialog.current.showModal()
         }
     }
-    const SelectUserType=(event)=>{
+    const SelectUserType = (event) => {
         setUserType(event.target.value)
     }
 
@@ -86,7 +91,7 @@ export const Register = (props) => {
                     <select onChange={SelectUserType}>
                         <option value="2">Customer/Parent</option>
                         <option value="1">Teacher</option>
-                        
+
                     </select>
                 </fieldset>
                 <fieldset>

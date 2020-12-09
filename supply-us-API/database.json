@@ -205,17 +205,17 @@
     },
     {
       "number": "2",
-      "supplyItemId": "6",
-      "description": "any color",
-      "classListId": 2,
-      "id": 6
-    },
-    {
-      "number": "2",
       "supplyItemId": "10",
       "description": "One for homework and one for classwork",
       "classListId": 2,
       "id": 7
+    },
+    {
+      "number": "1",
+      "supplyItemId": "9",
+      "description": "3 inch blue",
+      "classListId": 1,
+      "id": 8
     }
   ]
 }

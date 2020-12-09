@@ -41,7 +41,11 @@ export const CustomerForm = () => {
             classListId: parseInt(Class)
 
         }
-        addUserClasses(newItem)
+        if (userClasses.find(singleClass=> singleClass.userId===newItem.userId && singleClass.classListId===newItem.classListId)){
+            window.alert("You already have this class")
+        } else {
+            addUserClasses(newItem)
+        }
     }
 
     useEffect(()=>{

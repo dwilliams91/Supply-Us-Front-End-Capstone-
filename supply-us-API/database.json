@@ -188,6 +188,27 @@
       "supplyItemId": 3,
       "number": 2,
       "description": "A red binder and a blue binder"
+    },
+    {
+      "number": "2",
+      "supplyItemId": "9",
+      "description": "Red and Green",
+      "classListId": 2,
+      "id": 4
+    },
+    {
+      "number": "2",
+      "supplyItemId": "4",
+      "description": "with sharpener",
+      "classListId": 2,
+      "id": 5
+    },
+    {
+      "number": "2",
+      "supplyItemId": "6",
+      "description": "any color",
+      "classListId": 2,
+      "id": 6
     }
   ]
 }

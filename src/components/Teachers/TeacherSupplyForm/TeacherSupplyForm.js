@@ -16,9 +16,10 @@ export const TeacherSupplyForm = (props) => {
     const [ItemName, setItemName] = useState("")
     const [packageType, setPackType] = useState("Number of")
     const [filteredSupplyItems, setFilteredSupplyItems] = useState([])
+    const [ItemNumber, setItemNumber]= useState(0)
     const className=props.location.state.chosenClassName
     const classId=props.location.state.chosenClass.id
-    console.log(classId)
+    // console.log(classId)
     // getClassLists().then(()=>{
     //     console.log("is this empty",classLists)
     //     const FoundClass=classLists.find(singleItem=>singleItem.id===parseInt(classId))
@@ -90,23 +91,39 @@ export const TeacherSupplyForm = (props) => {
     const description=useRef(null)
 
     const SaveItem = () => {
+        // console.log("the current number is", number.current.value)
+        
+        // setItemNumber(number.current.value)
+        
+        
+        console.log("the current ItemNumber is", ItemNumber)
         const newItem={
-            number: number.current.value,
+            number: ItemNumber,
             supplyItemId: Item,
             description: description.current.value,
             classListId:classId
         }
-        addClassListSupplyItem(newItem)
+        console.log(newItem)
+        // addClassListSupplyItem(newItem)
     }
-    
+    const changeNumberField=()=>{
+        setItemNumber(document.getElementById("numberField").value)
+    }
+    const clearNumberField=()=>{
+        setItemNumber(0)
 
+        document.getElementById("numberField")
+    }
 
+    const resetField = () => { 
+        document.getElementById("formToReset").reset();
+      }
 
     return (
         <>      
           
     <h2>{className}</h2>
-            <form>
+            <form >
                 <fieldset>
                     <div className="form-group">
                         <label>Select Type </label>
@@ -134,9 +151,12 @@ export const TeacherSupplyForm = (props) => {
                         </select>
                     </div>
                 </fieldset>
+                </form>
+
+                <form id="formToReset" >
                 <fieldset>
                     <label>{packageType} {ItemName.name}</label>
-                    <input  ref={number} ></input>
+                            <input id="numberField" onChange={changeNumberField}></input>
 
                 </fieldset>
                 <fieldset>
@@ -148,6 +168,11 @@ export const TeacherSupplyForm = (props) => {
                 <button type="submit" onClick={evt => {
                     evt.preventDefault() // Prevent browser from submitting the form
                     SaveItem()
+                    setItem(0)
+                    setType(0)
+                    setItemNumber(0)
+                    setItemName("")
+                    resetField()                    
                 }}> Save Item </button>
             </form>
         </>

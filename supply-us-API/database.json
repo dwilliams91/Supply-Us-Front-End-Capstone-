@@ -188,6 +188,13 @@
       "supplyItemId": 3,
       "number": 2,
       "description": "A red binder and a blue binder"
+    },
+    {
+      "number": "5",
+      "supplyItemId": "2",
+      "description": "Not Red",
+      "classListId": 2,
+      "id": 4
     }
   ]
 }

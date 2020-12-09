@@ -1,7 +1,7 @@
 import React from "react"
 
 export const TeacherSupplyTable=({myItem})=>{
-    // console.log(myItem.classList)
+
     return(
         <>
         <tr className="TableRow">
@@ -15,7 +15,11 @@ export const TeacherSupplyTable=({myItem})=>{
                {myItem.description}
             </td>
             <td className="tableColumn DeleteButton">
-               <button>delete</button>
+               <button onClick={
+                   ()=>{
+                       console.log(myItem)
+                   }
+               }>delete</button>
             </td>
         </tr>
         </>

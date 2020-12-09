@@ -16,8 +16,8 @@ export const TeacherSupplyForm = (props) => {
     const [ItemName, setItemName] = useState("")
     const [packageType, setPackType] = useState("Number of")
     const [filteredSupplyItems, setFilteredSupplyItems] = useState([])
-    const [className, setClassName]= useState("")
-    const classId=props.location.state.chosenClassName
+    const className=props.location.state.chosenClassName
+    const classId=props.location.state.chosenClass.id
     console.log(classId)
     // getClassLists().then(()=>{
     //     console.log("is this empty",classLists)
@@ -105,7 +105,7 @@ export const TeacherSupplyForm = (props) => {
     return (
         <>      
           
-    <h2>{classId}</h2>
+    <h2>{className}</h2>
             <form>
                 <fieldset>
                     <div className="form-group">

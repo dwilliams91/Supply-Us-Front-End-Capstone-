@@ -26,14 +26,14 @@ export const ClassListSupplyItemProvider= (props) => {
     }
     const deleteItem = ClassItemSupplyListId => {
         console.log(ClassItemSupplyListId)
-        return fetch(`http://localhost:8088/ClassListSupplyItems${ClassItemSupplyListId}`, {
+        return fetch(`http://localhost:8088/ClassListSupplyItems/${ClassItemSupplyListId}`, {
             method: "DELETE"
         })
             .then(ClassItemSupplyListId)
     }
     return (
         <ClassListSupplyItemContext.Provider value={{
-            ClassListSupplyItemProvider, classListSupplyItem, getClassListSupplyItem, addClassListSupplyItem
+            ClassListSupplyItemProvider, classListSupplyItem, getClassListSupplyItem, addClassListSupplyItem, deleteItem
         }}>
             {props.children}
         </ClassListSupplyItemContext.Provider>

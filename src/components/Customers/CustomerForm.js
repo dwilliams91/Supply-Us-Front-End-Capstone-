@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from "react"
 import { TeacherContext } from "../DataProviders/TeacherDataProvider"
 import { ClassListContext } from "../DataProviders/ClassListProvider"
-
+import {UserClassesContext} from "../DataProviders/UserClassesProvider"
 export const CustomerForm = () => {
     const { Teachers, getTeachers } = useContext(TeacherContext)
     const { classLists, getClassLists } = useContext(ClassListContext)
+    const {userClasses, getUserClasses, addUserClasses}=useContext(UserClassesContext)
 
     const [Teacher, setTeacher]=useState(0)
     const [Class, setClass]=useState(0)
@@ -18,6 +19,9 @@ export const CustomerForm = () => {
     const FirstHandleFieldChange=(event)=>{
         setTeacher(event.target.value)
     }
+    const SecondHandleFieldChange=(event)=>{
+        setClass(event.target.value)
+    }
     useEffect(()=>{
         const selectTeacherParsed=parseInt(Teacher)
         if (selectTeacherParsed===0){
@@ -27,6 +31,15 @@ export const CustomerForm = () => {
         }
     },[Teacher, classLists])
 
+    const saveClasses=()=>{
+        const user=parseInt(localStorage.getItem("app_user_id"))
+        console.log(Class)
+        const newItem={
+            userId:user,
+            classListId:Class
+
+        }
+    }
 
     return (
         <>
@@ -44,7 +57,7 @@ export const CustomerForm = () => {
             </select>
             </fieldset>
             <fieldset>
-            <select value={Class}id="ClassName" className="form-control" >
+            <select id="ClassName" className="form-control" onChange={SecondHandleFieldChange} >
                 <option value="0">Select Class</option>
                 {filteredClasses.map(e => (
                     <option key={e.id} value={e.id}>
@@ -53,7 +66,14 @@ export const CustomerForm = () => {
                 ))}
             </select>
             </fieldset>
+            <button type="submit" onClick={event=>{
+                event.preventDefault()
+                saveClasses()
+                }}> Save Class</button>
             </form>
+            <div>
+
+            </div>
         </>
     )
 }

@@ -1,11 +1,15 @@
 import React  from "react"
 import { Route } from "react-router-dom"
+import { TeacherProvider } from "../DataProviders/TeacherDataProvider"
+import { CustomerForm } from "./CustomerForm"
 
 export const CustomerApplicationView=()=>{
     console.log("customer Application view is running")
     return (
+        <TeacherProvider>
         <Route exact path="/customers">
-            <h1>whats up?</h1>
+            <CustomerForm></CustomerForm>
         </Route>
+        </TeacherProvider>
     )
 }

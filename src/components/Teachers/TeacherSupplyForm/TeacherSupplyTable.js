@@ -1,7 +1,10 @@
-import React from "react"
+import React, { useContext } from "react"
+import { ClassListSupplyItemContext } from "../../DataProviders/ClassListSupplyItemProvider"
+import { TeacherSupplyTableList } from "./TeacherSupplyTableList"
 
-export const TeacherSupplyTable=({myItem})=>{
-    // console.log(myItem.classList)
+export const TeacherSupplyTable=({myItem, props})=>{
+    const {deleteItem} = useContext(ClassListSupplyItemContext)  
+    // console.log(props.history.location)
     return(
         <>
         <tr className="TableRow">
@@ -15,7 +18,10 @@ export const TeacherSupplyTable=({myItem})=>{
                {myItem.description}
             </td>
             <td className="tableColumn DeleteButton">
-               <button>delete</button>
+               <button onClick={ ()=>
+                   console.log("this will delete stuff")
+               }
+               >delete</button>
             </td>
         </tr>
         </>

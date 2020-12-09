@@ -16,9 +16,12 @@ export const TeacherSupplyForm = (props) => {
     const [ItemName, setItemName] = useState("")
     const [packageType, setPackType] = useState("Number of")
     const [filteredSupplyItems, setFilteredSupplyItems] = useState([])
-    const [className, setClassName]= useState("")
-    const classId=props.location.state.chosenClassName
-    console.log(classId)
+    const [ItemNumber, setItemNumber]= useState(0)
+    const [description, setDescription]=useState([])
+
+    const className=props.location.state.chosenClassName
+    const classId=props.location.state.chosenClass.id
+    // console.log(classId)
     // getClassLists().then(()=>{
     //     console.log("is this empty",classLists)
     //     const FoundClass=classLists.find(singleItem=>singleItem.id===parseInt(classId))
@@ -85,28 +88,32 @@ export const TeacherSupplyForm = (props) => {
 
     }, [ItemName])
 
-    // define number and description to be used later
-    const number=useRef(null)
-    const description=useRef(null)
 
     const SaveItem = () => {
         const newItem={
-            number: number.current.value,
+            number: ItemNumber,
             supplyItemId: Item,
-            description: description.current.value,
+            description: description,
             classListId:classId
         }
         addClassListSupplyItem(newItem)
     }
+    // this changes the values of the number and the description whenever one of them is changed
+    const changeField=()=>{
+        setItemNumber(document.getElementById("numberField").value)
+        setDescription(document.getElementById("descriptionField").value)
+    }
     
-
-
+    // this resets the two text based fields since their uncontrolled fields
+    const resetField = () => { 
+        document.getElementById("formToReset").reset();
+      }
 
     return (
         <>      
           
-    <h2>{classId}</h2>
-            <form>
+    <h2>{className}</h2>
+            <form >
                 <fieldset>
                     <div className="form-group">
                         <label>Select Type </label>
@@ -134,20 +141,29 @@ export const TeacherSupplyForm = (props) => {
                         </select>
                     </div>
                 </fieldset>
+                </form>
+
+                <form id="formToReset" >
                 <fieldset>
                     <label>{packageType} {ItemName.name}</label>
-                    <input  ref={number} ></input>
+                            <input id="numberField" onChange={changeField}></input>
 
                 </fieldset>
                 <fieldset>
 
                     <label> Description</label>
-                    <textarea ref={description} placeholder="Example: Red binders, 3 ring, "></textarea>
+                    <textarea id="descriptionField" placeholder="Example: Red binders, 3 ring," onChange={changeField}></textarea>
                     <p>Here is where you can add any specific information. If they need three binders, here is where you put the colors, or 3 inches or 1 inch </p>
                 </fieldset>
                 <button type="submit" onClick={evt => {
                     evt.preventDefault() // Prevent browser from submitting the form
                     SaveItem()
+                    setItem(0)
+                    setType(0)
+                    setItemNumber(0)
+                    setItemName("")
+                    setDescription("")
+                    resetField()                    
                 }}> Save Item </button>
             </form>
         </>

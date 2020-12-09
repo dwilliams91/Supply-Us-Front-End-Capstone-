@@ -32,7 +32,7 @@ export const TeacherSupplyTableList = (props) => {
                 <tbody>
                     {/* {findClass()} */}
                     {classListSupplyItem.filter(singleItem=>singleItem.classList.id===parseInt(classId)).map(singleItem=>{
-                        return <TeacherSupplyTable key={singleItem.id} myItem={singleItem}/>
+                        return <TeacherSupplyTable key={singleItem.id} myItem={singleItem} props={props}/>
                     })}
 
                 </tbody>

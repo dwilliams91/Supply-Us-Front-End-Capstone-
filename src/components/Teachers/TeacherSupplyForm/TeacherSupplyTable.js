@@ -19,7 +19,7 @@ export const TeacherSupplyTable=({myItem, props})=>{
             </td>
             <td className="tableColumn DeleteButton">
                <button onClick={ ()=>
-                   console.log("this will delete stuff")
+               deleteItem(myItem.id)
                }
                >delete</button>
             </td>

@@ -10,7 +10,9 @@ export const TeacherSupplyTableList = (props) => {
 
         getClassListSupplyItem()
     }, [])
-
+    useEffect(()=>{
+        getClassListSupplyItem()
+    },[classListSupplyItem])
 
     return (
         <>

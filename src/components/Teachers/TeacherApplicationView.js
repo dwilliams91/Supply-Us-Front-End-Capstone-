@@ -8,7 +8,6 @@ import { SupplyItemsProvider } from "../DataProviders/SupplyItemProvider"
 import { SupplyTypeProvider } from "../DataProviders/SupplyTypeProvider"
 import { ClassListSupplyItemProvider } from "../DataProviders/ClassListSupplyItemProvider"
 import { TeacherSupplyTableList } from "./TeacherSupplyForm/TeacherSupplyTableList"
-import { Testing } from "./testing"
 export const TeacherApplicationView = (props) => {
     const userType=parseInt(localStorage.getItem("userType"))
     console.log("userType", userType)

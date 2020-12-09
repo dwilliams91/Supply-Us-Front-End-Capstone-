@@ -17,6 +17,8 @@ export const TeacherSupplyForm = (props) => {
     const [packageType, setPackType] = useState("Number of")
     const [filteredSupplyItems, setFilteredSupplyItems] = useState([])
     const [ItemNumber, setItemNumber]= useState(0)
+    const [description, setDescription]=useState([])
+
     const className=props.location.state.chosenClassName
     const classId=props.location.state.chosenClass.id
     // console.log(classId)
@@ -88,7 +90,6 @@ export const TeacherSupplyForm = (props) => {
 
     // define number and description to be used later
     const number=useRef(null)
-    const description=useRef(null)
 
     const SaveItem = () => {
         // console.log("the current number is", number.current.value)
@@ -100,7 +101,7 @@ export const TeacherSupplyForm = (props) => {
         const newItem={
             number: ItemNumber,
             supplyItemId: Item,
-            description: description.current.value,
+            description: description,
             classListId:classId
         }
         console.log(newItem)
@@ -108,12 +109,9 @@ export const TeacherSupplyForm = (props) => {
     }
     const changeNumberField=()=>{
         setItemNumber(document.getElementById("numberField").value)
+        setDescription(document.getElementById("descriptionField").value)
     }
-    const clearNumberField=()=>{
-        setItemNumber(0)
-
-        document.getElementById("numberField")
-    }
+    
 
     const resetField = () => { 
         document.getElementById("formToReset").reset();
@@ -162,7 +160,7 @@ export const TeacherSupplyForm = (props) => {
                 <fieldset>
 
                     <label> Description</label>
-                    <textarea ref={description} placeholder="Example: Red binders, 3 ring, "></textarea>
+                    <textarea id="descriptionField" placeholder="Example: Red binders, 3 ring," onChange={changeNumberField}></textarea>
                     <p>Here is where you can add any specific information. If they need three binders, here is where you put the colors, or 3 inches or 1 inch </p>
                 </fieldset>
                 <button type="submit" onClick={evt => {
@@ -172,6 +170,7 @@ export const TeacherSupplyForm = (props) => {
                     setType(0)
                     setItemNumber(0)
                     setItemName("")
+                    setDescription("")
                     resetField()                    
                 }}> Save Item </button>
             </form>

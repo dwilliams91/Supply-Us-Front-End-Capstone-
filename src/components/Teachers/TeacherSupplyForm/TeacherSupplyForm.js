@@ -88,31 +88,23 @@ export const TeacherSupplyForm = (props) => {
 
     }, [ItemName])
 
-    // define number and description to be used later
-    const number=useRef(null)
 
     const SaveItem = () => {
-        // console.log("the current number is", number.current.value)
-        
-        // setItemNumber(number.current.value)
-        
-        
-        console.log("the current ItemNumber is", ItemNumber)
         const newItem={
             number: ItemNumber,
             supplyItemId: Item,
             description: description,
             classListId:classId
         }
-        console.log(newItem)
-        // addClassListSupplyItem(newItem)
+        addClassListSupplyItem(newItem)
     }
-    const changeNumberField=()=>{
+    // this changes the values of the number and the description whenever one of them is changed
+    const changeField=()=>{
         setItemNumber(document.getElementById("numberField").value)
         setDescription(document.getElementById("descriptionField").value)
     }
     
-
+    // this resets the two text based fields since their uncontrolled fields
     const resetField = () => { 
         document.getElementById("formToReset").reset();
       }
@@ -154,13 +146,13 @@ export const TeacherSupplyForm = (props) => {
                 <form id="formToReset" >
                 <fieldset>
                     <label>{packageType} {ItemName.name}</label>
-                            <input id="numberField" onChange={changeNumberField}></input>
+                            <input id="numberField" onChange={changeField}></input>
 
                 </fieldset>
                 <fieldset>
 
                     <label> Description</label>
-                    <textarea id="descriptionField" placeholder="Example: Red binders, 3 ring," onChange={changeNumberField}></textarea>
+                    <textarea id="descriptionField" placeholder="Example: Red binders, 3 ring," onChange={changeField}></textarea>
                     <p>Here is where you can add any specific information. If they need three binders, here is where you put the colors, or 3 inches or 1 inch </p>
                 </fieldset>
                 <button type="submit" onClick={evt => {

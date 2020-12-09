@@ -10,7 +10,11 @@ import { ClassListSupplyItemProvider } from "../DataProviders/ClassListSupplyIte
 import { TeacherSupplyTableList } from "./TeacherSupplyForm/TeacherSupplyTableList"
 import { Testing } from "./testing"
 export const TeacherApplicationView = (props) => {
-
+    const userType=parseInt(localStorage.getItem("userType"))
+    console.log("userType", userType)
+    if (userType !==1){
+        props.history.push("/customers")
+    }
     return (
         <>
             <ClassListSupplyItemProvider>

@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React, { useRef, useState } from "react"
 import "./Login.css"
 
 export const Register = (props) => {
@@ -9,6 +9,7 @@ export const Register = (props) => {
     const verifyPassword = useRef()
     const passwordDialog = useRef()
     const conflictDialog = useRef()
+    const [userType, setUserType]=useState(2)
 
     const existingUserCheck = () => {
         // If your json-server URL is different, please change it below!
@@ -19,7 +20,6 @@ export const Register = (props) => {
 
     const handleRegister = (e) => {
         e.preventDefault()
-
         if (password.current.value === verifyPassword.current.value) {
             existingUserCheck()
                 .then((userExists) => {
@@ -33,6 +33,7 @@ export const Register = (props) => {
                             body: JSON.stringify({
                                 email: email.current.value,
                                 password: password.current.value,
+                                userType: parseInt(userType),
                                 name: `${firstName.current.value} ${lastName.current.value}`
                             })
                         })
@@ -52,6 +53,9 @@ export const Register = (props) => {
         } else {
             passwordDialog.current.showModal()
         }
+    }
+    const SelectUserType=(event)=>{
+        setUserType(event.target.value)
     }
 
     return (
@@ -76,6 +80,14 @@ export const Register = (props) => {
                 <fieldset>
                     <label htmlFor="lastName"> Last Name </label>
                     <input ref={lastName} type="text" name="lastName" className="form-control" placeholder="Last name" required />
+                </fieldset>
+                <fieldset>
+                    <label htmlFor="userType">Customer or Teacher</label>
+                    <select onChange={SelectUserType}>
+                        <option value="2">Customer/Parent</option>
+                        <option value="1">Teacher</option>
+                        
+                    </select>
                 </fieldset>
                 <fieldset>
                     <label htmlFor="inputEmail"> Email address </label>

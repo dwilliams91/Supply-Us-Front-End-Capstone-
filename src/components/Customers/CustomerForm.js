@@ -10,10 +10,12 @@ export const CustomerForm = () => {
     const [Teacher, setTeacher]=useState(0)
     const [Class, setClass]=useState(0)
     const [filteredClasses, setFilteredClasses]=useState([])
+    const [myClasses,setMyClasses]=useState([])
 
     useEffect(() => {
         getTeachers()
         .then(getClassLists)
+        .then(getUserClasses)
     }, [])
 
     const FirstHandleFieldChange=(event)=>{
@@ -36,13 +38,18 @@ export const CustomerForm = () => {
         console.log(Class)
         const newItem={
             userId:user,
-            classListId:Class
+            classListId: parseInt(Class)
 
         }
+        addUserClasses(newItem)
     }
 
+    useEffect(()=>{
+
+    },[userClasses])
     return (
         <>
+
             
             <h2>This is working</h2>
             <form>
@@ -72,7 +79,9 @@ export const CustomerForm = () => {
                 }}> Save Class</button>
             </form>
             <div>
-
+                {userClasses.map(singleClass=>{
+                    return <p key={singleClass.id}>{singleClass.classList.name}</p>
+                })}
             </div>
         </>
     )

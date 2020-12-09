@@ -33,7 +33,11 @@
     }
   ],
   "userClasses": [
-      
+    {
+      "userId": 4,
+      "classListId": 1,
+      "id": 1
+    }
   ],
   "classLists": [
     {

@@ -9,7 +9,7 @@ export const UserClassesProvider= (props) => {
 
 
     const getUserClasses = () => {
-        return fetch("http://localhost:8088/userClasses")
+        return fetch("http://localhost:8088/userClasses?_expand=classList")
             .then(res => res.json())
             .then(setUserClasses)
     }

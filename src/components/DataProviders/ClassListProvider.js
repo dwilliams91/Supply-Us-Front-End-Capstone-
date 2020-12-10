@@ -25,9 +25,17 @@ export const ClassListProvider = (props) => {
         })
             .then(getClassLists)
     }
+    const deleteClassList = classLists => {
+        console.log(classLists)
+        return fetch(`http://localhost:8088/classLists/${classLists}`, {
+            method: "DELETE"
+        })
+            .then(getClassLists)
+    }
+
     return (
         <ClassListContext.Provider value={{
-            ClassListProvider, classLists, getClassLists, addClassList
+            ClassListProvider, classLists, getClassLists, addClassList, deleteClassList
         }}>
             {props.children}
         </ClassListContext.Provider>

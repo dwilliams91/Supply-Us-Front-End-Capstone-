@@ -1,7 +1,7 @@
 import React, { useContext, useRef } from "react"
 import { ClassListContext } from "../../DataProviders/ClassListProvider"
 
-export const TeacherClassForm=()=>{
+export const TeacherClassForm=(props)=>{
     // get the add class function
     const { addClassList}=useContext(ClassListContext)
 
@@ -16,7 +16,7 @@ export const TeacherClassForm=()=>{
             name:name.current.value,
             userId:user
         }
-        addClassList(newClass)
+        addClassList(newClass).then(()=>props.history.push("/teachers"))
     }
 
     

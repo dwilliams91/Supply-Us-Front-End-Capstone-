@@ -55,7 +55,7 @@ export const CustomerForm = () => {
         <>
 
             
-            <h2>This is working</h2>
+            <h2>Find Your Classes</h2>
             <form>
                 <fieldset>
             <select value={Teacher}id="TeacherName" className="form-control" onChange={FirstHandleFieldChange}>

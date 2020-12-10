@@ -25,6 +25,34 @@ export const CustomerTableList=()=>{
 
     })
     console.log("the main list",ListOfAllMyItems)
+    let finalArray=[]
+    ListOfAllMyItems.map(singleItem=>{
+        
+        const foundItem=finalArray.find(oneItem=>oneItem.name===singleItem.supplyItem.name)
+        
+        if (foundItem){
+           const indexSpot=finalArray.indexOf(foundItem)
+           const previousItem=finalArray[indexSpot]
+           const newItem=
+           {
+               name:singleItem.supplyItem.name,
+               number:parseInt(previousItem.number)+parseInt(singleItem.number)
+               
+           }
+           
+           finalArray.splice(indexSpot, 1, newItem)
+        } else{
+           const newItem={
+               name:singleItem.supplyItem.name,
+               number:singleItem.number,
+           }
+        //    console.log(newItem)
+           finalArray.push(newItem)
+        }
+
+    })
+    console.log("finalArray", finalArray)
+
     
 
     }

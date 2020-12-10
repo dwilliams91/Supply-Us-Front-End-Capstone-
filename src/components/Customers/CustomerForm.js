@@ -18,7 +18,7 @@ export const CustomerForm = () => {
         .then(getClassLists)
         .then(getUserClasses)
     }, [])
-
+   
     const FirstHandleFieldChange=(event)=>{
         setTeacher(event.target.value)
     }
@@ -50,7 +50,8 @@ export const CustomerForm = () => {
     }
 
     useEffect(()=>{
-
+        const user=parseInt(localStorage.getItem("app_user_id"))
+        setMyClasses(userClasses.filter(e=>e.userId===user))
     },[userClasses])
     return (
         <>
@@ -84,7 +85,7 @@ export const CustomerForm = () => {
                 }}> Save Class</button>
             </form>
             <div>
-                {userClasses.map(singleClass=>{
+                {myClasses.map(singleClass=>{
                     return <CustomerClassCards key={singleClass.id} myClass={singleClass}></CustomerClassCards> 
                 })}
             </div>

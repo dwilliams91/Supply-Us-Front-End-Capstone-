@@ -9,13 +9,24 @@ export const CustomerTableList=()=>{
 
     const {classListSupplyItem, getClassListSupplyItem}=useContext(ClassListSupplyItemContext)
     const [finalAddedArray, setFinalAddedArray]=useState([])
+    const [OnlyMyClasses,setOnlyMyClasses]=useState([])
+
     useEffect(()=>{
         getUserClasses().then(getClassListSupplyItem)
     },[])
+
+    useEffect(()=>{
+        const user=parseInt(localStorage.getItem("app_user_id"))
+        setOnlyMyClasses(userClasses.filter(e=>e.userId===user))
+    },[userClasses])
+
     // this gets all the items into one list
+
+
     const addLists=(myClasses, AllLists)=>{
+
     let ListOfAllMyItems=[]
-    const myClassId=myClasses.map(singleClass=>{
+    const myClassId=OnlyMyClasses.map(singleClass=>{
         const mySingleClass= singleClass.classList.id
         AllLists.map(singleListItem=>{
            if(singleListItem.classListId===mySingleClass){

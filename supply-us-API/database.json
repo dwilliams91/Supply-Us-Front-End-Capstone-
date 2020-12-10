@@ -30,6 +30,13 @@
       "userType": 1,
       "name": "Kelly Love",
       "id": 6
+    },
+    {
+      "email": "customer@customer.com",
+      "password": "password",
+      "userType": 2,
+      "name": "customer customer",
+      "id": 7
     }
   ],
   "userClasses": [
@@ -47,6 +54,21 @@
       "userId": 4,
       "classListId": 2,
       "id": 4
+    },
+    {
+      "userId": 7,
+      "classListId": 1,
+      "id": 5
+    },
+    {
+      "userId": 7,
+      "classListId": 2,
+      "id": 6
+    },
+    {
+      "userId": 7,
+      "classListId": 5,
+      "id": 7
     }
   ],
   "classLists": [

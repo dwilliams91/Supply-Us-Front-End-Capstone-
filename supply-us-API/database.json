@@ -42,6 +42,11 @@
       "userId": 4,
       "classListId": 4,
       "id": 2
+    },
+    {
+      "userId": 4,
+      "classListId": 5,
+      "id": 3
     }
   ],
   "classLists": [
@@ -64,6 +69,16 @@
       "name": "Test Class",
       "userId": 6,
       "id": 4
+    },
+    {
+      "name": "Test 2",
+      "userId": 5,
+      "id": 5
+    },
+    {
+      "name": "Test 3",
+      "userId": 5,
+      "id": 6
     }
   ],
   "supplyTypes": [
@@ -468,6 +483,20 @@
       "description": "3X5",
       "classListId": 4,
       "id": 24
+    },
+    {
+      "number": "6",
+      "supplyItemId": "1",
+      "description": "bendable",
+      "classListId": 5,
+      "id": 25
+    },
+    {
+      "number": "3",
+      "supplyItemId": "9",
+      "description": "blue",
+      "classListId": 5,
+      "id": 26
     }
   ]
 }

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { ClassListSupplyItemContext } from "../DataProviders/ClassListSupplyItemProvider"
 import { UserClassesContext } from "../DataProviders/UserClassesProvider"
 import { CustomerTable } from "./CustomerTable"
@@ -8,7 +8,7 @@ export const CustomerTableList=()=>{
     const {userClasses, getUserClasses}=useContext(UserClassesContext)
 
     const {classListSupplyItem, getClassListSupplyItem}=useContext(ClassListSupplyItemContext)
-
+    const [finalAddedArray, setFinalAddedArray]=useState([])
     useEffect(()=>{
         getUserClasses().then(getClassListSupplyItem)
     },[])
@@ -26,7 +26,8 @@ export const CustomerTableList=()=>{
     })
     console.log("the main list",ListOfAllMyItems)
     let finalArray=[]
-    ListOfAllMyItems.map(singleItem=>{
+    let idCounter=1
+     ListOfAllMyItems.map(singleItem=>{
         
         const foundItem=finalArray.find(oneItem=>oneItem.name===singleItem.supplyItem.name)
         
@@ -35,6 +36,7 @@ export const CustomerTableList=()=>{
            const previousItem=finalArray[indexSpot]
            const newItem=
            {
+               id:previousItem.id,
                name:singleItem.supplyItem.name,
                number:parseInt(previousItem.number)+parseInt(singleItem.number)
                
@@ -43,23 +45,24 @@ export const CustomerTableList=()=>{
            finalArray.splice(indexSpot, 1, newItem)
         } else{
            const newItem={
+               id:idCounter,
                name:singleItem.supplyItem.name,
                number:singleItem.number,
            }
+           idCounter++
         //    console.log(newItem)
            finalArray.push(newItem)
         }
 
     })
-    console.log("finalArray", finalArray)
-
-    
-
+    // console.log("finalArray", finalArray)
+    setFinalAddedArray(finalArray)
     }
 
 
     return (
         <>
+        {console.log(finalAddedArray)}
         <table>
                 <thead>
                     <tr>
@@ -75,7 +78,7 @@ export const CustomerTableList=()=>{
                     </tr>
                 </thead>
                 <tbody>
-                    <CustomerTable></CustomerTable>
+                    {finalAddedArray.map(singleItem=><CustomerTable key={singleItem.id} myItem={singleItem}></CustomerTable>)}
 
                 </tbody>
 

@@ -24,7 +24,7 @@ export const CustomerTableList=()=>{
 
 
     const addLists=(myClasses, AllLists)=>{
-
+        // goes through all of my class and gets all items
     let ListOfAllMyItems=[]
     const myClassId=OnlyMyClasses.map(singleClass=>{
         const mySingleClass= singleClass.classList.id
@@ -38,12 +38,17 @@ export const CustomerTableList=()=>{
 
     console.log("the main list",ListOfAllMyItems)
     // this adds them together
+    // set an empty  array and an id counter
     let finalArray=[]
     let idCounter=1
+    //  map out the list of all the items
      ListOfAllMyItems.map(singleItem=>{
+        //  for each of the items, check the final array to see if it exists there. 
         const foundItem=finalArray.find(oneItem=>oneItem.name===singleItem.supplyItem.name)
-        
+
+        // if the items exists create a new object
         if (foundItem){
+            // find the previous item and get the number and description array
            const indexSpot=finalArray.indexOf(foundItem)
            const previousItem=finalArray[indexSpot]
            const descriptionArray=previousItem.descriptions
@@ -52,8 +57,7 @@ export const CustomerTableList=()=>{
                 description: singleItem.description
             }
             descriptionArray.push(descriptionObj)
-
-
+            // create the new object
            const newItem=
            {
                id:previousItem.id,
@@ -61,9 +65,10 @@ export const CustomerTableList=()=>{
                number:parseInt(previousItem.number)+parseInt(singleItem.number),
                descriptions:descriptionArray         
            }
-           
+        //    splice it into the array 
            finalArray.splice(indexSpot, 1, newItem)
         } else{
+            // if the item doesn't exist, create it
             const descriptionArray=[]
            const  descriptionObj={
                 className:singleItem.classList.name,
@@ -85,7 +90,6 @@ export const CustomerTableList=()=>{
     console.log("finalArray", finalArray)
     setFinalAddedArray(finalArray)
     }
-
 
     return (
         <>
@@ -110,7 +114,7 @@ export const CustomerTableList=()=>{
                 </tbody>
 
             </table>
-            <button onClick={event=>addLists(userClasses, classListSupplyItem)}> display stuff</button>
+            <button onClick={event=>addLists(userClasses, classListSupplyItem)}> display the list of all my items</button>
         </>
     )
 }

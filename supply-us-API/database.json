@@ -37,24 +37,16 @@
       "userType": 2,
       "name": "customer customer",
       "id": 7
+    },
+    {
+      "email": "Annie@annie.com",
+      "password": "password",
+      "userType": 1,
+      "name": "Annie Annie",
+      "id": 8
     }
   ],
   "userClasses": [
-    {
-      "userId": 4,
-      "classListId": 4,
-      "id": 2
-    },
-    {
-      "userId": 4,
-      "classListId": 5,
-      "id": 3
-    },
-    {
-      "userId": 4,
-      "classListId": 2,
-      "id": 4
-    },
     {
       "userId": 7,
       "classListId": 1,
@@ -64,11 +56,6 @@
       "userId": 7,
       "classListId": 2,
       "id": 6
-    },
-    {
-      "userId": 7,
-      "classListId": 5,
-      "id": 7
     }
   ],
   "classLists": [
@@ -83,19 +70,24 @@
       "id": 2
     },
     {
-      "name": "3rd Grade",
+      "name": "3rd Grade English",
       "userId": 6,
       "id": 3
     },
     {
-      "name": "Test Class",
-      "userId": 6,
-      "id": 4
+      "name": "1st Grade Math",
+      "userId": 8,
+      "id": 6
     },
     {
-      "name": "Test 2",
-      "userId": 5,
-      "id": 5
+      "name": "3rd Grade Math",
+      "userId": 8,
+      "id": 7
+    },
+    {
+      "name": "1st Grade English",
+      "userId": 6,
+      "id": 8
     }
   ],
   "supplyTypes": [
@@ -481,32 +473,74 @@
       "id": 22
     },
     {
-      "number": "7",
+      "number": "3",
       "supplyItemId": "1",
-      "description": "mechanical",
-      "classListId": 4,
-      "id": 23
+      "description": "",
+      "classListId": 6,
+      "id": 27
+    },
+    {
+      "number": "1",
+      "supplyItemId": "4",
+      "description": "24 count",
+      "classListId": 6,
+      "id": 28
+    },
+    {
+      "number": "1",
+      "supplyItemId": "24",
+      "description": "childproof",
+      "classListId": 6,
+      "id": 29
     },
     {
       "number": "2",
-      "supplyItemId": "20",
-      "description": "3X5",
-      "classListId": 4,
-      "id": 24
-    },
-    {
-      "number": "6",
-      "supplyItemId": "1",
-      "description": "bendable",
-      "classListId": 5,
-      "id": 25
-    },
-    {
-      "number": "3",
       "supplyItemId": "9",
-      "description": "blue",
-      "classListId": 5,
-      "id": 26
+      "description": "1\" green and blue",
+      "classListId": 6,
+      "id": 30
+    },
+    {
+      "number": "1",
+      "supplyItemId": "1",
+      "description": "",
+      "classListId": 7,
+      "id": 31
+    },
+    {
+      "number": "2",
+      "supplyItemId": "11",
+      "description": "Grid Paper Spiral Notebooks",
+      "classListId": 7,
+      "id": 32
+    },
+    {
+      "number": "1",
+      "supplyItemId": "9",
+      "description": "1\" blue",
+      "classListId": 7,
+      "id": 33
+    },
+    {
+      "number": "1",
+      "supplyItemId": "11",
+      "description": "",
+      "classListId": 8,
+      "id": 34
+    },
+    {
+      "number": "2",
+      "supplyItemId": "6",
+      "description": "Yellow",
+      "classListId": 8,
+      "id": 35
+    },
+    {
+      "number": "2",
+      "supplyItemId": "26",
+      "description": "Forks and Spoons. No knives",
+      "classListId": 2,
+      "id": 36
     }
   ]
 }

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { ClassListSupplyItemContext } from "../DataProviders/ClassListSupplyItemProvider"
 import { UserClassesContext } from "../DataProviders/UserClassesProvider"
 import { CustomerTable } from "./CustomerTable"
@@ -8,7 +8,7 @@ export const CustomerTableList=()=>{
     const {userClasses, getUserClasses}=useContext(UserClassesContext)
 
     const {classListSupplyItem, getClassListSupplyItem}=useContext(ClassListSupplyItemContext)
-
+    const [finalAddedArray, setFinalAddedArray]=useState([])
     useEffect(()=>{
         getUserClasses().then(getClassListSupplyItem)
     },[])
@@ -26,7 +26,7 @@ export const CustomerTableList=()=>{
     })
     console.log("the main list",ListOfAllMyItems)
     let finalArray=[]
-    ListOfAllMyItems.map(singleItem=>{
+     ListOfAllMyItems.map(singleItem=>{
         
         const foundItem=finalArray.find(oneItem=>oneItem.name===singleItem.supplyItem.name)
         
@@ -51,15 +51,14 @@ export const CustomerTableList=()=>{
         }
 
     })
-    console.log("finalArray", finalArray)
-
-    
-
+    // console.log("finalArray", finalArray)
+    setFinalAddedArray(finalArray)
     }
 
 
     return (
         <>
+        {console.log(finalAddedArray)}
         <table>
                 <thead>
                     <tr>
@@ -75,7 +74,7 @@ export const CustomerTableList=()=>{
                     </tr>
                 </thead>
                 <tbody>
-                    <CustomerTable></CustomerTable>
+                    {finalAddedArray.map(singleItem=><CustomerTable key={singleItem} myItem={singleItem}></CustomerTable>)}
 
                 </tbody>
 

@@ -5,10 +5,10 @@ export const CustomerTable=({myItem})=>{
 return(
 <tr className="TableRow">
             <td className="tableColumn Name">
-                Item
+                {myItem.name}
             </td>
             <td className="tableColumn Number">
-               Number
+               {myItem.number}
             </td>
             <td className="tableColumn DeleteButton">
                <button onClick={ ()=>

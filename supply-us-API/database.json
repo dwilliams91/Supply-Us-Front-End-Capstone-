@@ -35,12 +35,12 @@
   "userClasses": [
     {
       "userId": 4,
-      "classListId": 1,
+      "classListId": 2,
       "id": 1
     },
     {
       "userId": 4,
-      "classListId": 3,
+      "classListId": 4,
       "id": 2
     }
   ],
@@ -59,6 +59,11 @@
       "name": "3rd Grade",
       "userId": 6,
       "id": 3
+    },
+    {
+      "name": "Test Class",
+      "userId": 6,
+      "id": 4
     }
   ],
   "supplyTypes": [
@@ -395,34 +400,6 @@
       "id": 10
     },
     {
-      "number": "1",
-      "supplyItemId": "9",
-      "description": "1\" black",
-      "classListId": 2,
-      "id": 11
-    },
-    {
-      "number": "1",
-      "supplyItemId": "23",
-      "description": "elmers",
-      "classListId": 2,
-      "id": 12
-    },
-    {
-      "number": "2",
-      "supplyItemId": "10",
-      "description": "Both Green",
-      "classListId": 2,
-      "id": 13
-    },
-    {
-      "number": "1",
-      "supplyItemId": "1",
-      "description": "mechanical",
-      "classListId": 2,
-      "id": 14
-    },
-    {
       "number": "2",
       "supplyItemId": "1",
       "description": "",
@@ -463,6 +440,34 @@
       "description": "not airpods",
       "classListId": 3,
       "id": 20
+    },
+    {
+      "number": "5",
+      "supplyItemId": "1",
+      "description": "pre-sharpened",
+      "classListId": 2,
+      "id": 21
+    },
+    {
+      "number": "2",
+      "supplyItemId": "9",
+      "description": "Black and Green",
+      "classListId": 2,
+      "id": 22
+    },
+    {
+      "number": "7",
+      "supplyItemId": "1",
+      "description": "mechanical",
+      "classListId": 4,
+      "id": 23
+    },
+    {
+      "number": "2",
+      "supplyItemId": "20",
+      "description": "3X5",
+      "classListId": 4,
+      "id": 24
     }
   ]
 }

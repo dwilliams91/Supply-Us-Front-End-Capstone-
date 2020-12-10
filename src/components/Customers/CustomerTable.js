@@ -20,12 +20,12 @@ return(
             </td>
             <td className="tableColumn DeleteButton">
                 <ul id={`descriptionList--${myItem.id}`} style={{display:"none"}} >
-                    {myItem.descriptions.map(singleDescription=><li> {singleDescription.description} for {singleDescription.className} </li>)}
+                    {myItem.descriptions.map(singleDescription=><li> {singleDescription.description} for <strong>{singleDescription.className}</strong> </li>)}
                 </ul>
                <button onClick={ ()=>
                 toggleDescriptionList(myItem)
                }
-               >see details</button>
+               >see details for {myItem.name}</button>
             </td>
         </tr>
 )

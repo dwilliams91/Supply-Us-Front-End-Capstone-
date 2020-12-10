@@ -5,7 +5,7 @@ export const CustomerClassCards=({myClass})=>{
     const {deleteUserClasses} = useContext(UserClassesContext)
     return(
     <div>
-    <h3>{myClass.classList.name}</h3>  
+    <h5>{myClass.classList.name}</h5>  
     <button onClick={()=>deleteUserClasses(myClass.id)}>Delete</button>
     </div>
     )

@@ -1,6 +1,14 @@
 import React from "react"
 
 export const CustomerTable=({myItem})=>{
+    const toggleDescriptionList=()=>{
+        var x = document.getElementById("descriptionList");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+    }
 
 return(
 <tr className="TableRow">
@@ -11,8 +19,11 @@ return(
                {myItem.number}
             </td>
             <td className="tableColumn DeleteButton">
+                <ul id="descriptionList"style={{display:"none"}} >
+                    {myItem.descriptions.map(singleDescription=><li> {singleDescription.description} for {singleDescription.className} </li>)}
+                </ul>
                <button onClick={ ()=>
-                console.log("description button")
+                toggleDescriptionList()
                }
                >see details</button>
             </td>

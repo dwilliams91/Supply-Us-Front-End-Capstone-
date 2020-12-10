@@ -26,6 +26,7 @@ export const CustomerTableList=()=>{
     })
     console.log("the main list",ListOfAllMyItems)
     let finalArray=[]
+    let idCounter=1
      ListOfAllMyItems.map(singleItem=>{
         
         const foundItem=finalArray.find(oneItem=>oneItem.name===singleItem.supplyItem.name)
@@ -35,6 +36,7 @@ export const CustomerTableList=()=>{
            const previousItem=finalArray[indexSpot]
            const newItem=
            {
+               id:previousItem.id,
                name:singleItem.supplyItem.name,
                number:parseInt(previousItem.number)+parseInt(singleItem.number)
                
@@ -43,9 +45,11 @@ export const CustomerTableList=()=>{
            finalArray.splice(indexSpot, 1, newItem)
         } else{
            const newItem={
+               id:idCounter,
                name:singleItem.supplyItem.name,
                number:singleItem.number,
            }
+           idCounter++
         //    console.log(newItem)
            finalArray.push(newItem)
         }
@@ -74,7 +78,7 @@ export const CustomerTableList=()=>{
                     </tr>
                 </thead>
                 <tbody>
-                    {finalAddedArray.map(singleItem=><CustomerTable key={singleItem} myItem={singleItem}></CustomerTable>)}
+                    {finalAddedArray.map(singleItem=><CustomerTable key={singleItem.id} myItem={singleItem}></CustomerTable>)}
 
                 </tbody>
 

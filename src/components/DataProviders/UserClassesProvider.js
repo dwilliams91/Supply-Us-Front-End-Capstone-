@@ -34,7 +34,7 @@ export const UserClassesProvider= (props) => {
     }
     return (
         <UserClassesContext.Provider value={{
-            userClasses, getUserClasses, addUserClasses
+            userClasses, getUserClasses, addUserClasses, deleteUserClasses
         }}>
             {props.children}
         </UserClassesContext.Provider>

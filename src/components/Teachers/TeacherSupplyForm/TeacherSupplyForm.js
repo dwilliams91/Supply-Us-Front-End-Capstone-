@@ -62,7 +62,12 @@ export const TeacherSupplyForm = (props) => {
 
     // check to see if the item bar has change, if it has change the item. 
     const SecondHandleFieldChange = (event) => {
-        setItem(event.target.value)
+        let preventZero=event.target.value
+        if (preventZero !==0){
+            setItem(preventZero)
+        } else{
+            console.log("its gonna break")
+        }
     }
 
     // re-render when there is a change in the item. Find the item to render on the dom
@@ -130,9 +135,9 @@ export const TeacherSupplyForm = (props) => {
                 </fieldset>
                 <fieldset>
                     <div className="form-group">
-                        <label>Select Type </label>
+                        <label>Select Item </label>
                         <select value={Item} id="SupplyItem" className="form-control" onChange={SecondHandleFieldChange}>
-                            <option value="0">Select Type</option>
+                            
                             {filteredSupplyItems.map(e => (
                                 <option key={e.id} value={e.id}>
                                     {e.name}

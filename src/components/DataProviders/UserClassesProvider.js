@@ -24,10 +24,17 @@ export const UserClassesProvider= (props) => {
         })
             .then(getUserClasses)
     }
-  
+    
+    const deleteUserClasses = userClasses => {
+        console.log(userClasses)
+        return fetch(`http://localhost:8088/userClasses/${userClasses}`, {
+            method: "DELETE"
+        })
+            .then(getUserClasses)
+    }
     return (
         <UserClassesContext.Provider value={{
-            userClasses, getUserClasses, addUserClasses
+            userClasses, getUserClasses, addUserClasses, deleteUserClasses
         }}>
             {props.children}
         </UserClassesContext.Provider>

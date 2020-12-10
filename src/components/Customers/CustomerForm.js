@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react"
 import { TeacherContext } from "../DataProviders/TeacherDataProvider"
 import { ClassListContext } from "../DataProviders/ClassListProvider"
 import {UserClassesContext} from "../DataProviders/UserClassesProvider"
+import {CustomerClassCards} from "./CustomerClassCards"
 export const CustomerForm = () => {
     const { Teachers, getTeachers } = useContext(TeacherContext)
     const { classLists, getClassLists } = useContext(ClassListContext)
@@ -84,7 +85,7 @@ export const CustomerForm = () => {
             </form>
             <div>
                 {userClasses.map(singleClass=>{
-                    return <p key={singleClass.id}>{singleClass.classList.name}</p>
+                    return <CustomerClassCards key={singleClass.id} myClass={singleClass}></CustomerClassCards> 
                 })}
             </div>
         </>

@@ -2,7 +2,7 @@ import React from "react"
 
 export const CustomerTable=({myItem})=>{
     const toggleDescriptionList=()=>{
-        var x = document.getElementById("descriptionList");
+    var x = document.getElementById(`descriptionList--${myItem.id}`);
   if (x.style.display === "none") {
     x.style.display = "block";
   } else {
@@ -19,11 +19,11 @@ return(
                {myItem.number}
             </td>
             <td className="tableColumn DeleteButton">
-                <ul id="descriptionList"style={{display:"none"}} >
+                <ul id={`descriptionList--${myItem.id}`} style={{display:"none"}} >
                     {myItem.descriptions.map(singleDescription=><li> {singleDescription.description} for {singleDescription.className} </li>)}
                 </ul>
                <button onClick={ ()=>
-                toggleDescriptionList()
+                toggleDescriptionList(myItem)
                }
                >see details</button>
             </td>

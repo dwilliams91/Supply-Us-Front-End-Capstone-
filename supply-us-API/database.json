@@ -35,11 +35,6 @@
   "userClasses": [
     {
       "userId": 4,
-      "classListId": 2,
-      "id": 1
-    },
-    {
-      "userId": 4,
       "classListId": 4,
       "id": 2
     },
@@ -47,6 +42,11 @@
       "userId": 4,
       "classListId": 5,
       "id": 3
+    },
+    {
+      "userId": 4,
+      "classListId": 2,
+      "id": 4
     }
   ],
   "classLists": [
@@ -74,11 +74,6 @@
       "name": "Test 2",
       "userId": 5,
       "id": 5
-    },
-    {
-      "name": "Test 3",
-      "userId": 5,
-      "id": 6
     }
   ],
   "supplyTypes": [
@@ -378,13 +373,6 @@
       "description": "1 3\" Blue binder\n1 2\" Green Binder",
       "classListId": 1,
       "id": 5
-    },
-    {
-      "number": "1",
-      "supplyItemId": "13",
-      "description": "pack of 5 with tabs",
-      "classListId": 1,
-      "id": 6
     },
     {
       "number": "1",

@@ -32,23 +32,19 @@ export const CustomerTableList=()=>{
         
         if (foundItem){
            const indexSpot=finalArray.indexOf(foundItem)
-           const previousNumber=finalArray[indexSpot].number
-           console.log("previous",previousNumber)
-           console.log("found", singleItem.number)
-           const newNumber=parseInt(previousNumber)+parseInt(singleItem.number)
-           console.log("newNumber", newNumber)
+           const previousItem=finalArray[indexSpot]
            const newItem=
            {
                name:singleItem.supplyItem.name,
-               number:newNumber
+               number:parseInt(previousItem.number)+parseInt(singleItem.number)
+               
            }
            
            finalArray.splice(indexSpot, 1, newItem)
         } else{
-            // console.log(singleItem)
            const newItem={
                name:singleItem.supplyItem.name,
-               number:singleItem.number
+               number:singleItem.number,
            }
         //    console.log(newItem)
            finalArray.push(newItem)

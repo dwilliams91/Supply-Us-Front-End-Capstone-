@@ -9,15 +9,15 @@ export const CustomerClassCards=({myClass, props})=>{
     <div className="CustomerClassesCard">
     <p>{myClass.classList.name}</p>  
     <button onClick={()=>deleteUserClasses(myClass.id).then(props.history.push("./customers"))}>Delete</button>
-    <button > <Link to={{
-                pathname:`/customers/{myClass.id}`,
+    <Link to={{
+                pathname:`/customers/class${myClass.id}`,
                 state:{
                 chosenClassName:myClass.name,
                 chosenClass:myClass
             }
                 }}>
-            </Link>Show Individual Class List</button>
-    <h2> </h2>
+                    <button>click me</button>
+            </Link>
     </div>
     )
 }

@@ -5,8 +5,11 @@ import { Register } from "./components/auth/Register"
 import { TeacherNavBar } from "./components/Teachers/TeacherNavBar/TeacherNavBar";
 import { TeacherApplicationView } from "./components/Teachers/TeacherApplicationView";
 import { CustomerApplicationView } from "./components/Customers/CustomerApplicationView";
+
 import "./App.css"
+import { UserTypeProvider } from "./components/DataProviders/UserTypeDataProvider";
 function App() {
+
   return (
     <>
     <header>
@@ -37,7 +40,9 @@ function App() {
       }} />
 
       <Route path="/login" render={props => <Login {...props} />} />
+      <UserTypeProvider>
       <Route path="/register" render={props => <Register {...props} />} />
+      </UserTypeProvider>
     </>
 
 

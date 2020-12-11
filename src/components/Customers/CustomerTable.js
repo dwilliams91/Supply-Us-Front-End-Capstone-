@@ -11,6 +11,8 @@ export const CustomerTable=({myItem})=>{
     }
 
 return(
+    <>
+    
 <tr className="TableRow">
             <td className="tableColumn Name">
                 {myItem.name}
@@ -20,7 +22,7 @@ return(
             </td>
             <td className="tableColumn DeleteButton">
                 <ul id={`descriptionList--${myItem.id}`} style={{display:"none"}} >
-                    {myItem.descriptions.map(singleDescription=><li> {singleDescription.description} for <strong>{singleDescription.className}</strong> </li>)}
+                    {myItem.descriptions.map(singleDescription=><li key={singleDescription.id}> {singleDescription.description} for <strong>{singleDescription.className}</strong> </li>)}
                 </ul>
                <button onClick={ ()=>
                 toggleDescriptionList(myItem)
@@ -28,5 +30,6 @@ return(
                >see details for {myItem.name}</button>
             </td>
         </tr>
+        </>
 )
 }

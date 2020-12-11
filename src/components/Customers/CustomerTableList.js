@@ -21,7 +21,9 @@ export const CustomerTableList=()=>{
     },[userClasses])
 
     // this gets all the items into one list
-
+    useEffect(()=>{
+        addLists(userClasses, classListSupplyItem)
+    },[OnlyMyClasses])
 
     const addLists=(myClasses, AllLists)=>{
         // goes through all of my class and gets all items
@@ -41,6 +43,7 @@ export const CustomerTableList=()=>{
     // set an empty  array and an id counter
     let finalArray=[]
     let idCounter=1
+    let descriptionCounter=1
     //  map out the list of all the items
      ListOfAllMyItems.map(singleItem=>{
         //  for each of the items, check the final array to see if it exists there. 
@@ -53,9 +56,11 @@ export const CustomerTableList=()=>{
            const previousItem=finalArray[indexSpot]
            const descriptionArray=previousItem.descriptions
            const  descriptionObj={
+               id:descriptionCounter,
                 className:singleItem.classList.name,
                 description: singleItem.description
             }
+            descriptionCounter++
             descriptionArray.push(descriptionObj)
             // create the new object
            const newItem=
@@ -71,10 +76,12 @@ export const CustomerTableList=()=>{
             // if the item doesn't exist, create it
             const descriptionArray=[]
            const  descriptionObj={
+               id:descriptionCounter,
                 className:singleItem.classList.name,
                 description: singleItem.description
             }
             descriptionArray.push(descriptionObj)
+            descriptionCounter++
            const newItem={
                id:idCounter,
                name:singleItem.supplyItem.name,
@@ -94,6 +101,7 @@ export const CustomerTableList=()=>{
     return (
         <>
         {/* {console.log(finalAddedArray)} */}
+        <h2>Your Supply List</h2>
         <table>
                 <thead>
                     <tr>
@@ -114,7 +122,7 @@ export const CustomerTableList=()=>{
                 </tbody>
 
             </table>
-            <button onClick={event=>addLists(userClasses, classListSupplyItem)}> display the list of all my items</button>
+            {/* <button onClick={event=>addLists(userClasses, classListSupplyItem)}> display the list of all my items</button> */}
         </>
     )
 }

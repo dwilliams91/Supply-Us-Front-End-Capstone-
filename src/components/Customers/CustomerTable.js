@@ -10,7 +10,7 @@ export const CustomerTable = ({ myItem }) => {
            setVisibility(true)
        }
     }
-    const [visbility, setVisibility] = useState(true)
+    const [visbility, setVisibility] = useState(false)
 
     
     
@@ -34,7 +34,7 @@ export const CustomerTable = ({ myItem }) => {
                         toggleDescriptionList(myItem)
                     }
                     >see details for {myItem.name}</button>
-                    <CheckVisibility visbilityCheck={visbility}/>
+                    <CheckVisibility visbilityCheck={visbility} myItem={myItem}/>
                 </td>
             </tr>
         </>

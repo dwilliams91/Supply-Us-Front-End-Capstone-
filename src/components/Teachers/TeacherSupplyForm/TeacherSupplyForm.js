@@ -152,8 +152,9 @@ export const TeacherSupplyForm = (props) => {
                 <fieldset>
                     <div className="form-group">
                         <label>Select Item </label>
-                        <select value={Item} id="SupplyItem" className="form-control" onChange={SecondHandleFieldChange}>
-                            
+                        <select value={Item} id="SupplyItem" className="form-control"  onChange={SecondHandleFieldChange}>
+                        <option value="0">Select Item</option>
+
                             {filteredSupplyItems.map(e => (
                                 <option key={e.id} value={e.id}>
                                     {e.name}

@@ -47,7 +47,7 @@ export const TeacherSupplyForm = (props) => {
         // console.log(Type)
     }, [Type, SupplyItems])
 
-    // check to see if the item bar has change, if it has change the item. 
+    // check to see if the item bar has change, if it has change the item, but not to zero
     const SecondHandleFieldChange = (event) => {
         let ItemSelected=parseInt(event.target.value)
         console.log("Item Selected", ItemSelected)
@@ -58,21 +58,15 @@ export const TeacherSupplyForm = (props) => {
         }
     }
     
-    // re-render when there is a change in the item. Find the item to render on the dom
-    // HERE IT PREVENTS FROM 0
+    // re-render when there is a change in the item. Find the item to render on the dom by the number input button
     useEffect(() => {
-        // if the item is not 0, then 
         if (Item !== 0) {
             setItemName(SupplyItems.find(e => e.id == parseInt(Item)))
 
-        } else {
-            // setItemName(SupplyItems.find(e => e.id == parseInt(1)))
-        }
+        } 
     }, [Item])
+
     // re-render when there is a change in item name, check to see if the item comes in packaging
-
-
-
     useEffect(() => {
         if (ItemName.packaging === true) {
             setPackType("Packs of ")
@@ -83,7 +77,7 @@ export const TeacherSupplyForm = (props) => {
 
     }, [ItemName])
 
-
+    // Save the item
     const SaveItem = () => {
         const newItem={
             number: ItemNumber,
@@ -93,6 +87,7 @@ export const TeacherSupplyForm = (props) => {
         }
         addClassListSupplyItem(newItem)
     }
+
     // this changes the values of the number and the description whenever one of them is changed
     const changeField=()=>{
         setItemNumber(document.getElementById("numberField").value)
@@ -167,7 +162,7 @@ export const TeacherSupplyForm = (props) => {
                     <p>Here is where you can add any specific information. If they need three binders, here is where you put the colors, or 3 inches or 1 inch </p>
                 </fieldset>
                 <button type="submit" onClick={evt => {
-                    evt.preventDefault() // Prevent browser from submitting the form
+                    evt.preventDefault()
                     SaveItem()
                     setItem(0)
                     setType(0)

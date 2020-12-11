@@ -2,9 +2,8 @@ import React, { useContext } from "react"
 import { ClassListSupplyItemContext } from "../../DataProviders/ClassListSupplyItemProvider"
 import { TeacherSupplyTableList } from "./TeacherSupplyTableList"
 
-export const TeacherSupplyTable=({myItem, props})=>{
+export const TeacherSupplyTable=({myItem})=>{
     const {deleteItem} = useContext(ClassListSupplyItemContext)  
-    // console.log(props.history.location)
     return(
         <>
         <tr className="TableRow">

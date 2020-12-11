@@ -1,0 +1,37 @@
+.classCardFlex{
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    
+}
+.classCardContainer{
+    min-height: 400px;
+    padding-top: 20px;
+    background-color: #007cba;
+
+}
+
+.classCardTitle{
+    color:white
+}
+.classCard{
+    border: 1px solid black;
+    flex-basis: 20%;
+    padding:20px;
+    background-color:white;
+    max-height: 100px
+}
+.TeacherClassForm{
+    padding:20px;
+    flex-basis: 20%;
+}
+
+.TeacherClassFormLabel{
+    color:white;
+}
+.AddClassPicture{
+    flex-basis: 20%;
+}
+#classPicture{
+    max-width: 400px;
+}

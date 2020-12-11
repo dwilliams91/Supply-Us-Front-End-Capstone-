@@ -6,6 +6,7 @@ import { ClassListSupplyItemProvider } from "../DataProviders/ClassListSupplyIte
 import { TeacherProvider } from "../DataProviders/TeacherDataProvider"
 import { UserClassesProvider } from "../DataProviders/UserClassesProvider"
 import { CustomerForm } from "./CustomerForm"
+import { CustomerIndividualClassTableList } from "./CustomerIndividualClassTableList"
 import { CustomerTableList } from "./CustomerTableList"
 export const CustomerApplicationView = () => {
     return (
@@ -23,7 +24,11 @@ export const CustomerApplicationView = () => {
             </ClassListProvider>
         </TeacherProvider>
         </ClassListSupplyItemProvider>
-        <Logout></Logout>
+        <Route path="/customers/class:ClassListId(\d+)" render={
+                                props => <CustomerIndividualClassTableList {...props} />
+                            } />       
+                            
+     <Logout></Logout>
         </>
     )
 }

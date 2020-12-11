@@ -13,7 +13,6 @@ export const UserTypeProvider= (props) => {
             .then(res => res.json())
             .then(setUserType)
     }
-
     
     return (
         <UserTypeContext.Provider value={{

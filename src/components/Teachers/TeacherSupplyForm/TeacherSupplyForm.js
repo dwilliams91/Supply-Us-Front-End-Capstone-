@@ -22,13 +22,7 @@ export const TeacherSupplyForm = (props) => {
 
     const className=props.location.state.chosenClassName
     const classId=props.location.state.chosenClass.id
-    // console.log(classId)
-    // getClassLists().then(()=>{
-    //     console.log("is this empty",classLists)
-    //     const FoundClass=classLists.find(singleItem=>singleItem.id===parseInt(classId))
-    //     return FoundClass
-    // })
-
+   
     // initial render
     useEffect(() => {
         getClassLists()
@@ -36,15 +30,7 @@ export const TeacherSupplyForm = (props) => {
         .then(getSupplyItems)
     }, [])
 
-    // useEffect(()=>{
-    //     console.log(classLists)
-    //     const foundClass=classLists.find(singleItem=>singleItem.id===classId)
-    //     console.log("found class", foundClass)
-    //     setClassName(foundClass)
-
-    // },[])
-
-    
+  
 
     // check to see if the type bar has changed, if it has set the type
     const FirstHandleFieldChange = (event) => {
@@ -63,34 +49,37 @@ export const TeacherSupplyForm = (props) => {
 
     // check to see if the item bar has change, if it has change the item. 
     const SecondHandleFieldChange = (event) => {
-        let preventZero=event.target.value
-        if (preventZero !==0){
-            setItem(preventZero)
+        let ItemSelected=parseInt(event.target.value)
+        console.log("Item Selected", ItemSelected)
+        if (ItemSelected !==0){
+            setItem(ItemSelected)
         } else{
-            console.log("its gonna break")
+            setItem(1)
         }
     }
-
+    
     // re-render when there is a change in the item. Find the item to render on the dom
+    // HERE IT PREVENTS FROM 0
     useEffect(() => {
-        // console.log(Item)
-        // this stuff runs so it will work on render
         // if the item is not 0, then 
         if (Item !== 0) {
             setItemName(SupplyItems.find(e => e.id == parseInt(Item)))
 
         } else {
-
+            // setItemName(SupplyItems.find(e => e.id == parseInt(1)))
         }
     }, [Item])
     // re-render when there is a change in item name, check to see if the item comes in packaging
+
+
+
     useEffect(() => {
         if (ItemName.packaging === true) {
             setPackType("Packs of ")
         } else {
             setPackType("Number of ")
         }
-        console.log(packageType)
+        // console.log(packageType)
 
     }, [ItemName])
 

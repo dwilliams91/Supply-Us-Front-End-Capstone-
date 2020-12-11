@@ -56,6 +56,11 @@
       "userId": 7,
       "classListId": 2,
       "id": 6
+    },
+    {
+      "userId": 4,
+      "classListId": 1,
+      "id": 7
     }
   ],
   "classLists": [

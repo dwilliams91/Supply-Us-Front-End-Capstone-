@@ -18,8 +18,9 @@ export const TeacherSupplyForm = (props) => {
     const [packageType, setPackType] = useState("Number of")
     const [filteredSupplyItems, setFilteredSupplyItems] = useState([])
     const [ItemNumber, setItemNumber] = useState(0)
-    const [description, setDescription] = useState([])
-
+    const [description, setDescription] = useState("")
+    const [ItemQuantity, setItemQuantity]=useState("")
+    // SET UP STATE VARIABLE FOR NUMBER SET TO EMPTY STRING
     const className = props.location.state.chosenClassName
     const classId = props.location.state.chosenClass.id
 
@@ -33,7 +34,7 @@ export const TeacherSupplyForm = (props) => {
 
 
     // check to see if the type bar has changed, if it has set the type
-    const FirstHandleFieldChange = (event) => {
+    const TypeChangeField = (event) => {
         setType(event.target.value)
     }
     // re-rendering when the type changes. If the type is not 0, filter the item bar
@@ -48,7 +49,7 @@ export const TeacherSupplyForm = (props) => {
     }, [Type, SupplyItems])
 
     // check to see if the item bar has change, if it has change the item, but not to zero
-    const SecondHandleFieldChange = (event) => {
+    const ItemChangeField = (event) => {
         let ItemSelected = parseInt(event.target.value)
         console.log("Item Selected", ItemSelected)
         if (ItemSelected !== 0) {
@@ -80,25 +81,23 @@ export const TeacherSupplyForm = (props) => {
     // Save the item
     const SaveItem = () => {
         const newItem = {
-            number: ItemNumber,
+            number: ItemQuantity,
             supplyItemId: Item,
             description: description,
             classListId: classId
         }
-        addClassListSupplyItem(newItem)
+        addClassListSupplyItem(newItem).then(()=>setItemQuantity(""))
     }
-
+    // CHANGE THIS
     // this changes the values of the number and the description whenever one of them is changed
-    const changeField = () => {
-        setItemNumber(document.getElementById("numberField").value)
-        setDescription(document.getElementById("descriptionField").value)
+    // 
+    const NumberChangeField = (e) => {
+        setItemQuantity(e.target.value)
     }
-
-    // this resets the two text based fields since their uncontrolled fields
-    const resetField = () => {
-        document.getElementById("formToReset").reset();
+    const DescriptionChangeField=(e)=>{
+        setDescription(e.target.value)
     }
-
+   
     //   this is the search functionality
     useEffect(() => {
         if (searchTerms !== "") {
@@ -122,7 +121,7 @@ export const TeacherSupplyForm = (props) => {
                     <fieldset>
                         <div className="form-group">
                             <label>Select Type </label>
-                            <select value={Type} id="SupplyType" className="form-control" onChange={FirstHandleFieldChange}>
+                            <select value={Type} id="SupplyType" className="form-control" onChange={TypeChangeField}>
 
                                 <option value="0">Select Type</option>
                                 {SupplyTypes.map(e => (
@@ -136,7 +135,7 @@ export const TeacherSupplyForm = (props) => {
                     <fieldset>
                         <div className="form-group">
                             <label>Select Item </label>
-                            <select value={Item} id="SupplyItem" className="form-control" onChange={SecondHandleFieldChange}>
+                            <select value={Item} id="SupplyItem" className="form-control" onChange={ItemChangeField}>
                                 <option value="0">Select Item</option>
 
                                 {filteredSupplyItems.map(e => (
@@ -149,16 +148,17 @@ export const TeacherSupplyForm = (props) => {
                     </fieldset>
                 </form>
 
-                <form id="formToReset" >
+                <form >
+                   
                     <fieldset>
                         <label>{packageType} {ItemName.name}</label>
-                        <input id="numberField" onChange={changeField}></input>
+                        <input id="quantity" value={ItemQuantity} onChange={e=>NumberChangeField(e)}></input>
 
                     </fieldset>
                     <fieldset>
 
                         <label> Description</label>
-                        <textarea id="descriptionField" placeholder="Example: Red binders, 3 ring," onChange={changeField}></textarea>
+                        <textarea id="descriptionField" placeholder="Example: Red binders, 3 ring,"  value= {description} onChange={e=>DescriptionChangeField(e)}></textarea>
                         <p>Here is where you can add any specific information. If they need three binders, here is where you put the colors, or 3 inches or 1 inch </p>
                     </fieldset>
                     <button type="submit" onClick={evt => {
@@ -169,7 +169,6 @@ export const TeacherSupplyForm = (props) => {
                         setItemNumber(0)
                         setItemName("")
                         setDescription("")
-                        resetField()
                     }}> Save Item </button>
                 </form>
             </div>

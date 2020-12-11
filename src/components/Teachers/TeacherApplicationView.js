@@ -39,7 +39,7 @@ export const TeacherApplicationView = (props) => {
             <ClassListSupplyItemProvider>
                 <SupplyTypeProvider>
                     <SupplyItemsProvider>
-                        <div class="TeacherSupplyContainer">
+                        <div className="TeacherSupplyContainer">
                     <Route path="/teachers/class:ClassListId(\d+)" render={
                                 props => <TeacherSupplyForm {...props} />
                             } />

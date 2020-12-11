@@ -44,6 +44,13 @@
       "userType": 1,
       "name": "Annie Annie",
       "id": 8
+    },
+    {
+      "email": "rena@rena.com",
+      "password": "password",
+      "userType": 1,
+      "name": "Rena M",
+      "id": 9
     }
   ],
   "userClasses": [
@@ -56,6 +63,16 @@
       "userId": 7,
       "classListId": 2,
       "id": 6
+    },
+    {
+      "userId": 4,
+      "classListId": 8,
+      "id": 7
+    },
+    {
+      "userId": 4,
+      "classListId": 2,
+      "id": 8
     }
   ],
   "classLists": [
@@ -93,6 +110,11 @@
       "name": "6th Grade English",
       "userId": 5,
       "id": 9
+    },
+    {
+      "name": "6th Grade Math",
+      "userId": 9,
+      "id": 10
     }
   ],
   "supplyTypes": [
@@ -553,6 +575,27 @@
       "description": "pre-sharpened",
       "classListId": 1,
       "id": 39
+    },
+    {
+      "number": "5",
+      "supplyItemId": 2,
+      "description": [],
+      "classListId": 10,
+      "id": 40
+    },
+    {
+      "number": "5",
+      "supplyItemId": 2,
+      "description": "asdf",
+      "classListId": 10,
+      "id": 41
+    },
+    {
+      "number": "6",
+      "supplyItemId": 5,
+      "description": "asdf",
+      "classListId": 10,
+      "id": 42
     }
   ]
 }

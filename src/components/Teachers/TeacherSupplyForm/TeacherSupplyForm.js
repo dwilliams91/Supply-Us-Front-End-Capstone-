@@ -3,10 +3,11 @@ import { ClassListSupplyItemContext } from "../../DataProviders/ClassListSupplyI
 import { SupplyItemContext } from "../../DataProviders/SupplyItemProvider"
 import { SupplyTypeContext } from "../../DataProviders/SupplyTypeProvider"
 import {ClassListContext} from "../../DataProviders/ClassListProvider"
+import { ItemSearch } from "./ItemSearch"
 export const TeacherSupplyForm = (props) => {
     // getting the items from the providers
     const { SupplyTypes, getSupplyTypes } = useContext(SupplyTypeContext)
-    const { SupplyItems, getSupplyItems } = useContext(SupplyItemContext)
+    const { SupplyItems,searchTerms, getSupplyItems } = useContext(SupplyItemContext)
     const {addClassListSupplyItem} = useContext(ClassListSupplyItemContext)
     const {classLists, getClassLists}=useContext(ClassListContext)
 
@@ -21,13 +22,7 @@ export const TeacherSupplyForm = (props) => {
 
     const className=props.location.state.chosenClassName
     const classId=props.location.state.chosenClass.id
-    // console.log(classId)
-    // getClassLists().then(()=>{
-    //     console.log("is this empty",classLists)
-    //     const FoundClass=classLists.find(singleItem=>singleItem.id===parseInt(classId))
-    //     return FoundClass
-    // })
-
+   
     // initial render
     useEffect(() => {
         getClassLists()
@@ -35,15 +30,7 @@ export const TeacherSupplyForm = (props) => {
         .then(getSupplyItems)
     }, [])
 
-    // useEffect(()=>{
-    //     console.log(classLists)
-    //     const foundClass=classLists.find(singleItem=>singleItem.id===classId)
-    //     console.log("found class", foundClass)
-    //     setClassName(foundClass)
-
-    // },[])
-
-    
+  
 
     // check to see if the type bar has changed, if it has set the type
     const FirstHandleFieldChange = (event) => {
@@ -62,34 +49,37 @@ export const TeacherSupplyForm = (props) => {
 
     // check to see if the item bar has change, if it has change the item. 
     const SecondHandleFieldChange = (event) => {
-        let preventZero=event.target.value
-        if (preventZero !==0){
-            setItem(preventZero)
+        let ItemSelected=parseInt(event.target.value)
+        console.log("Item Selected", ItemSelected)
+        if (ItemSelected !==0){
+            setItem(ItemSelected)
         } else{
-            console.log("its gonna break")
+            setItem(1)
         }
     }
-
+    
     // re-render when there is a change in the item. Find the item to render on the dom
+    // HERE IT PREVENTS FROM 0
     useEffect(() => {
-        // console.log(Item)
-        // this stuff runs so it will work on render
         // if the item is not 0, then 
         if (Item !== 0) {
             setItemName(SupplyItems.find(e => e.id == parseInt(Item)))
 
         } else {
-
+            // setItemName(SupplyItems.find(e => e.id == parseInt(1)))
         }
     }, [Item])
     // re-render when there is a change in item name, check to see if the item comes in packaging
+
+
+
     useEffect(() => {
         if (ItemName.packaging === true) {
             setPackType("Packs of ")
         } else {
             setPackType("Number of ")
         }
-        console.log(packageType)
+        // console.log(packageType)
 
     }, [ItemName])
 
@@ -114,11 +104,26 @@ export const TeacherSupplyForm = (props) => {
         document.getElementById("formToReset").reset();
       }
 
+    //   this is the search functionality
+    useEffect(()=>{
+        if (searchTerms !==""){
+            const subset=SupplyItems.filter(singleItem=>singleItem.name.toLowerCase().includes(searchTerms.toLowerCase()))
+            setFilteredSupplyItems(subset)
+        } else{
+            setFilteredSupplyItems(SupplyItems)
+        }
+
+    },[searchTerms, SupplyItems])
+
     return (
         <>      
           
     <h2>{className}</h2>
             <form >
+                <fieldset>
+
+                <ItemSearch></ItemSearch>
+                </fieldset>
                 <fieldset>
                     <div className="form-group">
                         <label>Select Type </label>
@@ -136,8 +141,9 @@ export const TeacherSupplyForm = (props) => {
                 <fieldset>
                     <div className="form-group">
                         <label>Select Item </label>
-                        <select value={Item} id="SupplyItem" className="form-control" onChange={SecondHandleFieldChange}>
-                            
+                        <select value={Item} id="SupplyItem" className="form-control"  onChange={SecondHandleFieldChange}>
+                        <option value="0">Select Item</option>
+
                             {filteredSupplyItems.map(e => (
                                 <option key={e.id} value={e.id}>
                                     {e.name}

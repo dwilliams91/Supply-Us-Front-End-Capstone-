@@ -7,6 +7,7 @@ export const SupplyItemContext = React.createContext()
 export const SupplyItemsProvider = (props) => {
 
     const [SupplyItems, setSupplyItems] = useState([])
+    const [searchTerms, setSearchTerms]=useState("")
 
     const getSupplyItems = () => {
         return fetch("http://localhost:8088/supplyItems")
@@ -15,9 +16,10 @@ export const SupplyItemsProvider = (props) => {
     }
 
 
+
     return (
         <SupplyItemContext.Provider value={{
-            SupplyItems, SupplyItemsProvider, getSupplyItems
+            SupplyItems, SupplyItemsProvider, getSupplyItems, searchTerms, setSearchTerms
         }}>
             {props.children}
         </SupplyItemContext.Provider>

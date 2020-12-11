@@ -38,7 +38,7 @@ export const CustomerTableList=()=>{
 
     })
 
-    console.log("the main list",ListOfAllMyItems)
+    // console.log("the main list",ListOfAllMyItems)
     // this adds them together
     // set an empty  array and an id counter
     let finalArray=[]
@@ -94,7 +94,7 @@ export const CustomerTableList=()=>{
         }
 
     })
-    console.log("finalArray", finalArray)
+    // console.log("finalArray", finalArray)
     setFinalAddedArray(finalArray)
     }
 

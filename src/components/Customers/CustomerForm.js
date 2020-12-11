@@ -3,6 +3,7 @@ import { TeacherContext } from "../DataProviders/TeacherDataProvider"
 import { ClassListContext } from "../DataProviders/ClassListProvider"
 import {UserClassesContext} from "../DataProviders/UserClassesProvider"
 import {CustomerClassCards} from "./CustomerClassCards"
+import "./Customer.css"
 export const CustomerForm = () => {
     const { Teachers, getTeachers } = useContext(TeacherContext)
     const { classLists, getClassLists } = useContext(ClassListContext)
@@ -60,6 +61,7 @@ export const CustomerForm = () => {
             <h2>Find Your Classes</h2>
             <form>
                 <fieldset>
+                    <label>Select A Teacher</label>
             <select value={Teacher}id="TeacherName" className="form-control" onChange={FirstHandleFieldChange}>
                 <option value="0">Select Teacher</option>
                 {Teachers.map(e => (
@@ -70,6 +72,7 @@ export const CustomerForm = () => {
             </select>
             </fieldset>
             <fieldset>
+            <label>Select A Class </label>
             <select id="ClassName" className="form-control" onChange={SecondHandleFieldChange} >
                 <option value="0">Select Class</option>
                 {filteredClasses.map(e => (
@@ -84,7 +87,7 @@ export const CustomerForm = () => {
                 saveClasses()
                 }}> Save Class</button>
             </form>
-            <div>
+            <div className="myClassesContainer">
                 {myClasses.map(singleClass=>{
                     return <CustomerClassCards key={singleClass.id} myClass={singleClass}></CustomerClassCards> 
                 })}

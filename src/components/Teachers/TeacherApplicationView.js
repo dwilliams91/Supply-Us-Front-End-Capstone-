@@ -33,8 +33,7 @@ export const TeacherApplicationView = (props) => {
                 <Route exact path="/teachers/addClass"  render={props=><TeacherClassForm {...props}/>
                 }/>
             </ClassListProvider>
-
-
+        
             <ClassListProvider>
             <ClassListSupplyItemProvider>
                 <SupplyTypeProvider>
@@ -50,7 +49,6 @@ export const TeacherApplicationView = (props) => {
                 </SupplyTypeProvider>
             </ClassListSupplyItemProvider>
             </ClassListProvider>
-
             <Logout></Logout>
         </>
 

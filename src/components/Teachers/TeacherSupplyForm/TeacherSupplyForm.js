@@ -3,10 +3,11 @@ import { ClassListSupplyItemContext } from "../../DataProviders/ClassListSupplyI
 import { SupplyItemContext } from "../../DataProviders/SupplyItemProvider"
 import { SupplyTypeContext } from "../../DataProviders/SupplyTypeProvider"
 import {ClassListContext} from "../../DataProviders/ClassListProvider"
+import { ItemSearch } from "./ItemSearch"
 export const TeacherSupplyForm = (props) => {
     // getting the items from the providers
     const { SupplyTypes, getSupplyTypes } = useContext(SupplyTypeContext)
-    const { SupplyItems, getSupplyItems } = useContext(SupplyItemContext)
+    const { SupplyItems,searchTerms, getSupplyItems } = useContext(SupplyItemContext)
     const {addClassListSupplyItem} = useContext(ClassListSupplyItemContext)
     const {classLists, getClassLists}=useContext(ClassListContext)
 
@@ -114,11 +115,26 @@ export const TeacherSupplyForm = (props) => {
         document.getElementById("formToReset").reset();
       }
 
+    //   this is the search functionality
+    useEffect(()=>{
+        if (searchTerms !==""){
+            const subset=SupplyItems.filter(singleItem=>singleItem.name.toLowerCase().includes(searchTerms.toLowerCase()))
+            setFilteredSupplyItems(subset)
+        } else{
+            setFilteredSupplyItems(SupplyItems)
+        }
+
+    },[searchTerms, SupplyItems])
+
     return (
         <>      
           
     <h2>{className}</h2>
             <form >
+                <fieldset>
+
+                <ItemSearch></ItemSearch>
+                </fieldset>
                 <fieldset>
                     <div className="form-group">
                         <label>Select Type </label>

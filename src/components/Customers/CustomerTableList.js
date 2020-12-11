@@ -101,6 +101,7 @@ export const CustomerTableList=()=>{
     return (
         <>
         {/* {console.log(finalAddedArray)} */}
+        <div className="CustomerTable">
         <h2>Your Supply List</h2>
         <table>
                 <thead>
@@ -123,6 +124,7 @@ export const CustomerTableList=()=>{
 
             </table>
             {/* <button onClick={event=>addLists(userClasses, classListSupplyItem)}> display the list of all my items</button> */}
+            </div>
         </>
     )
 }

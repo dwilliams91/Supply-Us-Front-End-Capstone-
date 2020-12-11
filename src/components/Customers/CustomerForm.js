@@ -57,7 +57,7 @@ export const CustomerForm = (props) => {
     return (
         <>
 
-            
+        <div className="CustomerForm">
             <h2>Find Your Classes</h2>
             <form>
                 <fieldset>
@@ -87,10 +87,12 @@ export const CustomerForm = (props) => {
                 saveClasses()
                 }}> Save Class</button>
             </form>
+            <h3>Your Classes</h3>
             <div className="myClassesContainer">
                 {myClasses.map(singleClass=>{
                     return <CustomerClassCards key={singleClass.id} myClass={singleClass} props={props}></CustomerClassCards> 
                 })}
+            </div>
             </div>
         </>
     )

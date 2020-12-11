@@ -1,7 +1,9 @@
-import React, { useRef, useState } from "react"
+import React, { useContext, useEffect, useRef, useState } from "react"
+import { UserTypeContext } from "../DataProviders/UserTypeDataProvider"
 import "./Login.css"
 
 export const Register = (props) => {
+    const{userTypes, getUserTypes}=useContext(UserTypeContext)
     const firstName = useRef()
     const lastName = useRef()
     const email = useRef()
@@ -11,6 +13,9 @@ export const Register = (props) => {
     const conflictDialog = useRef()
     const [userType, setUserType] = useState(2)
 
+    useEffect(()=>{
+        getUserTypes()
+    },[])
     const existingUserCheck = () => {
         // If your json-server URL is different, please change it below!
         return fetch(`http://localhost:8088/users?email=${email.current.value}`)
@@ -65,7 +70,7 @@ export const Register = (props) => {
 
     return (
         <main style={{ textAlign: "center" }}>
-
+            {console.log(userTypes)}
             <dialog className="dialog dialog--password" ref={passwordDialog}>
                 <div>Passwords do not match</div>
                 <button className="button--close" onClick={e => passwordDialog.current.close()}>Close</button>
@@ -89,8 +94,9 @@ export const Register = (props) => {
                 <fieldset>
                     <label htmlFor="userType">Customer or Teacher</label>
                     <select onChange={SelectUserType}>
-                        <option value="2">Customer/Parent</option>
-                        <option value="1">Teacher</option>
+                        <option>Select Customer or Teacher</option>
+                        {userTypes.map(singleType=><option key={singleType.id} value={singleType.id}>{singleType.type}</option>)}
+                       
 
                     </select>
                 </fieldset>

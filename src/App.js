@@ -2,7 +2,6 @@ import { Route, Redirect } from "react-router-dom"
 import React from "react"
 import { Login } from "./components/auth/Login"
 import { Register } from "./components/auth/Register"
-import { Teacher } from './components/Teachers/Teacher';
 import { TeacherNavBar } from "./components/Teachers/TeacherNavBar/TeacherNavBar";
 import { TeacherApplicationView } from "./components/Teachers/TeacherApplicationView";
 import { CustomerApplicationView } from "./components/Customers/CustomerApplicationView";

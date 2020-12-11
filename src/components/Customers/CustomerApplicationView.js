@@ -1,5 +1,6 @@
 import React from "react"
 import { Route } from "react-router-dom"
+import { Logout } from "../auth/Logout"
 import { ClassListProvider } from "../DataProviders/ClassListProvider"
 import { ClassListSupplyItemProvider } from "../DataProviders/ClassListSupplyItemProvider"
 import { TeacherProvider } from "../DataProviders/TeacherDataProvider"
@@ -8,6 +9,7 @@ import { CustomerForm } from "./CustomerForm"
 import { CustomerTableList } from "./CustomerTableList"
 export const CustomerApplicationView = () => {
     return (
+        <>
         <ClassListSupplyItemProvider>
         <TeacherProvider>
             <ClassListProvider>
@@ -20,5 +22,7 @@ export const CustomerApplicationView = () => {
             </ClassListProvider>
         </TeacherProvider>
         </ClassListSupplyItemProvider>
+        <Logout></Logout>
+        </>
     )
 }

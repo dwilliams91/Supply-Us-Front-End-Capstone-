@@ -14,10 +14,10 @@ export const CustomerApplicationView = () => {
         <TeacherProvider>
             <ClassListProvider>
                 <UserClassesProvider>
-                <Route exact path="/customers">
-                    <CustomerForm></CustomerForm>
-                    <CustomerTableList></CustomerTableList>
-                </Route>
+                <Route exact path="/customers" render={props=> <CustomerForm {...props}/>}/>
+                <Route exact path="/customers" render={props=> <CustomerTableList {...props}/>}/>
+
+                
                 </UserClassesProvider>
             </ClassListProvider>
         </TeacherProvider>
@@ -26,3 +26,5 @@ export const CustomerApplicationView = () => {
         </>
     )
 }
+
+         

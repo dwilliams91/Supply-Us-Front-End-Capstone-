@@ -4,7 +4,7 @@ import { ClassListContext } from "../DataProviders/ClassListProvider"
 import {UserClassesContext} from "../DataProviders/UserClassesProvider"
 import {CustomerClassCards} from "./CustomerClassCards"
 import "./Customer.css"
-export const CustomerForm = () => {
+export const CustomerForm = (props) => {
     const { Teachers, getTeachers } = useContext(TeacherContext)
     const { classLists, getClassLists } = useContext(ClassListContext)
     const {userClasses, getUserClasses, addUserClasses}=useContext(UserClassesContext)
@@ -89,7 +89,7 @@ export const CustomerForm = () => {
             </form>
             <div className="myClassesContainer">
                 {myClasses.map(singleClass=>{
-                    return <CustomerClassCards key={singleClass.id} myClass={singleClass}></CustomerClassCards> 
+                    return <CustomerClassCards key={singleClass.id} myClass={singleClass} props={props}></CustomerClassCards> 
                 })}
             </div>
         </>

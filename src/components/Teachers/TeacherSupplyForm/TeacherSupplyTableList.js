@@ -10,6 +10,7 @@ export const TeacherSupplyTableList = (props) => {
 
         getClassListSupplyItem()
     }, [])
+    
     useEffect(()=>{
         getClassListSupplyItem()
     },[classListSupplyItem])
@@ -34,7 +35,7 @@ export const TeacherSupplyTableList = (props) => {
                 <tbody>
                     {/* {findClass()} */}
                     {classListSupplyItem.filter(singleItem=>singleItem.classList.id===parseInt(classId)).map(singleItem=>{
-                        return <TeacherSupplyTable key={singleItem.id} myItem={singleItem} props={props}/>
+                        return <TeacherSupplyTable key={singleItem.id} myItem={singleItem}/>
                     })}
 
                 </tbody>

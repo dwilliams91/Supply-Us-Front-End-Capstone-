@@ -1,5 +1,5 @@
 import React from "react"
-
+// this is to toggle the display
 export const CustomerTable=({myItem})=>{
     const toggleDescriptionList=()=>{
     var x = document.getElementById(`descriptionList--${myItem.id}`);

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react"
 import { ClassListSupplyItemContext } from "../DataProviders/ClassListSupplyItemProvider"
 import { UserClassesContext } from "../DataProviders/UserClassesProvider"
 import { CustomerTable } from "./CustomerTable"
-
+import "./Customer.css"
 
 export const CustomerTableList=()=>{
     const {userClasses, getUserClasses}=useContext(UserClassesContext)

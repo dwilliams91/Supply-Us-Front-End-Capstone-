@@ -8,6 +8,7 @@ export const CustomerClassCards=({myClass, props})=>{
     <div className="CustomerClassesCard">
     <p>{myClass.classList.name}</p>  
     <button onClick={()=>deleteUserClasses(myClass.id).then(props.history.push("./customers"))}>Delete</button>
+    <button> Show Individual Class List</button>
     </div>
     )
 }

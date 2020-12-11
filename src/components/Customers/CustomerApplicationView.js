@@ -14,10 +14,11 @@ export const CustomerApplicationView = () => {
         <TeacherProvider>
             <ClassListProvider>
                 <UserClassesProvider>
+                    <div className="CustomerContainer">
                 <Route exact path="/customers" render={props=> <CustomerForm {...props}/>}/>
                 <Route exact path="/customers" render={props=> <CustomerTableList {...props}/>}/>
 
-                
+                </div>
                 </UserClassesProvider>
             </ClassListProvider>
         </TeacherProvider>

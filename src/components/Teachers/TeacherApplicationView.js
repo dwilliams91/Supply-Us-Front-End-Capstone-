@@ -9,6 +9,7 @@ import { SupplyTypeProvider } from "../DataProviders/SupplyTypeProvider"
 import { ClassListSupplyItemProvider } from "../DataProviders/ClassListSupplyItemProvider"
 import { TeacherSupplyTableList } from "./TeacherSupplyForm/TeacherSupplyTableList"
 import { Logout } from "../auth/Logout"
+import "../Teachers/TeacherSupplyForm/TeacherSupply.css"
 export const TeacherApplicationView = (props) => {
     const userType=parseInt(localStorage.getItem("userType"))
     console.log("userType", userType)
@@ -33,18 +34,19 @@ export const TeacherApplicationView = (props) => {
                 <Route exact path="/teachers/addClass"  render={props=><TeacherClassForm {...props}/>
                 }/>
             </ClassListProvider>
-        
+            
             <ClassListProvider>
             <ClassListSupplyItemProvider>
                 <SupplyTypeProvider>
                     <SupplyItemsProvider>
+                        <div class="TeacherSupplyContainer">
                     <Route path="/teachers/class:ClassListId(\d+)" render={
                                 props => <TeacherSupplyForm {...props} />
                             } />
                             <Route path="/teachers/class:ClassListId(\d+)" render={
                                 props => <TeacherSupplyTableList {...props} />
                             } />
-
+                        </div>
                     </SupplyItemsProvider>
                 </SupplyTypeProvider>
             </ClassListSupplyItemProvider>

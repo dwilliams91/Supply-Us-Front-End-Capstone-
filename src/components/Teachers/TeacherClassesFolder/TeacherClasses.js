@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react"
 import { ClassListContext } from "../../DataProviders/ClassListProvider"
 import {TeacherClass} from "./TeacherClass"
+import "./TeacherClass.css"
 export const TeacherClasses=()=>{
     // gets the classes
     const {classLists, getClassLists}=useContext(ClassListContext)

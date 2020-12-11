@@ -5,10 +5,14 @@ import { Register } from "./components/auth/Register"
 import { TeacherNavBar } from "./components/Teachers/TeacherNavBar/TeacherNavBar";
 import { TeacherApplicationView } from "./components/Teachers/TeacherApplicationView";
 import { CustomerApplicationView } from "./components/Customers/CustomerApplicationView";
-
+import "./App.css"
 function App() {
   return (
     <>
+    <header>
+      <h1>Supply Us</h1>
+
+    </header>
       <Route render={() => {
         // The user id is saved under the key app_user_id in local Storage. Change below if needed!
         if (localStorage.getItem("app_user_id")) {

@@ -44,20 +44,6 @@
       "userType": 1,
       "name": "Annie Annie",
       "id": 8
-    },
-    {
-      "email": "rena@rena.com",
-      "password": "password",
-      "userType": 1,
-      "name": "Rena M",
-      "id": 9
-    },
-    {
-      "email": "nick@nick.com",
-      "password": "password",
-      "userType": 2,
-      "name": "Nick L",
-      "id": 10
     }
   ],
   "userClasses": [
@@ -70,16 +56,6 @@
       "userId": 7,
       "classListId": 2,
       "id": 6
-    },
-    {
-      "userId": 4,
-      "classListId": 2,
-      "id": 7
-    },
-    {
-      "userId": 4,
-      "classListId": 1,
-      "id": 8
     }
   ],
   "classLists": [
@@ -383,13 +359,6 @@
   ],
   "classListSupplyItems": [
     {
-      "number": "2",
-      "supplyItemId": "2",
-      "description": "Pre-sharpened",
-      "classListId": 1,
-      "id": 1
-    },
-    {
       "number": "3",
       "supplyItemId": "2",
       "description": "2 red packs\n1 any color but red",
@@ -577,6 +546,13 @@
       "description": "can fit inside your pocket",
       "classListId": 1,
       "id": 38
+    },
+    {
+      "number": "2",
+      "supplyItemId": 1,
+      "description": "pre-sharpened",
+      "classListId": 1,
+      "id": 39
     }
   ]
 }

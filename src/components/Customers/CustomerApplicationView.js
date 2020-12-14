@@ -11,27 +11,40 @@ import { CustomerTableList } from "./CustomerTableList"
 export const CustomerApplicationView = () => {
     return (
         <>
-        <ClassListSupplyItemProvider>
-        <TeacherProvider>
-            <ClassListProvider>
-                <UserClassesProvider>
-                    <div className="CustomerContainer">
-                <Route exact path="/customers" render={props=> <CustomerForm {...props}/>}/>
-                <Route exact path="/customers" render={props=> <CustomerTableList {...props}/>}/>
+            <ClassListSupplyItemProvider>
+                <TeacherProvider>
+                    <ClassListProvider>
+                        <UserClassesProvider>
+                            <div className="CustomerContainer">
+                                <Route exact path="/customers" render={props => <CustomerForm {...props} />} />
+                                <Route exact path="/customers" render={props => <CustomerTableList {...props} />} />
 
-                </div>
-                </UserClassesProvider>
-            </ClassListProvider>
-        </TeacherProvider>
-        </ClassListSupplyItemProvider>
-        <ClassListSupplyItemProvider>
-        <Route path="/customers/class:ClassListId(\d+)" render={
+                            </div>
+                        </UserClassesProvider>
+                    </ClassListProvider>
+                </TeacherProvider>
+            </ClassListSupplyItemProvider>
+
+            <TeacherProvider>
+                <ClassListSupplyItemProvider>
+                    <ClassListProvider>
+                        <UserClassesProvider>
+                            <div className="CustomerContainer">
+                        <Route path="/customers/class:ClassListId(\d+)" render={
+                                props => <CustomerForm {...props} />
+                            } />
+                            <Route path="/customers/class:ClassListId(\d+)" render={
                                 props => <CustomerIndividualClassTableList {...props} />
-                            } />       
-        </ClassListSupplyItemProvider>
-     <Logout></Logout>
+                            } />
+                           </div>
+                        </UserClassesProvider>
+                    </ClassListProvider>
+                </ClassListSupplyItemProvider>
+            </TeacherProvider>
+
+
+            <Logout></Logout>
         </>
     )
 }
 
-         

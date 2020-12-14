@@ -13,7 +13,8 @@ const {classListSupplyItem, getClassListSupplyItem}=useContext(ClassListSupplyIt
 
     return(
         <>
-        <div className="TeacherSupplyTable">
+        <div className="CustomerTable">
+    <h2>{props.location.state.chosenClassName}</h2>
             <table >
                 
                 <thead>

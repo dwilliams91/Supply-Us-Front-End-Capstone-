@@ -3,13 +3,14 @@ import { SupplyItemContext } from "../DataProviders/SupplyItemProvider"
 import { SupplyTypeContext } from "../DataProviders/SupplyTypeProvider"
 
 export const TeacherAddItem = () => {
-    const { SupplyItems, getSupplyItems, addSupplyItem } = useContext(SupplyItemContext)
+    const { SupplyItems, getSupplyItems, addSupplyItem, updateItem } = useContext(SupplyItemContext)
     const { SupplyTypes, getSupplyTypes } = useContext(SupplyTypeContext)
     const [Type, setType] = useState(0)
     const [newItemName, setNewItemName] = useState("")
     const [Package, setPackage] = useState(false)
     const [editItem, setEditItem]=useState(0)
     const Packaging = useRef(null)
+    const [editMode, setEditMode]=useState(false)
 
     const [TypeDropDown, setTypeDropDown]=useState([])
 
@@ -39,30 +40,45 @@ export const TeacherAddItem = () => {
     }
 
     const SaveItem = () => {
-        const newItem = {
-            typeId: parseInt(Type),
-            name: newItemName,
-            packaging: Package
+        if(editMode){
+            const newItem = {
+                id:editItem,
+                typeId: parseInt(Type),
+                name: newItemName,
+                packaging: Package
+            }
+            updateItem(newItem)
+        } else {
+            const newItem = {
+                typeId: parseInt(Type),
+                name: newItemName,
+                packaging: Package
+            }
+            addSupplyItem(newItem)
         }
-        console.log(newItem)
         // addSupplyItem(newItem)
     }
 
-    
+
     const EditSelected=(event)=>{
-        setEditItem(event.target.value)
+        if (parseInt(event.target.value) !==0){
+            setEditItem(event.target.value)
+        } else {
+            setEditItem(0)
+            setEditMode(false)
+            setType(0)
+            setNewItemName("")
+            setPackage(false)
+        }
     }
 
     useEffect(()=>{
         const ItemToEdit=SupplyItems.find(e=>e.id===parseInt(editItem))
         if(ItemToEdit){
+            setEditMode(true)
             setNewItemName(ItemToEdit.name)
             setPackage(ItemToEdit.packaging)
-            let newDropDown=[]
-            newDropDown.push(0)
-            newDropDown.push(ItemToEdit.typeId)
-            console.log(newDropDown)
-            setTypeDropDown(newDropDown)
+            setType(ItemToEdit.typeId)
         }
     },[editItem])
 
@@ -91,7 +107,7 @@ export const TeacherAddItem = () => {
                     <select value={Type} id="SupplyType" className="form-control" onChange={TypeChangeField}>
 
                         <option value="0">Select Type</option>
-                        {TypeDropDown.map(e => (
+                        {SupplyTypes.map(e => (
                             <option key={e.id} value={e.id}>
                                 {e.type}
                             </option>

@@ -6,41 +6,22 @@ import {CustomerIndividualClassTable} from "./CustomerIndividualClassTable"
 export const CustomerIndividualClassTableList=(props)=>{
 const {classListSupplyItem, getClassListSupplyItem}=useContext(ClassListSupplyItemContext)
 const {classLists, getClassLists}=useContext(ClassListContext)
+// const [classId, setClassId]=useState([])
     const classId=props.location.state.chosenClass.classListId
-    const [thisSingleClass, setThisSingleClass]=useState([])
-    const [thisSingleClassName, setThisSingleClassName]=useState("Hi!!")
+    const MyClass=props.location.state.chosenClassName
+    // console.log("my class is", MyClass)
     
     useEffect(() => {
-
-        getClassListSupplyItem()
-        getClassLists()
+        // setClassId(props.location.state.chosenClass.classListId)
+        getClassLists().then(getClassListSupplyItem)
     }, [])
-    // console.log(classId)
 
-    useEffect(()=>{
-        
-        setThisSingleClass(classLists.find(singleClass=>singleClass.id===parseInt(classId)))
-        
-    },[classLists])
-
-    useEffect(()=>{
-        
-        if (thisSingleClass){
-        setThisSingleClassName(thisSingleClass.className)
-        }
-    },[thisSingleClass])
-
-    useEffect(()=>{
-        // console.log("is this hitting",thisSingleClassName)
-    },[thisSingleClassName])
-    
-    
 
     return(
         <>
-        {/* {console.log(thisSingleClassName)} */}
+        {/* {console.log(thisSingleClass)} */}
         <div className="CustomerTable">
-    <h2>{thisSingleClassName}</h2>
+        <h2>{MyClass}</h2>
             <table >
                 
                 <thead>

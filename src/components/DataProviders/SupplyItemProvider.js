@@ -26,7 +26,7 @@ export const SupplyItemsProvider = (props) => {
             .then(getSupplyItems)
     }
     const updateItem = item => {
-        return fetch(`http://localhost:8088/animals/${item.id}`, {
+        return fetch(`http://localhost:8088/supplyItems/${item.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"

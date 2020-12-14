@@ -382,6 +382,12 @@
       "name": "lockershelf",
       "packaging": false,
       "typeId": 6
+    },
+    {
+      "typeId": 2,
+      "name": "Manilla Folders",
+      "packaging": true,
+      "id": 41
     }
   ],
   "classListSupplyItems": [

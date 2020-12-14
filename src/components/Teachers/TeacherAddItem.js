@@ -2,15 +2,16 @@ import React, { useContext, useEffect, useState, useRef } from "react"
 import { SupplyItemContext } from "../DataProviders/SupplyItemProvider"
 import { SupplyTypeContext } from "../DataProviders/SupplyTypeProvider"
 
-export const TeacherAddItem = () => {
+export const TeacherAddItem = (props) => {
     const { SupplyItems, getSupplyItems, addSupplyItem, updateItem } = useContext(SupplyItemContext)
-    const { SupplyTypes, getSupplyTypes } = useContext(SupplyTypeContext)
+    const { SupplyTypes, getSupplyTypes, addSupplyType } = useContext(SupplyTypeContext)
     const [Type, setType] = useState(0)
     const [newItemName, setNewItemName] = useState("")
     const [Package, setPackage] = useState(false)
     const [editItem, setEditItem]=useState(0)
     const Packaging = useRef(null)
     const [editMode, setEditMode]=useState(false)
+    const [newType, setNewType]=useState("")
 
     const [TypeDropDown, setTypeDropDown]=useState([])
 
@@ -39,22 +40,32 @@ export const TeacherAddItem = () => {
         }
     }
 
+   const addingNewTypeChangeField=(event)=>{
+       setNewType(event.target.value)
+   }
+
     const SaveItem = () => {
         if(editMode){
-            const newItem = {
+            const updatedItem = {
                 id:editItem,
                 typeId: parseInt(Type),
                 name: newItemName,
                 packaging: Package
             }
-            updateItem(newItem)
+            updateItem(updatedItem).then(props.history.push("/teachers"))
         } else {
             const newItem = {
                 typeId: parseInt(Type),
                 name: newItemName,
                 packaging: Package
             }
-            addSupplyItem(newItem)
+            const duplicateItemCheck=SupplyItems.find(e=>e.name===newItem.name)
+            if (duplicateItemCheck){
+                window.alert("This is already an item")
+            } else {
+                addSupplyItem(newItem).then(props.history.push("/teachers"))
+
+            }
         }
         // addSupplyItem(newItem)
     }
@@ -81,6 +92,14 @@ export const TeacherAddItem = () => {
             setType(ItemToEdit.typeId)
         }
     },[editItem])
+    
+    const saveType=()=>{
+        const newSupplyType={
+            type: newType
+        }
+        console.log(newSupplyType)
+        addSupplyType(newSupplyType).then(setType(newSupplyType.type))
+    }
 
 
     return (
@@ -101,7 +120,7 @@ export const TeacherAddItem = () => {
             <br></br>
             <h3> To add an Item</h3>
             <fieldset>
-                <span>
+                
 
                     <label>Select Type </label>
                     <select value={Type} id="SupplyType" className="form-control" onChange={TypeChangeField}>
@@ -115,8 +134,11 @@ export const TeacherAddItem = () => {
                     </select>
 
                     <label> or Add a New Type</label>
-                    <input id="quantity" value={Type} onChange={TypeChangeField}></input>
-                </span>
+                    <input  onChange={addingNewTypeChangeField}></input>
+                    <button onClick={evt=>{
+                        saveType()
+                    }}>Add Type</button>
+                
             </fieldset>
             <fieldset>
                 <label>Name of New Item</label>

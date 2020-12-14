@@ -13,11 +13,20 @@ export const SupplyTypeProvider = (props) => {
             .then(res => res.json())
             .then(setSupplyType)
     }
-
+    const addSupplyType = supplyType => {
+        return fetch("http://localhost:8088/supplyTypes", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(supplyType)
+        })
+            .then(getSupplyTypes)
+    }
 
     return (
         <SupplyTypeContext.Provider value={{
-            SupplyTypeProvider, SupplyTypes, getSupplyTypes
+            SupplyTypeProvider, SupplyTypes, getSupplyTypes, addSupplyType
         }}>
             {props.children}
         </SupplyTypeContext.Provider>

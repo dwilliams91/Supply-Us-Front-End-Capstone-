@@ -3,6 +3,7 @@ import { CheckVisibility } from "./CheckVisibility";
 import "./Customer.css"
 // this is to toggle the display
 export const CustomerTable = ({ myItem }) => {
+    
     const toggleDescriptionList = () => {
        if (visbility){
            setVisibility(false)

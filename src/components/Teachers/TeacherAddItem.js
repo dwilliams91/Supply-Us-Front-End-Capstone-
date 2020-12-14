@@ -31,11 +31,12 @@ export const TeacherAddItem = () => {
    }
    const SaveItem=()=>{
        const newItem={
-           type:Type,
+           typeId:parseInt(Type),
            name:newItemName,
            packaging:Package
        }
        console.log(newItem)
+       addSupplyItem(newItem)
    }
 
     return (

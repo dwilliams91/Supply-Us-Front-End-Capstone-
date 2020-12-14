@@ -3,6 +3,7 @@ import { SupplyItemContext } from "../DataProviders/SupplyItemProvider"
 import { SupplyTypeContext } from "../DataProviders/SupplyTypeProvider"
 
 export const TeacherAddItem = (props) => {
+    // set up all the things I will need
     const { SupplyItems, getSupplyItems, addSupplyItem, updateItem } = useContext(SupplyItemContext)
     const { SupplyTypes, getSupplyTypes, addSupplyType } = useContext(SupplyTypeContext)
     const [Type, setType] = useState(0)
@@ -13,8 +14,7 @@ export const TeacherAddItem = (props) => {
     const [editMode, setEditMode]=useState(false)
     const [newType, setNewType]=useState("")
 
-    const [TypeDropDown, setTypeDropDown]=useState([])
-
+    // initial render
     useEffect(() => {
         getSupplyItems()
         getSupplyTypes().then(()=>{
@@ -23,7 +23,7 @@ export const TeacherAddItem = (props) => {
     }, [])
 
 
-
+    // if any field changes, change the variable so the state will always be ready
     const TypeChangeField = (event) => {
         setType(event.target.value)
     }
@@ -39,12 +39,13 @@ export const TeacherAddItem = (props) => {
             setPackage(false)
         }
     }
-
    const addingNewTypeChangeField=(event)=>{
        setNewType(event.target.value)
    }
 
+//    save an item
     const SaveItem = () => {
+        // if its in edit mode, change the item, if not, create a new one
         if(editMode){
             const updatedItem = {
                 id:editItem,
@@ -59,6 +60,7 @@ export const TeacherAddItem = (props) => {
                 name: newItemName,
                 packaging: Package
             }
+            // make sure the item doesn't already exist
             const duplicateItemCheck=SupplyItems.find(e=>e.name===newItem.name)
             if (duplicateItemCheck){
                 window.alert("This is already an item")
@@ -70,7 +72,7 @@ export const TeacherAddItem = (props) => {
         // addSupplyItem(newItem)
     }
 
-
+    // if there is an item selected to edit, change the editItem, if not, set the variables back to default
     const EditSelected=(event)=>{
         if (parseInt(event.target.value) !==0){
             setEditItem(event.target.value)
@@ -82,7 +84,7 @@ export const TeacherAddItem = (props) => {
             setPackage(false)
         }
     }
-
+    // if the edit Item changed, then get then input the values in the form
     useEffect(()=>{
         const ItemToEdit=SupplyItems.find(e=>e.id===parseInt(editItem))
         if(ItemToEdit){
@@ -93,6 +95,7 @@ export const TeacherAddItem = (props) => {
         }
     },[editItem])
     
+    // adding a new type
     const saveType=()=>{
         const newSupplyType={
             type: newType

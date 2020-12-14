@@ -5,6 +5,7 @@ import {UserClassesContext} from "../DataProviders/UserClassesProvider"
 import {CustomerClassCards} from "./CustomerClassCards"
 import "./Customer.css"
 export const CustomerForm = (props) => {
+    // get all the things you will need
     const { Teachers, getTeachers } = useContext(TeacherContext)
     const { classLists, getClassLists } = useContext(ClassListContext)
     const {userClasses, getUserClasses, addUserClasses}=useContext(UserClassesContext)
@@ -14,18 +15,20 @@ export const CustomerForm = (props) => {
     const [filteredClasses, setFilteredClasses]=useState([])
     const [myClasses,setMyClasses]=useState([])
 
+    // initial render
     useEffect(() => {
         getTeachers()
         .then(getClassLists)
         .then(getUserClasses)
     }, [])
-   
+//    if the dropdown menus change, change the state
     const FirstHandleFieldChange=(event)=>{
         setTeacher(event.target.value)
     }
     const SecondHandleFieldChange=(event)=>{
         setClass(event.target.value)
     }
+    // this changes the second dropdown menu to match only the classes of the selected teacher
     useEffect(()=>{
         const selectTeacherParsed=parseInt(Teacher)
         if (selectTeacherParsed===0){
@@ -35,9 +38,12 @@ export const CustomerForm = (props) => {
         }
     },[Teacher, classLists])
 
+    // this adds the class
     const saveClasses=()=>{
+        // get the user from local storage
         const user=parseInt(localStorage.getItem("app_user_id"))
-        console.log(Class)
+        // console.log(Class)
+        // create an item on the join table with the ID of user and the classListId of the selected class
         const newItem={
             userId:user,
             classListId: parseInt(Class)
@@ -49,12 +55,12 @@ export const CustomerForm = (props) => {
             addUserClasses(newItem)
         }
     }
-
+    // this renders the table of all someones classes if they had been looking at individual class lists
     const displayAllLists=()=>{
         props.history.push("/customers")
 
     }
-
+    // if the classes you are a part of change, then the total table will re-render. 
     useEffect(()=>{
         const user=parseInt(localStorage.getItem("app_user_id"))
         setMyClasses(userClasses.filter(e=>e.userId===user))

@@ -58,7 +58,9 @@ export const CustomerTableList=()=>{
            const  descriptionObj={
                id:descriptionCounter,
                 className:singleItem.classList.name,
-                description: singleItem.description
+                description: singleItem.description,
+                singleListNumber:singleItem.number
+
             }
             descriptionCounter++
             descriptionArray.push(descriptionObj)
@@ -78,7 +80,8 @@ export const CustomerTableList=()=>{
            const  descriptionObj={
                id:descriptionCounter,
                 className:singleItem.classList.name,
-                description: singleItem.description
+                description: singleItem.description,
+                singleListNumber:singleItem.number
             }
             descriptionArray.push(descriptionObj)
             descriptionCounter++
@@ -94,7 +97,7 @@ export const CustomerTableList=()=>{
         }
 
     })
-    // console.log("finalArray", finalArray)
+    console.log("finalArray", finalArray)
     setFinalAddedArray(finalArray)
     }
 

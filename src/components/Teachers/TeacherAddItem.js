@@ -17,9 +17,7 @@ export const TeacherAddItem = (props) => {
     // initial render
     useEffect(() => {
         getSupplyItems()
-        getSupplyTypes().then(()=>{
-            setTypeDropDown(SupplyTypes)
-        })
+        getSupplyTypes()
     }, [])
 
 

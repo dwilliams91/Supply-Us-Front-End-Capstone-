@@ -24,10 +24,11 @@ export const CustomerApplicationView = () => {
             </ClassListProvider>
         </TeacherProvider>
         </ClassListSupplyItemProvider>
+        <ClassListSupplyItemProvider>
         <Route path="/customers/class:ClassListId(\d+)" render={
                                 props => <CustomerIndividualClassTableList {...props} />
                             } />       
-                            
+        </ClassListSupplyItemProvider>
      <Logout></Logout>
         </>
     )

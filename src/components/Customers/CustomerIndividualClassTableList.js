@@ -1,7 +1,45 @@
-import React from "react"
+import React, {useContext, useEffect} from "react"
+import {ClassListSupplyItemContext} from "../DataProviders/ClassListSupplyItemProvider"
+import {CustomerIndividualClassTable} from "./CustomerIndividualClassTable"
+export const CustomerIndividualClassTableList=(props)=>{
 
-export const CustomerIndividualClassTableList=()=>{
+const {classListSupplyItem, getClassListSupplyItem}=useContext(ClassListSupplyItemContext)
+    const classId=props.location.state.chosenClass.classListId
+    useEffect(() => {
+
+        getClassListSupplyItem()
+    }, [])
+    console.log(classId)
+
     return(
-        <h2>This is working</h2>
+        <>
+        <div className="TeacherSupplyTable">
+            <table >
+                
+                <thead>
+                    <tr>
+                        <th>
+                            Item
+                        </th>
+                        <th>
+                            Number
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {/* {findClass()} */}
+                    {classListSupplyItem.filter(singleItem=>singleItem.classList.id===parseInt(classId)).map(singleItem=>{
+                        return <CustomerIndividualClassTable key={singleItem.id} myItem={singleItem}/>
+                    })}
+
+                </tbody>
+
+            </table>
+            </div>
+        </>
+        
     )
 }

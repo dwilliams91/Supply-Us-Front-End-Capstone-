@@ -11,6 +11,9 @@ export const TeacherNavBar = (props) => {
             <li className="navbar__item">
                 <Link className="navbar__link" to="/teachers/addClass">Add a Class</Link>
             </li>
+            <li className="navbar__item">
+                <Link className="navbar__link" to="/teachers/addItem">Add a Item</Link>
+            </li>
         </ul>
     )
 }

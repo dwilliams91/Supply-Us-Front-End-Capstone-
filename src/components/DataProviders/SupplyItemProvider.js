@@ -25,11 +25,20 @@ export const SupplyItemsProvider = (props) => {
         })
             .then(getSupplyItems)
     }
-
+    const updateItem = item => {
+        return fetch(`http://localhost:8088/supplyItems/${item.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(item)
+        })
+            .then(getSupplyItems)
+    }
 
     return (
         <SupplyItemContext.Provider value={{
-            SupplyItems, SupplyItemsProvider, getSupplyItems, searchTerms, setSearchTerms, addSupplyItem
+            SupplyItems, SupplyItemsProvider, getSupplyItems, searchTerms, setSearchTerms, addSupplyItem, updateItem
         }}>
             {props.children}
         </SupplyItemContext.Provider>

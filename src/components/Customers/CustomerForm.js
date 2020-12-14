@@ -50,6 +50,11 @@ export const CustomerForm = (props) => {
         }
     }
 
+    const displayAllLists=()=>{
+        props.history.push("/customers")
+
+    }
+
     useEffect(()=>{
         const user=parseInt(localStorage.getItem("app_user_id"))
         setMyClasses(userClasses.filter(e=>e.userId===user))
@@ -93,6 +98,7 @@ export const CustomerForm = (props) => {
                     return <CustomerClassCards key={singleClass.id} myClass={singleClass} props={props}></CustomerClassCards> 
                 })}
             </div>
+            <button onClick={event=>{displayAllLists()}}>Display All Classes</button>
             </div>
         </>
     )

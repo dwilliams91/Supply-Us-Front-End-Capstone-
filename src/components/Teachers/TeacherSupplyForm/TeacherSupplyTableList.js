@@ -18,8 +18,8 @@ export const TeacherSupplyTableList = (props) => {
     return (
         <>
         {/* {console.log("classId",classId)} */}
-        <div className="TeacherSupplyTable">
-            <table >
+        <div className="TeacherSupplyTableContainer">
+            <table className="TeacherSupplyTable">
                 
                 <thead>
                     <tr>

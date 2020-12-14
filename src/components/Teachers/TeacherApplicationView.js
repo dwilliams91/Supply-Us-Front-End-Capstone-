@@ -51,7 +51,7 @@ export const TeacherApplicationView = (props) => {
                 </SupplyTypeProvider>
             </ClassListSupplyItemProvider>
             </ClassListProvider>
-            <Logout></Logout>
+            <Route render={props => <Logout {...props} />} />   
         </>
 
     )

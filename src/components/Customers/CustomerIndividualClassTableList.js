@@ -15,7 +15,7 @@ const {classLists, getClassLists}=useContext(ClassListContext)
         getClassListSupplyItem()
         getClassLists()
     }, [])
-    console.log(classId)
+    // console.log(classId)
 
     useEffect(()=>{
         
@@ -31,14 +31,14 @@ const {classLists, getClassLists}=useContext(ClassListContext)
     },[thisSingleClass])
 
     useEffect(()=>{
-        console.log("is this hitting",thisSingleClassName)
+        // console.log("is this hitting",thisSingleClassName)
     },[thisSingleClassName])
     
     
 
     return(
         <>
-        {console.log(thisSingleClassName)}
+        {/* {console.log(thisSingleClassName)} */}
         <div className="CustomerTable">
     <h2>{thisSingleClassName}</h2>
             <table >

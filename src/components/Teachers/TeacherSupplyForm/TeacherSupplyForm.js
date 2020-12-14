@@ -152,13 +152,13 @@ export const TeacherSupplyForm = (props) => {
                    
                     <fieldset>
                         <label>{packageType} {ItemName.name}</label>
-                        <input id="quantity" value={ItemQuantity} onChange={e=>NumberChangeField(e)}></input>
+                        <input id="quantity" value={ItemQuantity} onChange={NumberChangeField}></input>
 
                     </fieldset>
                     <fieldset>
 
                         <label> Description</label>
-                        <textarea id="descriptionField" placeholder="Example: Red binders, 3 ring,"  value= {description} onChange={e=>DescriptionChangeField(e)}></textarea>
+                        <textarea id="descriptionField" placeholder="Example: Red binders, 3 ring,"  value= {description} onChange={DescriptionChangeField}></textarea>
                         <p>Here is where you can add any specific information. If they need three binders, here is where you put the colors, or 3 inches or 1 inch </p>
                     </fieldset>
                     <button type="submit" onClick={evt => {

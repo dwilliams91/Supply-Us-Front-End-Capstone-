@@ -43,8 +43,7 @@ export const CustomerApplicationView = () => {
             </TeacherProvider>
 
 
-            <Logout></Logout>
-        </>
+            <Route render={props => <Logout {...props} />} />        </>
     )
 }
 

@@ -24,15 +24,17 @@ export const TeacherClassForm = (props) => {
         <>
 
             <h1 > Add a class</h1>
-            <div className="classCardContainer">
+            <div className="addClassCardContainer">
+                <div className="addClassCard">
                 <form className="TeacherClassForm">
                     <h2 className="TeacherClassFormLabel">Class name</h2>
-                    <input type="text" id="AddingAClass" ref={name} required autoFocus className="form-control" placeholder="Add a class" />
+                    <input type="text" id="AddingAClass" ref={name} required autoFocus className="form-control" placeholder="Name of the class" />
                     <button type="submit" onClick={evt => {
                         evt.preventDefault() // Prevent browser from submitting the form
                         constructNewClass()
                     }}> Save </button>
                 </form>
+                </div>
                 <div className="AddClassPicture">
                     <img id="classPicture" src="https://images.unsplash.com/photo-1604134967494-8a9ed3adea0d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80"></img>
                 </div>

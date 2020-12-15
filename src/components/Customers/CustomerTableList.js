@@ -70,7 +70,8 @@ export const CustomerTableList=()=>{
                id:previousItem.id,
                name:singleItem.supplyItem.name,
                number:parseInt(previousItem.number)+parseInt(singleItem.number),
-               descriptions:descriptionArray         
+               descriptions:descriptionArray,  
+               packaging: singleItem.supplyItem.packaging
            }
         //    splice it into the array 
            finalArray.splice(indexSpot, 1, newItem)
@@ -89,7 +90,8 @@ export const CustomerTableList=()=>{
                id:idCounter,
                name:singleItem.supplyItem.name,
                number:singleItem.number,
-               descriptions:descriptionArray
+               descriptions:descriptionArray,
+               packaging: singleItem.supplyItem.packaging
            }
            idCounter++
         //    console.log(newItem)

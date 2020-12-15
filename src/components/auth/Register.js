@@ -83,6 +83,8 @@ export const Register = (props) => {
 
             <form className="form--login" onSubmit={handleRegister}>
                 <h1 className="h3 mb-3 font-weight-normal">Please Register for Application Name</h1>
+                <div className="registerContainer">
+                    <div className="registerCard">
                 <fieldset>
                     <label htmlFor="firstName"> First Name </label>
                     <input ref={firstName} type="text" name="firstName" className="form-control" placeholder="First name" required autoFocus />
@@ -115,6 +117,8 @@ export const Register = (props) => {
                 <fieldset>
                     <button type="submit"> Sign in </button>
                 </fieldset>
+                </div>
+                </div>
             </form>
         </main>
     )

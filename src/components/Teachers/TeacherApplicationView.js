@@ -19,6 +19,7 @@ export const TeacherApplicationView = (props) => {
     }
     return (
         <>
+        <div className="flexLogoutButton">
             <ClassListSupplyItemProvider>
                 <SupplyTypeProvider>
                     <SupplyItemsProvider>
@@ -60,8 +61,10 @@ export const TeacherApplicationView = (props) => {
             }/>
             </SupplyItemsProvider>
             </SupplyTypeProvider>
-
-            <Route render={props => <Logout {...props} />} />   
+            <div className="LogoutButton">
+            <Route render={props => <Logout {...props} />} />  
+            </div> 
+            </div>
         </>
 
     )

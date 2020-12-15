@@ -5,8 +5,12 @@ import { TeacherSupplyTableList } from "./TeacherSupplyForm/TeacherSupplyTableLi
 import "../Teachers/TeacherSupplyForm/TeacherSupply.css"
 
 export const TeacherSupply = (props) => {
+    const className = props.location.state.chosenClassName
+
+
     return (
         <>
+        <h1>{className}</h1>
             <div className="TeacherSupplyContainer">
                 <Route path="/teachers/class:ClassListId(\d+)" render={
                     props => <TeacherSupplyForm {...props} />

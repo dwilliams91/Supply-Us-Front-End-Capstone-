@@ -23,14 +23,17 @@ export const TeacherSupplyTableList = (props) => {
                 
                 <thead>
                     <tr>
-                        <th>
+                        <th className="TeacherTableHead">
                             Item
                         </th>
-                        <th>
+                        <th className="TeacherTableHead">
                             Number
                         </th>
-                        <th>
+                        <th className="TeacherTableHead">
                             Description
+                        </th>
+                        <th className="TeacherTableHead">
+
                         </th>
                     </tr>
                 </thead>

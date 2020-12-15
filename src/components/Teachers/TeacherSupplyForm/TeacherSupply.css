@@ -11,22 +11,31 @@
 }
 .SupplyFormContainer{
     flex-basis: 30%;
-    min-height: 400px;
-    max-height: 400px;
+    min-height: 425px;
+    max-height: 425px;
+    background-color: white;
+    border-radius: 25px;
+    padding: 10px;
 }
 
 .TeacherSupplyTableContainer{
     flex-basis: 60%;
     border:1px solid black;
-    margin-top: 4em;
-    max-height: 400px;
+    max-height: 425px;
     overflow: scroll;
+    background-color: white;
+    border-radius: 25px;
+    padding: 10px;
 }
 .TeacherFieldSet{
-    padding: 15px;
+    margin:2px;
+    padding: 10px;
+    border-radius: 15px;
 }
-th{
-    border-bottom:1px solid black
+.TeacherTableHead{
+    border-bottom:1px solid black;
+    padding:5px;
+    text-align: left;
 }
 .tableColumn{
     border-bottom:1px solid black;
@@ -42,9 +51,7 @@ table{
 .Name{
     padding: 20px;
 }
-.form-group :first-child{
-    padding:5px
-}
+
 .descriptionFormGroup{
     display:flex;
     flex-direction: column;

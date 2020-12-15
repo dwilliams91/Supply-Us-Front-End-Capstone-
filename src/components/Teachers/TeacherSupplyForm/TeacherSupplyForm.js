@@ -113,18 +113,17 @@ export const TeacherSupplyForm = (props) => {
     return (
         <>
             <div className="SupplyFormContainer">
-                <h2>{className}</h2>
+                
                 <form >
                     <fieldset className="TeacherFieldSet">
-                    <div className="form-group">
-                        <ItemSearch></ItemSearch>
-                    </div>
-                    </fieldset>
-                    <fieldset className="TeacherFieldSet">
+                    <p>Find or Filter The Item List</p>
                         <div className="form-group">
-                            <label>Select Type </label>
-                            <select value={Type} id="SupplyType" className="form-control" onChange={TypeChangeField}>
-
+                            <div>
+                            <ItemSearch></ItemSearch>
+                            <br></br>
+                            <label className="TeacherLabel">Select Type </label>
+                                <select value={Type} id="SupplyType" className="form-control" onChange={TypeChangeField}>
+                                
                                 <option value="0">Select Type</option>
                                 {SupplyTypes.map(e => (
                                     <option key={e.id} value={e.id}>
@@ -132,11 +131,12 @@ export const TeacherSupplyForm = (props) => {
                                     </option>
                                 ))}
                             </select>
+                            </div>
                         </div>
                     </fieldset>
                     <fieldset className="TeacherFieldSet">
                         <div className="form-group">
-                            <label>Select Item </label>
+                            <label className="TeacherLabel"> Select Item </label>
                             <select value={Item} id="SupplyItem" className="form-control" onChange={ItemChangeField}>
                                 <option value="0">Select Item</option>
 
@@ -154,13 +154,13 @@ export const TeacherSupplyForm = (props) => {
 
                     <fieldset className="TeacherFieldSet">
                         <div className="form-group">
-                            <label>{packageType} {ItemName.name}</label>
+                            <label className="TeacherLabel">{packageType} {ItemName.name}</label>
                             <input id="quantity" value={ItemQuantity} onChange={NumberChangeField}></input>
                         </div>
                     </fieldset>
                     <fieldset className="TeacherFieldSet">
                     <div className="form-group descriptionFormGroup">
-                        <label> Description</label>
+                        <label className="TeacherLabel"> Description</label>
                         <textarea id="descriptionField" placeholder="Example: Red binders, 3 ring," value={description} onChange={DescriptionChangeField}></textarea>
                         <p>Here is where you can add any specific information. If they need three binders, here is where you put the colors, or 3 inches or 1 inch </p>
                     </div>

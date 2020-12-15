@@ -109,13 +109,13 @@ export const CustomerTableList=()=>{
         <table>
                 <thead>
                     <tr>
-                        <th>
+                        <th className="CustomerTableHead">
                             Item
                         </th>
-                        <th>
+                        <th className="CustomerTableHead">
                             Number
                         </th>
-                        <th>
+                        <th  className="CustomerTableHead">
                             Description
                         </th>
                     </tr>

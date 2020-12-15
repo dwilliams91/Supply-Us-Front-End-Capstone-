@@ -73,6 +73,16 @@
       "userId": 4,
       "classListId": 8,
       "id": 8
+    },
+    {
+      "userId": 4,
+      "classListId": 1,
+      "id": 9
+    },
+    {
+      "userId": 4,
+      "classListId": 10,
+      "id": 10
     }
   ],
   "classLists": [

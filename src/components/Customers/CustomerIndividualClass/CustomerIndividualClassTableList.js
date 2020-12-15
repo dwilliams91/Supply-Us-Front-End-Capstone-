@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from "react"
-import { ClassListContext } from "../DataProviders/ClassListProvider"
-import {ClassListSupplyItemContext} from "../DataProviders/ClassListSupplyItemProvider"
+import { ClassListContext } from "../../DataProviders/ClassListProvider"
+import {ClassListSupplyItemContext} from "../../DataProviders/ClassListSupplyItemProvider"
 import {CustomerIndividualClassTable} from "./CustomerIndividualClassTable"
 
 export const CustomerIndividualClassTableList=(props)=>{

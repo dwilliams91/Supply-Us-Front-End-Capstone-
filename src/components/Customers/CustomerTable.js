@@ -26,13 +26,14 @@ export const CustomerTable = ({ myItem }) => {
                 <td className="tableColumn Number">
                     {myItem.number}
                 </td>
-                <td className="tableColumn DeleteButton">
+                <td  className="tableColumn DeleteButton">
                     <button onClick={() =>
                         toggleDescriptionList(myItem)
                     }
                     >see details for {myItem.name}</button>
                     <ItemDetails visbilityCheck={visbility} myItem={myItem}/>
                 </td>
+                
             </tr>
         </>
     )

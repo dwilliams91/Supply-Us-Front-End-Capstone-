@@ -11,6 +11,8 @@ import { TeacherSupplyTableList } from "./TeacherSupplyForm/TeacherSupplyTableLi
 import { Logout } from "../auth/Logout"
 import "../Teachers/TeacherSupplyForm/TeacherSupply.css"
 import { TeacherAddItem } from "./TeacherAddItem/TeacherAddItem"
+import {TeacherSupply} from "./TeacherSupply"
+
 export const TeacherApplicationView = (props) => {
     const userType=parseInt(localStorage.getItem("userType"))
     console.log("userType", userType)
@@ -41,14 +43,10 @@ export const TeacherApplicationView = (props) => {
             <ClassListSupplyItemProvider>
                 <SupplyTypeProvider>
                     <SupplyItemsProvider>
-                        <div className="TeacherSupplyContainer">
                     <Route path="/teachers/class:ClassListId(\d+)" render={
-                                props => <TeacherSupplyForm {...props} />
+                                props => <TeacherSupply {...props} />
                             } />
-                            <Route path="/teachers/class:ClassListId(\d+)" render={
-                                props => <TeacherSupplyTableList {...props} />
-                            } />
-                        </div>
+                            
                     </SupplyItemsProvider>
                 </SupplyTypeProvider>
             </ClassListSupplyItemProvider>

@@ -5,7 +5,7 @@ export const ItemSearch=()=>{
     const {searchTerms, setSearchTerms}=useContext(SupplyItemContext)
     return(
         <>
-        <label>Search</label>
+        <label className="TeacherLabel">Search</label>
         <input onKeyUp={
             (keyEvent) => {
                 setSearchTerms(keyEvent.target.value)

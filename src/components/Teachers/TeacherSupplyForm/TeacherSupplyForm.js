@@ -4,6 +4,7 @@ import { SupplyItemContext } from "../../DataProviders/SupplyItemProvider"
 import { SupplyTypeContext } from "../../DataProviders/SupplyTypeProvider"
 import { ClassListContext } from "../../DataProviders/ClassListProvider"
 import { ItemSearch } from "./ItemSearch"
+import "./TeacherSupply.css"
 export const TeacherSupplyForm = (props) => {
     // getting the items from the providers
     const { SupplyTypes, getSupplyTypes } = useContext(SupplyTypeContext)
@@ -19,7 +20,7 @@ export const TeacherSupplyForm = (props) => {
     const [filteredSupplyItems, setFilteredSupplyItems] = useState([])
     const [ItemNumber, setItemNumber] = useState(0)
     const [description, setDescription] = useState("")
-    const [ItemQuantity, setItemQuantity]=useState("")
+    const [ItemQuantity, setItemQuantity] = useState("")
     // SET UP STATE VARIABLE FOR NUMBER SET TO EMPTY STRING
     const className = props.location.state.chosenClassName
     const classId = props.location.state.chosenClass.id
@@ -86,7 +87,7 @@ export const TeacherSupplyForm = (props) => {
             description: description,
             classListId: classId
         }
-        addClassListSupplyItem(newItem).then(()=>setItemQuantity(""))
+        addClassListSupplyItem(newItem).then(() => setItemQuantity(""))
     }
     // CHANGE THIS
     // this changes the values of the number and the description whenever one of them is changed
@@ -94,10 +95,10 @@ export const TeacherSupplyForm = (props) => {
     const NumberChangeField = (e) => {
         setItemQuantity(e.target.value)
     }
-    const DescriptionChangeField=(e)=>{
+    const DescriptionChangeField = (e) => {
         setDescription(e.target.value)
     }
-   
+
     //   this is the search functionality
     useEffect(() => {
         if (searchTerms !== "") {
@@ -114,11 +115,12 @@ export const TeacherSupplyForm = (props) => {
             <div className="SupplyFormContainer">
                 <h2>{className}</h2>
                 <form >
-                    <fieldset>
-
+                    <fieldset className="TeacherFieldSet">
+                    <div className="form-group">
                         <ItemSearch></ItemSearch>
+                    </div>
                     </fieldset>
-                    <fieldset>
+                    <fieldset className="TeacherFieldSet">
                         <div className="form-group">
                             <label>Select Type </label>
                             <select value={Type} id="SupplyType" className="form-control" onChange={TypeChangeField}>
@@ -132,7 +134,7 @@ export const TeacherSupplyForm = (props) => {
                             </select>
                         </div>
                     </fieldset>
-                    <fieldset>
+                    <fieldset className="TeacherFieldSet">
                         <div className="form-group">
                             <label>Select Item </label>
                             <select value={Item} id="SupplyItem" className="form-control" onChange={ItemChangeField}>
@@ -149,17 +151,19 @@ export const TeacherSupplyForm = (props) => {
                 </form>
 
                 <form >
-                   
-                    <fieldset>
-                        <label>{packageType} {ItemName.name}</label>
-                        <input id="quantity" value={ItemQuantity} onChange={NumberChangeField}></input>
 
+                    <fieldset className="TeacherFieldSet">
+                        <div className="form-group">
+                            <label>{packageType} {ItemName.name}</label>
+                            <input id="quantity" value={ItemQuantity} onChange={NumberChangeField}></input>
+                        </div>
                     </fieldset>
-                    <fieldset>
-
+                    <fieldset className="TeacherFieldSet">
+                    <div className="form-group descriptionFormGroup">
                         <label> Description</label>
-                        <textarea id="descriptionField" placeholder="Example: Red binders, 3 ring,"  value= {description} onChange={DescriptionChangeField}></textarea>
+                        <textarea id="descriptionField" placeholder="Example: Red binders, 3 ring," value={description} onChange={DescriptionChangeField}></textarea>
                         <p>Here is where you can add any specific information. If they need three binders, here is where you put the colors, or 3 inches or 1 inch </p>
+                    </div>
                     </fieldset>
                     <button type="submit" onClick={evt => {
                         evt.preventDefault()

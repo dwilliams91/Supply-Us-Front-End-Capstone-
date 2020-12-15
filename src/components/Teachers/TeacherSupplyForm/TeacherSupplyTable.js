@@ -3,7 +3,7 @@ import { ClassListSupplyItemContext } from "../../DataProviders/ClassListSupplyI
 import { TeacherSupplyTableList } from "./TeacherSupplyTableList"
 
 export const TeacherSupplyTable=({myItem})=>{
-    const {deleteItem} = useContext(ClassListSupplyItemContext)  
+    const {deleteItem, getClassListSupplyItem} = useContext(ClassListSupplyItemContext)  
     return(
         <>
         <tr className="TableRow">
@@ -17,8 +17,10 @@ export const TeacherSupplyTable=({myItem})=>{
                {myItem.description}
             </td>
             <td className="tableColumn DeleteButton">
-               <button onClick={ ()=>
-               deleteItem(myItem.id)
+               <button onClick={ ()=>{
+
+                   deleteItem(myItem.id).then(()=>getClassListSupplyItem)
+               }
                }
                >delete</button>
             </td>

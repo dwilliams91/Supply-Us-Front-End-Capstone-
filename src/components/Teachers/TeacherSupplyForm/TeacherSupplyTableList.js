@@ -7,13 +7,12 @@ export const TeacherSupplyTableList = (props) => {
     const classId=props.location.state.chosenClass.id
 
     useEffect(() => {
-
         getClassListSupplyItem()
     }, [])
     
     useEffect(()=>{
         getClassListSupplyItem()
-    },[classListSupplyItem])
+    },[])
 
     return (
         <>

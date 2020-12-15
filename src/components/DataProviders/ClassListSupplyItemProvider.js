@@ -29,7 +29,7 @@ export const ClassListSupplyItemProvider= (props) => {
         return fetch(`http://localhost:8088/ClassListSupplyItems/${ClassItemSupplyListId}`, {
             method: "DELETE"
         })
-            .then(ClassItemSupplyListId)
+            .then(getClassListSupplyItem)
     }
     return (
         <ClassListSupplyItemContext.Provider value={{

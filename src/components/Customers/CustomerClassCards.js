@@ -19,7 +19,7 @@ export const CustomerClassCards=({myClass, props})=>{
                 chosenClass:myClass
             }
                 }}>
-                    <button>click me</button>
+                    <button>See only {myClass.classList.name}</button>
             </Link>
     </div>
     )

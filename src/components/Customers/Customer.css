@@ -1,8 +1,13 @@
 .CustomerClassesCard{
-    border: 1px solid black;
+    border: 1px solid #00a5d4;
     margin-bottom: 5px;
-    padding:5px
+    padding:5px;
+    border-radius: 10px;
 }
+.CustomerClassesCard:hover{
+    box-shadow: 2px 2px 0px 2px grey;
+}
+
 .CustomerContainer{
     min-height: 500px;
     padding: 20px 0 20px 0;
@@ -24,7 +29,7 @@
 }
 .CustomerTable{
     flex-basis: 60%;
-    border:1px solid black;
+    border:1px solid #00a5d4;
     max-height: 500px;
     overflow: scroll;
     background-color: white;

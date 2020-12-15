@@ -6,20 +6,21 @@ import { ClassListSupplyItemProvider } from "../DataProviders/ClassListSupplyIte
 import { TeacherProvider } from "../DataProviders/TeacherDataProvider"
 import { UserClassesProvider } from "../DataProviders/UserClassesProvider"
 import { CustomerForm } from "./CustomerForm"
-import { CustomerIndividualClassTableList } from "./CustomerIndividualClassTableList"
+import { CustomerIndividualClassTableList } from "./CustomerIndividualClass/CustomerIndividualClassTableList"
 import { CustomerTableList } from "./CustomerTableList"
 export const CustomerApplicationView = () => {
     return (
         <>
+        <div className="CustomerContainer">
             <ClassListSupplyItemProvider>
                 <TeacherProvider>
                     <ClassListProvider>
                         <UserClassesProvider>
-                            <div className="CustomerContainer">
+                            
                                 <Route exact path="/customers" render={props => <CustomerForm {...props} />} />
                                 <Route exact path="/customers" render={props => <CustomerTableList {...props} />} />
 
-                            </div>
+                            
                         </UserClassesProvider>
                     </ClassListProvider>
                 </TeacherProvider>
@@ -29,19 +30,19 @@ export const CustomerApplicationView = () => {
                 <ClassListSupplyItemProvider>
                     <ClassListProvider>
                         <UserClassesProvider>
-                            <div className="CustomerContainer">
+                            
                         <Route path="/customers/class:ClassListId(\d+)" render={
                                 props => <CustomerForm {...props} />
                             } />
                             <Route path="/customers/class:ClassListId(\d+)" render={
                                 props => <CustomerIndividualClassTableList {...props} />
                             } />
-                           </div>
+                           
                         </UserClassesProvider>
                     </ClassListProvider>
                 </ClassListSupplyItemProvider>
             </TeacherProvider>
-
+            </div>
 
             <Route render={props => <Logout {...props} />} />        </>
     )

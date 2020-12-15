@@ -17,3 +17,7 @@
 .AddEditCard >h3{
     text-align: center;
 }
+.AddEditCard:Hover{
+    box-shadow: 5px 5px 0px 5px #00a5d4;
+
+}

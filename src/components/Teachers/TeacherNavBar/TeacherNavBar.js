@@ -12,7 +12,7 @@ export const TeacherNavBar = (props) => {
                 <Link className="navbar__link" to="/teachers/addClass">Add a Class</Link>
             </li>
             <li className="navbar__item">
-                <Link className="navbar__link" to="/teachers/addItem">Add a Item</Link>
+                <Link className="navbar__link" to="/teachers/addItem">Add an Item To the Database</Link>
             </li>
         </ul>
     )

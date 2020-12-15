@@ -10,7 +10,7 @@ import { ClassListSupplyItemProvider } from "../DataProviders/ClassListSupplyIte
 import { TeacherSupplyTableList } from "./TeacherSupplyForm/TeacherSupplyTableList"
 import { Logout } from "../auth/Logout"
 import "../Teachers/TeacherSupplyForm/TeacherSupply.css"
-import { TeacherAddItem } from "./TeacherAddItem"
+import { TeacherAddItem } from "./TeacherAddItem/TeacherAddItem"
 export const TeacherApplicationView = (props) => {
     const userType=parseInt(localStorage.getItem("userType"))
     console.log("userType", userType)

@@ -1,0 +1,19 @@
+.AddItemContainer{
+    min-height: 400px;
+    padding-top: 20px;
+    background-color: #007cba;
+    margin: 0px 50px 0px 50px;
+    border-radius: 25px;
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.AddEditCard{
+    background-color: white;
+    padding:1px;
+    border-radius: 25px;
+    padding:10px
+}
+.AddEditCard >h3{
+    text-align: center;
+}

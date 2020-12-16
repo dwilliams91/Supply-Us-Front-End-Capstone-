@@ -5,9 +5,8 @@ import { SupplyTypeContext } from "../../DataProviders/SupplyTypeProvider"
 import { ClassListContext } from "../../DataProviders/ClassListProvider"
 import { ItemSearch } from "./ItemSearch"
 import "./TeacherSupply.css"
-import {Dropdown} from "react-bootstrap"
-import DropdownMenu from "react-bootstrap/esm/DropdownMenu"
-import DropdownItem from "react-bootstrap/esm/DropdownItem"
+import { Form, Row, Col } from "react-bootstrap"
+
 export const TeacherSupplyForm = (props) => {
     // getting the items from the providers
     const { SupplyTypes, getSupplyTypes } = useContext(SupplyTypeContext)
@@ -95,8 +94,8 @@ export const TeacherSupplyForm = (props) => {
     // this changes the values of the number and the description whenever one of them is changed
     const NumberChangeField = (e) => {
         console.log(e.target.value)
-        if (e.target.value){
-            if (isNaN(e.target.value)!==true){
+        if (e.target.value) {
+            if (isNaN(e.target.value) !== true) {
                 setItemQuantity(e.target.value)
             }
             else {
@@ -105,9 +104,9 @@ export const TeacherSupplyForm = (props) => {
         } else {
             setItemQuantity("")
         }
-        
+
     }
-    
+
     const DescriptionChangeField = (e) => {
         setDescription(e.target.value)
     }
@@ -126,67 +125,76 @@ export const TeacherSupplyForm = (props) => {
     return (
         <>
             <div className="SupplyFormContainer">
-                
-            <form >
-                    <fieldset className="TeacherFieldSet">
-                        <div>
-                            <label className="TeacherLabel"> Select Item </label>
-                            <select size="sm" value={Item} id="SupplyItem"  onChange={ItemChangeField}>
+                <Form.Group>
+                    <Row>
+                        <Col>
+                            <Form.Label >Select an Item</Form.Label>
+                        </Col>
+                        <Col>
+                            <Form.Control size="sm" as="select" value={Item} id="SupplyItem" onChange={ItemChangeField} >
                                 <option value="0">Select Item</option>
-
                                 {filteredSupplyItems.map(e => (
                                     <option key={e.id} value={e.id}>
                                         {e.name}
                                     </option>
                                 ))}
-                            </select>
-                        </div>
-                    <p>Can't find what you are looking for? Narrow the list down by selecting a type or searching.</p>
-                        <div>
-                        <label className="TeacherLabel">Select Type </label>
-                                <select value={Type} id="SupplyType"  onChange={TypeChangeField}>
-                                
+                            </Form.Control>
+                        </Col>
+                    </Row>
+                </Form.Group>
+
+                <Form.Group>
+                    <Row>
+                        <Col>
+                            <Form.Label>Can't find what you are looking for? Narrow the list down by selecting a type or searching.</Form.Label>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Form.Label column sm="5"> Select Type</Form.Label>
+                        <Col sm="7">
+                            <Form.Control className="Align-Left" size="sm" as="select" value={Type} id="SupplyType" onChange={TypeChangeField}>
                                 <option value="0">Select Type</option>
                                 {SupplyTypes.map(e => (
                                     <option key={e.id} value={e.id}>
                                         {e.type}
                                     </option>
                                 ))}
-                            </select>
-                            <div>
-                            <ItemSearch></ItemSearch>
-                            <br></br>
-                            
-                            </div>
-                        </div>
-                    </fieldset>
-                </form>
+                            </Form.Control>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <ItemSearch></ItemSearch>
+                    </Row>
+                </Form.Group>
+                <Form.Group>
+                    <Row>
+                        <Form.Label column>{packageType} {ItemName.name}</Form.Label>
+                        <Col>
+                            <Form.Control size="sm" type="text " value={ItemQuantity} onChange={NumberChangeField}>
+                            </Form.Control>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            <Form.Label>Description</Form.Label>
+                        </Col>
+                        <Col>
+                            <Form.Control size="sm" as="textarea" placeholder="Example: Red binders, 3 ring," value={description} onChange={DescriptionChangeField}>
+                            </Form.Control>
+                        </Col>
+                    </Row>
+                    <Form.Label>Here is where you can add any specific information. If they need three binders, here is where you put the colors, or 3 inches or 1 inch</Form.Label>
+                </Form.Group>
+                <button type="submit" onClick={evt => {
+                    evt.preventDefault()
+                    SaveItem()
+                    setItem(0)
+                    setType(0)
+                    setItemNumber(0)
+                    setItemName("")
+                    setDescription("")
+                }}> Save Item </button>
 
-                <form >
-
-                    <fieldset className="TeacherFieldSet">
-                        <div>
-                            <label className="TeacherLabel">{packageType} {ItemName.name}</label>
-                            <input id="quantity" value={ItemQuantity}  onChange={NumberChangeField}></input>
-                        </div>
-                    </fieldset>
-                    <fieldset className="TeacherFieldSet">
-                    <div className="descriptionFormGroup">
-                        <label className="TeacherLabel"> Description</label>
-                        <textarea id="descriptionField" placeholder="Example: Red binders, 3 ring," value={description} onChange={DescriptionChangeField}></textarea>
-                        <p>Here is where you can add any specific information. If they need three binders, here is where you put the colors, or 3 inches or 1 inch </p>
-                    </div>
-                    </fieldset>
-                    <button type="submit" onClick={evt => {
-                        evt.preventDefault()
-                        SaveItem()
-                        setItem(0)
-                        setType(0)
-                        setItemNumber(0)
-                        setItemName("")
-                        setDescription("")
-                    }}> Save Item </button>
-                </form>
             </div>
         </>
     )

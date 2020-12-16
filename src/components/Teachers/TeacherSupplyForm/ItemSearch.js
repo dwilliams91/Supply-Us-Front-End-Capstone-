@@ -1,16 +1,22 @@
-import React, { useContext }  from "react"
+import React, { useContext } from "react"
 import { SupplyItemContext } from "../../DataProviders/SupplyItemProvider"
-
-export const ItemSearch=()=>{
-    const {searchTerms, setSearchTerms}=useContext(SupplyItemContext)
-    return(
+import { Form, Col, Row } from "react-bootstrap"
+export const ItemSearch = () => {
+    const { searchTerms, setSearchTerms } = useContext(SupplyItemContext)
+    return (
         <>
-        <label className="TeacherLabel">Search</label>
-        <input onKeyUp={
-            (keyEvent) => {
-                setSearchTerms(keyEvent.target.value)
-            }
-        }placeholder="search for an item"></input>
+            {/* <Form.Group as={Row}> */}
+                <Form.Label column sm="5" >Search</Form.Label>
+                <Col size="sm">
+                    <Form.Control size="sm" type="text" placeholder="search to filter dropdown" onKeyUp={
+                        (keyEvent) => {
+                            setSearchTerms(keyEvent.target.value)
+                        }
+                    }>
+                    </Form.Control>
+                </Col>
+            {/* </Form.Group> */}
+
         </>
     )
 }

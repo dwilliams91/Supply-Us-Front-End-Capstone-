@@ -3,6 +3,7 @@ import { ClassListSupplyItemContext } from "../DataProviders/ClassListSupplyItem
 import { UserClassesContext } from "../DataProviders/UserClassesProvider"
 import { CustomerTable } from "./CustomerTable"
 import "./Customer.css"
+import {Table} from "react-bootstrap"
 
 export const CustomerTableList=()=>{
     const {userClasses, getUserClasses}=useContext(UserClassesContext)
@@ -108,16 +109,16 @@ export const CustomerTableList=()=>{
         {/* {console.log(finalAddedArray)} */}
         <div className="CustomerTable">
         <h2>Your Supply List</h2>
-        <table>
+        <Table striped bordered hover>
                 <thead>
                     <tr>
-                        <th className="CustomerTableHead">
+                        <th colSpan="1" className="CustomerTableHead">
                             Item
                         </th>
-                        <th className="CustomerTableHead">
+                        <th colSpan="1"className="CustomerTableHead">
                             Number
                         </th>
-                        <th  className="CustomerTableHead">
+                        <th  colSpan="3" className="CustomerTableHead">
                             Description
                         </th>
                     </tr>
@@ -127,7 +128,7 @@ export const CustomerTableList=()=>{
 
                 </tbody>
 
-            </table>
+            </Table>
             {/* <button onClick={event=>addLists(userClasses, classListSupplyItem)}> display the list of all my items</button> */}
             </div>
         </>

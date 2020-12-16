@@ -4,6 +4,8 @@ import { ClassListContext } from "../DataProviders/ClassListProvider"
 import {UserClassesContext} from "../DataProviders/UserClassesProvider"
 import {CustomerClassCards} from "./CustomerClassCards"
 import "./Customer.css"
+import { Button } from 'react-bootstrap';
+
 export const CustomerForm = (props) => {
     // get all the things you will need
     const { Teachers, getTeachers } = useContext(TeacherContext)

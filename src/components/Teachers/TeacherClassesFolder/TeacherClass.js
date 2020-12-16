@@ -1,7 +1,7 @@
 import React, {useContext} from "react"
 import { Link } from "react-router-dom"
 import { ClassListContext } from "../../DataProviders/ClassListProvider"
-
+import {Button} from "react-bootstrap"
 
 export const TeacherClass = ({myClass}) => {
     const {deleteClassList}=useContext(ClassListContext)
@@ -20,7 +20,7 @@ export const TeacherClass = ({myClass}) => {
                 { myClass.name }
             </Link>
         </h3>
-        <button onClick={()=>deleteClassList(myClass.id)}>Delete</button>
+        <Button variant="outline-primary" onClick={()=>deleteClassList(myClass.id)}>Delete</Button>
         </div>
         </>
 )

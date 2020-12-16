@@ -1,8 +1,8 @@
-.navbar {
+.NavBarFlex {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-}
+    }
 
 .navbar__item {
     flex-basis: 20%;

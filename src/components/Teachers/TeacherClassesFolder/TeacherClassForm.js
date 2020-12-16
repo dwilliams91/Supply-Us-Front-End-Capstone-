@@ -1,6 +1,6 @@
 import React, { useContext, useRef } from "react"
 import { ClassListContext } from "../../DataProviders/ClassListProvider"
-
+import {Button} from "react-bootstrap"
 export const TeacherClassForm = (props) => {
     // get the add class function
     const { addClassList } = useContext(ClassListContext)
@@ -29,10 +29,10 @@ export const TeacherClassForm = (props) => {
                 <form className="TeacherClassForm">
                     <h2 className="TeacherClassFormLabel">Class name</h2>
                     <input type="text" id="AddingAClass" ref={name} required autoFocus className="form-control" placeholder="Name of the class" />
-                    <button type="submit" onClick={evt => {
+                    <Button type="submit" onClick={evt => {
                         evt.preventDefault() // Prevent browser from submitting the form
                         constructNewClass()
-                    }}> Save </button>
+                    }}> Save </Button>
                 </form>
                 </div>
                 <div className="AddClassPicture">

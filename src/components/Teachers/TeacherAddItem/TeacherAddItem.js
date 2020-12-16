@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState, useRef } from "react"
 import { SupplyItemContext } from "../../DataProviders/SupplyItemProvider"
 import { SupplyTypeContext } from "../../DataProviders/SupplyTypeProvider"
 import "./TeacherAddItem.css"
+import { Button } from "react-bootstrap"
+
 export const TeacherAddItem = (props) => {
     // set up all the things I will need
     const { SupplyItems, getSupplyItems, addSupplyItem, updateItem } = useContext(SupplyItemContext)
@@ -110,63 +112,63 @@ export const TeacherAddItem = (props) => {
                 <div className="EditItemForm">
                     <div className="AddEditCard">
                         <h3>To Edit an Item</h3>
-                    
-                    <fieldset>
-                        <label>Select an Item</label>
-                        <select id="SupplyType" value={editItem} className="form-control" onChange={EditSelected}>
-                            <option value="0">Select an Item</option>
-                            {SupplyItems.map(e => (
-                                <option key={e.id} value={e.id}>
-                                    {e.name}
-                                </option>
-                            ))}
-                        </select>
-                    </fieldset>
+
+                        <fieldset>
+                            <label>Select an Item</label>
+                            <select id="SupplyType" value={editItem} className="form-control" onChange={EditSelected}>
+                                <option value="0">Select an Item</option>
+                                {SupplyItems.map(e => (
+                                    <option key={e.id} value={e.id}>
+                                        {e.name}
+                                    </option>
+                                ))}
+                            </select>
+                        </fieldset>
                     </div>
                 </div>
 
                 <div className="AddItemForm">
                     <div className="AddEditCard">
                         <h3> To Add an Item</h3>
-                    
-                    <fieldset>
+
+                        <fieldset>
 
 
-                        <label>Select Type </label>
-                        <select value={Type} id="SupplyType" className="form-control" onChange={TypeChangeField}>
+                            <label>Select Type </label>
+                            <select value={Type} id="SupplyType" className="form-control" onChange={TypeChangeField}>
 
-                            <option value="0">Select Type</option>
-                            {SupplyTypes.map(e => (
-                                <option key={e.id} value={e.id}>
-                                    {e.type}
-                                </option>
-                            ))}
-                        </select>
-                        <br></br>
-                        <br></br>
-                        <label> <strong>OR</strong> Add a New Type if needed</label>
-                        <input onChange={addingNewTypeChangeField}></input>
-                        <button onClick={evt => {
-                            saveType()
-                        }}>Add Type</button>
+                                <option value="0">Select Type</option>
+                                {SupplyTypes.map(e => (
+                                    <option key={e.id} value={e.id}>
+                                        {e.type}
+                                    </option>
+                                ))}
+                            </select>
+                            <label> <strong>OR</strong> Add a New Type if needed</label>
 
-                    </fieldset>
-                    <fieldset>
-                        <label>Name of New Item</label>
-                        <input value={newItemName} onChange={newItemNameChangeField}></input>
-                    </fieldset>
-                    <fieldset>
-                        <p>Is it sold in Packs?</p>
-                        <label>Yes</label>
-                        <input type="checkbox" ref={Packaging} value={Package} onChange={PackageChangeField}></input>
-                        <label> No</label>
-                        <input type="checkbox"></input>
-                    </fieldset>
+                            <input onChange={addingNewTypeChangeField}></input>
+                            <Button onClick={evt => {
+                                saveType()
+                            }}>Add Type</Button>
+                            <br></br>
+                            <br></br>
+                        </fieldset>
+                        <fieldset>
+                            <label>Name of New Item</label>
+                            <input value={newItemName} onChange={newItemNameChangeField}></input>
+                        </fieldset>
+                        <fieldset>
+                            <p>Is it sold in Packs?</p>
+                            <label>Yes</label>
+                            <input type="checkbox" ref={Packaging} value={Package} onChange={PackageChangeField}></input>
+                            <label> No</label>
+                            <input type="checkbox"></input>
+                        </fieldset>
 
-                    <button type="submit" onClick={evt => {
-                        evt.preventDefault()
-                        SaveItem()
-                    }}> Save Item </button>
+                        <Button type="submit" onClick={evt => {
+                            evt.preventDefault()
+                            SaveItem()
+                        }}> Save Item </Button>
                     </div>
                 </div>
             </div>

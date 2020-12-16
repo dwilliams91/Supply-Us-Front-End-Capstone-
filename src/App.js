@@ -7,6 +7,7 @@ import { TeacherApplicationView } from "./components/Teachers/TeacherApplication
 import { CustomerApplicationView } from "./components/Customers/CustomerApplicationView";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 import "./App.css"
 import { UserTypeProvider } from "./components/DataProviders/UserTypeDataProvider";
 function App() {
@@ -15,7 +16,8 @@ function App() {
     <>
     <header>
       <h1>Supply Us</h1>
-      <img id="logo"src="supply.png"></img>
+      <div className="logo"></div>
+      {/* <img id="logo" src="./Pictures/Supply.png" alt="logo"/> */}
     </header>
       <Route render={() => {
         // The user id is saved under the key app_user_id in local Storage. Change below if needed!

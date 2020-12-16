@@ -1,5 +1,5 @@
 .classCardContainer{
-    min-height: 500px;
+    min-height: 600px;
     padding-top: 20px;
     background-color: #007cba;
     margin: 0px 50px 0px 50px;
@@ -24,7 +24,7 @@
     box-shadow: 5px 5px 0px 5px #00a5d4;
 }
 .addClassCardContainer{
-    min-height: 500px;
+    min-height: 600px;
     padding-top: 20px;
     background-color: #007cba;
     margin: 0px 50px 0px 50px;
@@ -38,7 +38,7 @@
     border-radius: 25px;
     max-height: 12em;
     padding: 10px;
-    min-width: 15em;
+    min-width: 20em;
     border:2px solid #005a87
 }
 .addClassCard:hover{

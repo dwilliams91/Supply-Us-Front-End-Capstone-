@@ -125,12 +125,13 @@ export const TeacherSupplyForm = (props) => {
     return (
         <>
             <div className="SupplyFormContainer">
+                <div className="borderAround">
                 <Form.Group>
                     <Row>
-                        <Col>
+                        <Col sm="3">
                             <Form.Label >Select an Item</Form.Label>
                         </Col>
-                        <Col>
+                        <Col sm="">
                             <Form.Control size="sm" as="select" value={Item} id="SupplyItem" onChange={ItemChangeField} >
                                 <option value="0">Select Item</option>
                                 {filteredSupplyItems.map(e => (
@@ -145,13 +146,15 @@ export const TeacherSupplyForm = (props) => {
 
                 <Form.Group>
                     <Row>
-                        <Col>
+                        <Col sm="">
                             <Form.Label>Can't find what you are looking for? Narrow the list down by selecting a type or searching.</Form.Label>
                         </Col>
                     </Row>
                     <Row>
-                        <Form.Label column sm="5"> Select Type</Form.Label>
-                        <Col sm="7">
+                        <Col sm="3">
+                            <Form.Label> Select Type</Form.Label>
+                        </Col>
+                        <Col sm="">
                             <Form.Control className="Align-Left" size="sm" as="select" value={Type} id="SupplyType" onChange={TypeChangeField}>
                                 <option value="0">Select Type</option>
                                 {SupplyTypes.map(e => (
@@ -166,24 +169,29 @@ export const TeacherSupplyForm = (props) => {
                         <ItemSearch></ItemSearch>
                     </Row>
                 </Form.Group>
+                </div>
                 <Form.Group>
                     <Row>
-                        <Form.Label column>{packageType} {ItemName.name}</Form.Label>
-                        <Col>
+                        <Col sm="3">
+                            <Form.Label>{packageType} {ItemName.name}</Form.Label>
+                        </Col>
+                        <Col sm="">
                             <Form.Control size="sm" type="text " value={ItemQuantity} onChange={NumberChangeField}>
                             </Form.Control>
                         </Col>
                     </Row>
                     <Row>
-                        <Col>
+                        <Col sm="3">
                             <Form.Label>Description</Form.Label>
                         </Col>
-                        <Col>
+                        <Col sm="">
                             <Form.Control size="sm" as="textarea" placeholder="Example: Red binders, 3 ring," value={description} onChange={DescriptionChangeField}>
                             </Form.Control>
                         </Col>
                     </Row>
-                    <Form.Label>Here is where you can add any specific information. If they need three binders, here is where you put the colors, or 3 inches or 1 inch</Form.Label>
+                    <Col sm="">
+                        <Form.Label>Here is where you can add any specific information. If they need three binders, here is where you put the colors, or 3 inches or 1 inch</Form.Label>
+                    </Col>
                 </Form.Group>
                 <button type="submit" onClick={evt => {
                     evt.preventDefault()

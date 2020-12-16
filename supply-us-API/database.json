@@ -600,6 +600,13 @@
       "description": "asdf",
       "classListId": 10,
       "id": 41
+    },
+    {
+      "number": "2",
+      "supplyItemId": 3,
+      "description": "Washable",
+      "classListId": 1,
+      "id": 42
     }
   ]
 }

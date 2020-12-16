@@ -600,13 +600,6 @@
       "description": "asdf",
       "classListId": 10,
       "id": 41
-    },
-    {
-      "number": "6",
-      "supplyItemId": 5,
-      "description": "asdf",
-      "classListId": 10,
-      "id": 42
     }
   ]
 }

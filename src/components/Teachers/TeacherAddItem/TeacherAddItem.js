@@ -127,7 +127,7 @@ export const TeacherAddItem = (props) => {
 
                 <div className="AddItemForm">
                     <div className="AddEditCard">
-                        <h3> To add an Item</h3>
+                        <h3> To Add an Item</h3>
                     
                     <fieldset>
 
@@ -142,8 +142,9 @@ export const TeacherAddItem = (props) => {
                                 </option>
                             ))}
                         </select>
-
-                        <label> or Add a New Type</label>
+                        <br></br>
+                        <br></br>
+                        <label> <strong>OR</strong> Add a New Type if needed</label>
                         <input onChange={addingNewTypeChangeField}></input>
                         <button onClick={evt => {
                             saveType()

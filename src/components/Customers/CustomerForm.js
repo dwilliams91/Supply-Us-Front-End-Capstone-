@@ -4,6 +4,8 @@ import { ClassListContext } from "../DataProviders/ClassListProvider"
 import {UserClassesContext} from "../DataProviders/UserClassesProvider"
 import {CustomerClassCards} from "./CustomerClassCards"
 import "./Customer.css"
+import { Button } from 'react-bootstrap';
+
 export const CustomerForm = (props) => {
     // get all the things you will need
     const { Teachers, getTeachers } = useContext(TeacherContext)
@@ -93,10 +95,10 @@ export const CustomerForm = (props) => {
                 ))}
             </select>
             </fieldset>
-            <button type="submit" onClick={event=>{
+            <Button type="submit" onClick={event=>{
                 event.preventDefault()
                 saveClasses()
-                }}> Save Class</button>
+                }}> Save Class</Button>
             </form>
             <h3>Your Classes</h3>
             <div className="myClassesContainer">
@@ -104,7 +106,7 @@ export const CustomerForm = (props) => {
                     return <CustomerClassCards key={singleClass.id} myClass={singleClass} props={props}></CustomerClassCards> 
                 })}
             </div>
-            <button onClick={event=>{displayAllLists()}}>Display All Classes</button>
+            <Button onClick={event=>{displayAllLists()}}>Display All Classes</Button>
             </div>
         </>
     )

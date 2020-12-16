@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react"
 import { ItemDetails } from "./ItemDetails";
 import "./Customer.css"
+import {Button} from "react-bootstrap"
 // this is to toggle the display
 export const CustomerTable = ({ myItem }) => {
     const [packageType, setPackageType]=useState("")
@@ -23,17 +24,17 @@ export const CustomerTable = ({ myItem }) => {
         <>
 
             <tr className="TableRow">
-                <td className="tableColumn Name">
+                <td  colSpan="1" className="tableColumn Name">
                     {myItem.name}
                 </td>
-                <td className="tableColumn Number">
+                <td  colSpan="1" className="tableColumn Number">
      {myItem.number} {packageType}
                 </td>
-                <td  className="tableColumn DeleteButton">
-                    <button onClick={() =>
+                <td colSpan="6" className="tableColumn DeleteButton">
+                    <Button variant="outline-primary" size="sm" onClick={() =>
                         toggleDescriptionList(myItem)
                     }
-                    >see details for {myItem.name}</button>
+                    >see details for {myItem.name}</Button>
                     <ItemDetails visbilityCheck={visbility} myItem={myItem}/>
                 </td>
                 

@@ -5,6 +5,7 @@ import { Register } from "./components/auth/Register"
 import { TeacherNavBar } from "./components/Teachers/TeacherNavBar/TeacherNavBar";
 import { TeacherApplicationView } from "./components/Teachers/TeacherApplicationView";
 import { CustomerApplicationView } from "./components/Customers/CustomerApplicationView";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import "./App.css"
 import { UserTypeProvider } from "./components/DataProviders/UserTypeDataProvider";

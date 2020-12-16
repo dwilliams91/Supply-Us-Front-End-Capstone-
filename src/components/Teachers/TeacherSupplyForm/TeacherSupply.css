@@ -3,14 +3,14 @@
     min-height: 500px;
     padding-top: 20px;
     background-color: #007cba;
-    margin: 0px 50px 0px 50px;
+    margin: 0px 25px 0px 25px;
     border-radius: 25px;
     display:flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
 .SupplyFormContainer{
-    flex-basis: 30%;
+    flex-basis: 33%;
     min-height: 425px;
     max-height: 425px;
     background-color: white;

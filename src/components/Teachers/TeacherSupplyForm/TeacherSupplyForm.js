@@ -89,12 +89,22 @@ export const TeacherSupplyForm = (props) => {
         }
         addClassListSupplyItem(newItem).then(() => setItemQuantity(""))
     }
-    // CHANGE THIS
     // this changes the values of the number and the description whenever one of them is changed
-    // 
     const NumberChangeField = (e) => {
-        setItemQuantity(e.target.value)
+        console.log(e.target.value)
+        if (e.target.value){
+            if (isNaN(e.target.value)!==true){
+                setItemQuantity(e.target.value)
+            }
+            else {
+                window.alert("Please only put a number")
+            }
+        } else {
+            setItemQuantity("")
+        }
+        
     }
+    
     const DescriptionChangeField = (e) => {
         setDescription(e.target.value)
     }
@@ -114,26 +124,7 @@ export const TeacherSupplyForm = (props) => {
         <>
             <div className="SupplyFormContainer">
                 
-                <form >
-                    <fieldset className="TeacherFieldSet">
-                    <p>Find or Filter The Item List</p>
-                        <div className="form-group">
-                            <div>
-                            <ItemSearch></ItemSearch>
-                            <br></br>
-                            <label className="TeacherLabel">Select Type </label>
-                                <select value={Type} id="SupplyType" className="form-control" onChange={TypeChangeField}>
-                                
-                                <option value="0">Select Type</option>
-                                {SupplyTypes.map(e => (
-                                    <option key={e.id} value={e.id}>
-                                        {e.type}
-                                    </option>
-                                ))}
-                            </select>
-                            </div>
-                        </div>
-                    </fieldset>
+            <form >
                     <fieldset className="TeacherFieldSet">
                         <div className="form-group">
                             <label className="TeacherLabel"> Select Item </label>
@@ -147,6 +138,24 @@ export const TeacherSupplyForm = (props) => {
                                 ))}
                             </select>
                         </div>
+                    <p>Can't find what you are looking for? Narrow the list down by selecting a type or searching.</p>
+                        <div className="form-group">
+                        <label className="TeacherLabel">Select Type </label>
+                                <select value={Type} id="SupplyType" className="form-control" onChange={TypeChangeField}>
+                                
+                                <option value="0">Select Type</option>
+                                {SupplyTypes.map(e => (
+                                    <option key={e.id} value={e.id}>
+                                        {e.type}
+                                    </option>
+                                ))}
+                            </select>
+                            <div>
+                            <ItemSearch></ItemSearch>
+                            <br></br>
+                            
+                            </div>
+                        </div>
                     </fieldset>
                 </form>
 
@@ -155,7 +164,7 @@ export const TeacherSupplyForm = (props) => {
                     <fieldset className="TeacherFieldSet">
                         <div className="form-group">
                             <label className="TeacherLabel">{packageType} {ItemName.name}</label>
-                            <input id="quantity" value={ItemQuantity} onChange={NumberChangeField}></input>
+                            <input id="quantity" value={ItemQuantity}  onChange={NumberChangeField}></input>
                         </div>
                     </fieldset>
                     <fieldset className="TeacherFieldSet">

@@ -5,6 +5,9 @@ import { SupplyTypeContext } from "../../DataProviders/SupplyTypeProvider"
 import { ClassListContext } from "../../DataProviders/ClassListProvider"
 import { ItemSearch } from "./ItemSearch"
 import "./TeacherSupply.css"
+import {Dropdown} from "react-bootstrap"
+import DropdownMenu from "react-bootstrap/esm/DropdownMenu"
+import DropdownItem from "react-bootstrap/esm/DropdownItem"
 export const TeacherSupplyForm = (props) => {
     // getting the items from the providers
     const { SupplyTypes, getSupplyTypes } = useContext(SupplyTypeContext)
@@ -126,9 +129,9 @@ export const TeacherSupplyForm = (props) => {
                 
             <form >
                     <fieldset className="TeacherFieldSet">
-                        <div className="form-group">
+                        <div>
                             <label className="TeacherLabel"> Select Item </label>
-                            <select value={Item} id="SupplyItem" className="form-control" onChange={ItemChangeField}>
+                            <select size="sm" value={Item} id="SupplyItem"  onChange={ItemChangeField}>
                                 <option value="0">Select Item</option>
 
                                 {filteredSupplyItems.map(e => (
@@ -139,9 +142,9 @@ export const TeacherSupplyForm = (props) => {
                             </select>
                         </div>
                     <p>Can't find what you are looking for? Narrow the list down by selecting a type or searching.</p>
-                        <div className="form-group">
+                        <div>
                         <label className="TeacherLabel">Select Type </label>
-                                <select value={Type} id="SupplyType" className="form-control" onChange={TypeChangeField}>
+                                <select value={Type} id="SupplyType"  onChange={TypeChangeField}>
                                 
                                 <option value="0">Select Type</option>
                                 {SupplyTypes.map(e => (
@@ -162,13 +165,13 @@ export const TeacherSupplyForm = (props) => {
                 <form >
 
                     <fieldset className="TeacherFieldSet">
-                        <div className="form-group">
+                        <div>
                             <label className="TeacherLabel">{packageType} {ItemName.name}</label>
                             <input id="quantity" value={ItemQuantity}  onChange={NumberChangeField}></input>
                         </div>
                     </fieldset>
                     <fieldset className="TeacherFieldSet">
-                    <div className="form-group descriptionFormGroup">
+                    <div className="descriptionFormGroup">
                         <label className="TeacherLabel"> Description</label>
                         <textarea id="descriptionField" placeholder="Example: Red binders, 3 ring," value={description} onChange={DescriptionChangeField}></textarea>
                         <p>Here is where you can add any specific information. If they need three binders, here is where you put the colors, or 3 inches or 1 inch </p>

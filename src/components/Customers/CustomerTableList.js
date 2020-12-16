@@ -118,7 +118,7 @@ export const CustomerTableList=()=>{
                         <th colSpan="1"className="CustomerTableHead">
                             Number
                         </th>
-                        <th  colSpan="3" className="CustomerTableHead">
+                        <th  colSpan="6" className="CustomerTableHead">
                             Description
                         </th>
                     </tr>

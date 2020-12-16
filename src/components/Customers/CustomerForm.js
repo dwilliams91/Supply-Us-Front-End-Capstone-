@@ -95,10 +95,10 @@ export const CustomerForm = (props) => {
                 ))}
             </select>
             </fieldset>
-            <button type="submit" onClick={event=>{
+            <Button type="submit" onClick={event=>{
                 event.preventDefault()
                 saveClasses()
-                }}> Save Class</button>
+                }}> Save Class</Button>
             </form>
             <h3>Your Classes</h3>
             <div className="myClassesContainer">
@@ -106,7 +106,7 @@ export const CustomerForm = (props) => {
                     return <CustomerClassCards key={singleClass.id} myClass={singleClass} props={props}></CustomerClassCards> 
                 })}
             </div>
-            <button onClick={event=>{displayAllLists()}}>Display All Classes</button>
+            <Button onClick={event=>{displayAllLists()}}>Display All Classes</Button>
             </div>
         </>
     )

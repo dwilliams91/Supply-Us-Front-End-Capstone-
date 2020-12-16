@@ -39,18 +39,11 @@
       "id": 7
     },
     {
-      "email": "Annie@annie.com",
+      "email": "jennifer@jennifer.com",
       "password": "password",
       "userType": 1,
-      "name": "Annie Annie",
+      "name": "Jennifer Hosey",
       "id": 8
-    },
-    {
-      "email": "rena@rena.com",
-      "password": "password",
-      "userType": 1,
-      "name": "Rena M",
-      "id": 9
     }
   ],
   "userClasses": [
@@ -73,11 +66,6 @@
       "userId": 4,
       "classListId": 1,
       "id": 9
-    },
-    {
-      "userId": 4,
-      "classListId": 10,
-      "id": 10
     }
   ],
   "classLists": [
@@ -97,16 +85,6 @@
       "id": 3
     },
     {
-      "name": "1st Grade Math",
-      "userId": 8,
-      "id": 6
-    },
-    {
-      "name": "3rd Grade Math",
-      "userId": 8,
-      "id": 7
-    },
-    {
       "name": "1st Grade English",
       "userId": 6,
       "id": 8
@@ -117,8 +95,8 @@
       "id": 9
     },
     {
-      "name": "6th Grade Math",
-      "userId": 9,
+      "name": "Kindergarten",
+      "userId": 8,
       "id": 10
     }
   ],
@@ -497,55 +475,6 @@
       "id": 22
     },
     {
-      "number": "3",
-      "supplyItemId": "1",
-      "description": "",
-      "classListId": 6,
-      "id": 27
-    },
-    {
-      "number": "1",
-      "supplyItemId": "4",
-      "description": "24 count",
-      "classListId": 6,
-      "id": 28
-    },
-    {
-      "number": "1",
-      "supplyItemId": "24",
-      "description": "childproof",
-      "classListId": 6,
-      "id": 29
-    },
-    {
-      "number": "2",
-      "supplyItemId": "9",
-      "description": "1\" green and blue",
-      "classListId": 6,
-      "id": 30
-    },
-    {
-      "number": "1",
-      "supplyItemId": "1",
-      "description": "",
-      "classListId": 7,
-      "id": 31
-    },
-    {
-      "number": "2",
-      "supplyItemId": "11",
-      "description": "Grid Paper Spiral Notebooks",
-      "classListId": 7,
-      "id": 32
-    },
-    {
-      "number": "1",
-      "supplyItemId": "9",
-      "description": "1\" blue",
-      "classListId": 7,
-      "id": 33
-    },
-    {
       "number": "1",
       "supplyItemId": "11",
       "description": "",
@@ -588,25 +517,88 @@
       "id": 39
     },
     {
-      "number": "5",
-      "supplyItemId": 2,
-      "description": [],
-      "classListId": 10,
-      "id": 40
-    },
-    {
-      "number": "5",
-      "supplyItemId": 2,
-      "description": "asdf",
-      "classListId": 10,
-      "id": 41
-    },
-    {
       "number": "2",
       "supplyItemId": 3,
       "description": "Washable",
       "classListId": 1,
       "id": 42
+    },
+    {
+      "number": "2",
+      "supplyItemId": 3,
+      "description": "10 count",
+      "classListId": 10,
+      "id": 43
+    },
+    {
+      "number": "1",
+      "supplyItemId": 5,
+      "description": "",
+      "classListId": 10,
+      "id": 44
+    },
+    {
+      "number": "2",
+      "supplyItemId": 4,
+      "description": "Crayola 24 count",
+      "classListId": 10,
+      "id": 45
+    },
+    {
+      "number": "2",
+      "supplyItemId": 22,
+      "description": "8 count packs",
+      "classListId": 10,
+      "id": 46
+    },
+    {
+      "number": "1",
+      "supplyItemId": 9,
+      "description": "2 inch with a clear cover",
+      "classListId": 10,
+      "id": 47
+    },
+    {
+      "number": "1",
+      "supplyItemId": 10,
+      "description": "Red plastic folder with pockets and clasps",
+      "classListId": 10,
+      "id": 48
+    },
+    {
+      "number": "2",
+      "supplyItemId": 12,
+      "description": "Mead K-2 Primary Journal with space for writing at the top",
+      "classListId": 10,
+      "id": 49
+    },
+    {
+      "number": "3",
+      "supplyItemId": 34,
+      "description": "",
+      "classListId": 10,
+      "id": 50
+    },
+    {
+      "number": "1",
+      "supplyItemId": 8,
+      "description": "with a large and small opening",
+      "classListId": 10,
+      "id": 51
+    },
+    {
+      "number": "1",
+      "supplyItemId": 37,
+      "description": "to keep at school",
+      "classListId": 10,
+      "id": 52
+    },
+    {
+      "number": "1",
+      "supplyItemId": 38,
+      "description": "to keep at school",
+      "classListId": 10,
+      "id": 53
     }
   ]
 }

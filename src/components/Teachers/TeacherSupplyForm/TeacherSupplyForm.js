@@ -136,24 +136,6 @@ export const TeacherSupplyForm = (props) => {
                 <div className="borderAround">
                 <Form.Group>
                     <Row>
-                        <Col sm="4">
-                            <Form.Label >Select an Item</Form.Label>
-                        </Col>
-                        <Col sm="">
-                            <Form.Control size="sm" as="select" value={Item} id="SupplyItem" onChange={ItemChangeField} >
-                                <option value="0">Select Item</option>
-                                {filteredSupplyItems.map(e => (
-                                    <option key={e.id} value={e.id}>
-                                        {e.name}
-                                    </option>
-                                ))}
-                            </Form.Control>
-                        </Col>
-                    </Row>
-                </Form.Group>
-
-                <Form.Group>
-                    <Row>
                         <Col sm="">
                             <Form.Label>Can't find what you are looking for? Narrow the list down by selecting a type or searching.</Form.Label>
                         </Col>
@@ -176,8 +158,29 @@ export const TeacherSupplyForm = (props) => {
                     <Row>
                         <ItemSearch></ItemSearch>
                     </Row>
+                   
+                
+                                </Form.Group>
+                                </div>
+                <Form.Group>
+                    <Row className="addPadding">
+                        <Col sm="4">
+                            <h5>Select an Item</h5> 
+                            {/* <Form.Label ><strong>Select an Item</strong></Form.Label> */}
+                        </Col>
+                        <Col sm="">
+                            <Form.Control size="sm" as="select" value={Item} id="SupplyItem" onChange={ItemChangeField} >
+                                <option value="0">Select Item</option>
+                                {filteredSupplyItems.map(e => (
+                                    <option key={e.id} value={e.id}>
+                                        {e.name}
+                                    </option>
+                                ))}
+                            </Form.Control>
+                        </Col>
+                    </Row>
+                
                 </Form.Group>
-                </div>
                 <div className="borderAround">
                 <Form.Group>
                     <Row>
@@ -203,6 +206,7 @@ export const TeacherSupplyForm = (props) => {
                     </Col>
                 </Form.Group>
                 </div>
+
                 <Button type="submit" onClick={evt => {
                     evt.preventDefault()
                     SaveItem()
@@ -212,7 +216,6 @@ export const TeacherSupplyForm = (props) => {
                     setItemName("")
                     setDescription("")
                 }}> Save Item </Button>
-
             </div>
         </>
     )

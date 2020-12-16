@@ -39,18 +39,25 @@
       "id": 7
     },
     {
-      "email": "Annie@annie.com",
+      "email": "jennifer@jennifer.com",
       "password": "password",
       "userType": 1,
-      "name": "Annie Annie",
+      "name": "Jennifer Hosey",
       "id": 8
     },
     {
-      "email": "rena@rena.com",
+      "email": "Annie@annie.com",
       "password": "password",
       "userType": 1,
-      "name": "Rena M",
+      "name": "Annie D",
       "id": 9
+    },
+    {
+      "email": "alex@alex.com",
+      "password": "password",
+      "userType": 1,
+      "name": "Alex Clapton",
+      "id": 10
     }
   ],
   "userClasses": [
@@ -73,11 +80,6 @@
       "userId": 4,
       "classListId": 1,
       "id": 9
-    },
-    {
-      "userId": 4,
-      "classListId": 10,
-      "id": 10
     }
   ],
   "classLists": [
@@ -97,16 +99,6 @@
       "id": 3
     },
     {
-      "name": "1st Grade Math",
-      "userId": 8,
-      "id": 6
-    },
-    {
-      "name": "3rd Grade Math",
-      "userId": 8,
-      "id": 7
-    },
-    {
       "name": "1st Grade English",
       "userId": 6,
       "id": 8
@@ -117,9 +109,24 @@
       "id": 9
     },
     {
-      "name": "6th Grade Math",
-      "userId": 9,
+      "name": "Kindergarten",
+      "userId": 8,
       "id": 10
+    },
+    {
+      "name": "1st Grade",
+      "userId": 9,
+      "id": 11
+    },
+    {
+      "name": "2nd Grade",
+      "userId": 9,
+      "id": 12
+    },
+    {
+      "name": "3rd Grade",
+      "userId": 10,
+      "id": 13
     }
   ],
   "supplyTypes": [
@@ -388,6 +395,12 @@
       "name": "Manilla Folders",
       "packaging": true,
       "id": 41
+    },
+    {
+      "typeId": 1,
+      "name": "dry erase marker",
+      "packaging": true,
+      "id": 42
     }
   ],
   "classListSupplyItems": [
@@ -497,55 +510,6 @@
       "id": 22
     },
     {
-      "number": "3",
-      "supplyItemId": "1",
-      "description": "",
-      "classListId": 6,
-      "id": 27
-    },
-    {
-      "number": "1",
-      "supplyItemId": "4",
-      "description": "24 count",
-      "classListId": 6,
-      "id": 28
-    },
-    {
-      "number": "1",
-      "supplyItemId": "24",
-      "description": "childproof",
-      "classListId": 6,
-      "id": 29
-    },
-    {
-      "number": "2",
-      "supplyItemId": "9",
-      "description": "1\" green and blue",
-      "classListId": 6,
-      "id": 30
-    },
-    {
-      "number": "1",
-      "supplyItemId": "1",
-      "description": "",
-      "classListId": 7,
-      "id": 31
-    },
-    {
-      "number": "2",
-      "supplyItemId": "11",
-      "description": "Grid Paper Spiral Notebooks",
-      "classListId": 7,
-      "id": 32
-    },
-    {
-      "number": "1",
-      "supplyItemId": "9",
-      "description": "1\" blue",
-      "classListId": 7,
-      "id": 33
-    },
-    {
       "number": "1",
       "supplyItemId": "11",
       "description": "",
@@ -588,25 +552,431 @@
       "id": 39
     },
     {
-      "number": "5",
-      "supplyItemId": 2,
-      "description": [],
-      "classListId": 10,
-      "id": 40
-    },
-    {
-      "number": "5",
-      "supplyItemId": 2,
-      "description": "asdf",
-      "classListId": 10,
-      "id": 41
-    },
-    {
       "number": "2",
       "supplyItemId": 3,
       "description": "Washable",
       "classListId": 1,
       "id": 42
+    },
+    {
+      "number": "2",
+      "supplyItemId": 3,
+      "description": "10 count",
+      "classListId": 10,
+      "id": 43
+    },
+    {
+      "number": "1",
+      "supplyItemId": 5,
+      "description": "",
+      "classListId": 10,
+      "id": 44
+    },
+    {
+      "number": "2",
+      "supplyItemId": 4,
+      "description": "Crayola 24 count",
+      "classListId": 10,
+      "id": 45
+    },
+    {
+      "number": "2",
+      "supplyItemId": 22,
+      "description": "8 count packs",
+      "classListId": 10,
+      "id": 46
+    },
+    {
+      "number": "1",
+      "supplyItemId": 9,
+      "description": "2 inch with a clear cover",
+      "classListId": 10,
+      "id": 47
+    },
+    {
+      "number": "1",
+      "supplyItemId": 10,
+      "description": "Red plastic folder with pockets and clasps",
+      "classListId": 10,
+      "id": 48
+    },
+    {
+      "number": "2",
+      "supplyItemId": 12,
+      "description": "Mead K-2 Primary Journal with space for writing at the top",
+      "classListId": 10,
+      "id": 49
+    },
+    {
+      "number": "3",
+      "supplyItemId": 34,
+      "description": "",
+      "classListId": 10,
+      "id": 50
+    },
+    {
+      "number": "1",
+      "supplyItemId": 8,
+      "description": "with a large and small opening",
+      "classListId": 10,
+      "id": 51
+    },
+    {
+      "number": "1",
+      "supplyItemId": 37,
+      "description": "to keep at school",
+      "classListId": 10,
+      "id": 52
+    },
+    {
+      "number": "1",
+      "supplyItemId": 38,
+      "description": "to keep at school",
+      "classListId": 10,
+      "id": 53
+    },
+    {
+      "number": "2",
+      "supplyItemId": 16,
+      "description": "soft",
+      "classListId": 11,
+      "id": 54
+    },
+    {
+      "number": "4",
+      "supplyItemId": 1,
+      "description": "pre-sharpened",
+      "classListId": 11,
+      "id": 55
+    },
+    {
+      "number": "2",
+      "supplyItemId": 8,
+      "description": "personal",
+      "classListId": 11,
+      "id": 56
+    },
+    {
+      "number": "2",
+      "supplyItemId": 7,
+      "description": "Large pink or white erasers",
+      "classListId": 11,
+      "id": 57
+    },
+    {
+      "number": "1",
+      "supplyItemId": 22,
+      "description": "",
+      "classListId": 11,
+      "id": 58
+    },
+    {
+      "number": "2",
+      "supplyItemId": 5,
+      "description": "",
+      "classListId": 11,
+      "id": 59
+    },
+    {
+      "number": "1",
+      "supplyItemId": 4,
+      "description": "",
+      "classListId": 11,
+      "id": 60
+    },
+    {
+      "number": "6",
+      "supplyItemId": 10,
+      "description": "plastic pocket folders with clasps. (one of each - red, blue, yellow, green, black, white)",
+      "classListId": 11,
+      "id": 61
+    },
+    {
+      "number": "3",
+      "supplyItemId": 9,
+      "description": "3 ringed with clear plastic front, 1 inch wide (1 blue, 1 red. 1 white)",
+      "classListId": 11,
+      "id": 62
+    },
+    {
+      "number": "1",
+      "supplyItemId": 24,
+      "description": "kids",
+      "classListId": 11,
+      "id": 63
+    },
+    {
+      "number": "1",
+      "supplyItemId": 42,
+      "description": "low-odor any color",
+      "classListId": 11,
+      "id": 64
+    },
+    {
+      "number": "1",
+      "supplyItemId": 12,
+      "description": "black and white cover with lined paper",
+      "classListId": 11,
+      "id": 65
+    },
+    {
+      "number": "2",
+      "supplyItemId": 32,
+      "description": "",
+      "classListId": 11,
+      "id": 66
+    },
+    {
+      "number": "2",
+      "supplyItemId": 34,
+      "description": "baby wipes will work too",
+      "classListId": 11,
+      "id": 67
+    },
+    {
+      "number": "1",
+      "supplyItemId": 35,
+      "description": "",
+      "classListId": 11,
+      "id": 68
+    },
+    {
+      "number": "1",
+      "supplyItemId": 37,
+      "description": "to be kept at school",
+      "classListId": 11,
+      "id": 69
+    },
+    {
+      "number": "1",
+      "supplyItemId": 38,
+      "description": "to be kept at school",
+      "classListId": 11,
+      "id": 70
+    },
+    {
+      "number": "1",
+      "supplyItemId": 39,
+      "description": "",
+      "classListId": 11,
+      "id": 71
+    },
+    {
+      "number": "4",
+      "supplyItemId": 1,
+      "description": "Pre-sharpened",
+      "classListId": 12,
+      "id": 72
+    },
+    {
+      "number": "1",
+      "supplyItemId": 16,
+      "description": "soft",
+      "classListId": 12,
+      "id": 73
+    },
+    {
+      "number": "5",
+      "supplyItemId": 12,
+      "description": "wide ruled and labeled with your name",
+      "classListId": 12,
+      "id": 74
+    },
+    {
+      "number": "7",
+      "supplyItemId": 10,
+      "description": "plastic Pocket folders; with fasteners; one of each color: green, red, yellow, black, purpose, white, and blue",
+      "classListId": 12,
+      "id": 75
+    },
+    {
+      "number": "2",
+      "supplyItemId": 24,
+      "description": "",
+      "classListId": 12,
+      "id": 76
+    },
+    {
+      "number": "1",
+      "supplyItemId": 3,
+      "description": "12 pack  washable",
+      "classListId": 12,
+      "id": 77
+    },
+    {
+      "number": "2",
+      "supplyItemId": 6,
+      "description": "assorted colors",
+      "classListId": 12,
+      "id": 78
+    },
+    {
+      "number": "2",
+      "supplyItemId": 5,
+      "description": "",
+      "classListId": 12,
+      "id": 79
+    },
+    {
+      "number": "1",
+      "supplyItemId": 4,
+      "description": "",
+      "classListId": 12,
+      "id": 80
+    },
+    {
+      "number": "2",
+      "supplyItemId": 22,
+      "description": "",
+      "classListId": 12,
+      "id": 81
+    },
+    {
+      "number": "2",
+      "supplyItemId": 9,
+      "description": "3 ringed with clear plastic front, 1 inch. ",
+      "classListId": 12,
+      "id": 82
+    },
+    {
+      "number": "1",
+      "supplyItemId": 39,
+      "description": "",
+      "classListId": 12,
+      "id": 83
+    },
+    {
+      "number": "2",
+      "supplyItemId": 32,
+      "description": "",
+      "classListId": 12,
+      "id": 84
+    },
+    {
+      "number": "1",
+      "supplyItemId": 34,
+      "description": "",
+      "classListId": 12,
+      "id": 85
+    },
+    {
+      "number": "1",
+      "supplyItemId": 37,
+      "description": "",
+      "classListId": 12,
+      "id": 86
+    },
+    {
+      "number": "1",
+      "supplyItemId": 38,
+      "description": "",
+      "classListId": 12,
+      "id": 87
+    },
+    {
+      "number": "2",
+      "supplyItemId": 16,
+      "description": "1 box to keep in desk, 1 to keep in locker with extra supplies",
+      "classListId": 13,
+      "id": 88
+    },
+    {
+      "number": "2",
+      "supplyItemId": 1,
+      "description": "mechanical or #2",
+      "classListId": 13,
+      "id": 89
+    },
+    {
+      "number": "2",
+      "supplyItemId": 7,
+      "description": "large",
+      "classListId": 13,
+      "id": 90
+    },
+    {
+      "number": "3",
+      "supplyItemId": 2,
+      "description": "1 pack of red, 1 of black, and 1 any color. Not ball point",
+      "classListId": 13,
+      "id": 91
+    },
+    {
+      "number": "1",
+      "supplyItemId": 6,
+      "description": "yellow",
+      "classListId": 13,
+      "id": 92
+    },
+    {
+      "number": "1",
+      "supplyItemId": 5,
+      "description": "pre-sharpened",
+      "classListId": 13,
+      "id": 93
+    },
+    {
+      "number": "2",
+      "supplyItemId": 18,
+      "description": "wide ruled ",
+      "classListId": 13,
+      "id": 94
+    },
+    {
+      "number": "2",
+      "supplyItemId": 12,
+      "description": "with sewn binding for math and writing",
+      "classListId": 13,
+      "id": 95
+    },
+    {
+      "number": "6",
+      "supplyItemId": 10,
+      "description": "with brads and pockets. labeled with the students name in the bottom left. Red, blue, yellow, green, purple, black",
+      "classListId": 13,
+      "id": 96
+    },
+    {
+      "number": "1",
+      "supplyItemId": 11,
+      "description": "spelling",
+      "classListId": 13,
+      "id": 97
+    },
+    {
+      "number": "2",
+      "supplyItemId": 20,
+      "description": "4X6",
+      "classListId": 13,
+      "id": 98
+    },
+    {
+      "number": "1",
+      "supplyItemId": 24,
+      "description": "",
+      "classListId": 13,
+      "id": 99
+    },
+    {
+      "number": "1",
+      "supplyItemId": 22,
+      "description": "Elmers or Avery recommended",
+      "classListId": 13,
+      "id": 100
+    },
+    {
+      "number": "1",
+      "supplyItemId": 9,
+      "description": "1 inch white for Judaics",
+      "classListId": 13,
+      "id": 101
+    },
+    {
+      "number": "1",
+      "supplyItemId": 37,
+      "description": "to keep at school",
+      "classListId": 13,
+      "id": 102
     }
   ]
 }

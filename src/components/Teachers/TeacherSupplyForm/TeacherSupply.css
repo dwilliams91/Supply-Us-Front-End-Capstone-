@@ -64,3 +64,9 @@ textarea{
     display:flex;
     flex-direction: column;
 }
+.borderAround{
+    border:1px solid #007cba;
+    /* border-radius: 25px;
+    padding:7px */
+
+}

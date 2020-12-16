@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react"
 import { ClassListSupplyItemContext } from "../../DataProviders/ClassListSupplyItemProvider"
 import { TeacherSupplyTable } from "./TeacherSupplyTable"
-
+import {Table} from "react-bootstrap"
 export const TeacherSupplyTableList = (props) => {
     const { classListSupplyItem, getClassListSupplyItem } = useContext(ClassListSupplyItemContext)
     const classId=props.location.state.chosenClass.id
@@ -18,7 +18,7 @@ export const TeacherSupplyTableList = (props) => {
         <>
         {/* {console.log("classId",classId)} */}
         <div className="TeacherSupplyTableContainer">
-            <table className="TeacherSupplyTable">
+            <Table striped bordered hover className="TeacherSupplyTable">
                 
                 <thead>
                     <tr>
@@ -44,7 +44,7 @@ export const TeacherSupplyTableList = (props) => {
 
                 </tbody>
 
-            </table>
+            </Table>
             </div>
         </>
     )

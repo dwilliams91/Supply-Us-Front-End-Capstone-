@@ -5,7 +5,7 @@ import { SupplyTypeContext } from "../../DataProviders/SupplyTypeProvider"
 import { ClassListContext } from "../../DataProviders/ClassListProvider"
 import { ItemSearch } from "./ItemSearch"
 import "./TeacherSupply.css"
-import { Form, Row, Col } from "react-bootstrap"
+import { Form, Row, Col, Button } from "react-bootstrap"
 
 export const TeacherSupplyForm = (props) => {
     // getting the items from the providers
@@ -128,7 +128,7 @@ export const TeacherSupplyForm = (props) => {
                 <div className="borderAround">
                 <Form.Group>
                     <Row>
-                        <Col sm="3">
+                        <Col sm="4">
                             <Form.Label >Select an Item</Form.Label>
                         </Col>
                         <Col sm="">
@@ -151,8 +151,8 @@ export const TeacherSupplyForm = (props) => {
                         </Col>
                     </Row>
                     <Row>
-                        <Col sm="3">
-                            <Form.Label> Select Type</Form.Label>
+                        <Col sm="4">
+                            <Form.Label> Search by Type</Form.Label>
                         </Col>
                         <Col sm="">
                             <Form.Control className="Align-Left" size="sm" as="select" value={Type} id="SupplyType" onChange={TypeChangeField}>
@@ -170,9 +170,10 @@ export const TeacherSupplyForm = (props) => {
                     </Row>
                 </Form.Group>
                 </div>
+                <div className="borderAround">
                 <Form.Group>
                     <Row>
-                        <Col sm="3">
+                        <Col sm="4">
                             <Form.Label>{packageType} {ItemName.name}</Form.Label>
                         </Col>
                         <Col sm="">
@@ -181,7 +182,7 @@ export const TeacherSupplyForm = (props) => {
                         </Col>
                     </Row>
                     <Row>
-                        <Col sm="3">
+                        <Col sm="4">
                             <Form.Label>Description</Form.Label>
                         </Col>
                         <Col sm="">
@@ -193,7 +194,8 @@ export const TeacherSupplyForm = (props) => {
                         <Form.Label>Here is where you can add any specific information. If they need three binders, here is where you put the colors, or 3 inches or 1 inch</Form.Label>
                     </Col>
                 </Form.Group>
-                <button type="submit" onClick={evt => {
+                </div>
+                <Button type="submit" onClick={evt => {
                     evt.preventDefault()
                     SaveItem()
                     setItem(0)
@@ -201,7 +203,7 @@ export const TeacherSupplyForm = (props) => {
                     setItemNumber(0)
                     setItemName("")
                     setDescription("")
-                }}> Save Item </button>
+                }}> Save Item </Button>
 
             </div>
         </>

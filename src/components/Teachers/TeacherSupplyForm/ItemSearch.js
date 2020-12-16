@@ -6,8 +6,8 @@ export const ItemSearch = () => {
     return (
         <>
             {/* <Form.Group as={Row}> */}
-                <Col sm="3">
-                <Form.Label>Search</Form.Label>
+                <Col sm="4">
+                <Form.Label>Search by Name</Form.Label>
                 </Col>
                 <Col sm="">
                     <Form.Control size="sm" type="text" placeholder="search to filter dropdown" onKeyUp={

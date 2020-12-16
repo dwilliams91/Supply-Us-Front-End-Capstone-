@@ -83,13 +83,21 @@ export const TeacherSupplyForm = (props) => {
 
     // Save the item
     const SaveItem = () => {
+
+
         const newItem = {
             number: ItemQuantity,
             supplyItemId: Item,
             description: description,
             classListId: classId
         }
-        addClassListSupplyItem(newItem).then(() => setItemQuantity(""))
+        console.log(newItem)
+        if (parseInt(newItem.supplyItemId) !==0){
+            addClassListSupplyItem(newItem).then(() => setItemQuantity(""))
+        } else {
+            window.alert("Please select an Item")
+
+        }
     }
     // this changes the values of the number and the description whenever one of them is changed
     const NumberChangeField = (e) => {
@@ -191,7 +199,7 @@ export const TeacherSupplyForm = (props) => {
                         </Col>
                     </Row>
                     <Col sm="">
-                        <Form.Label>Here is where you can add any specific information. If they need three binders, here is where you put the colors, or 3 inches or 1 inch</Form.Label>
+                        <Form.Label>Here is where you can add any specific information. If they need three binders, the description is where you put the colors or the size</Form.Label>
                     </Col>
                 </Form.Group>
                 </div>

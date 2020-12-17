@@ -15,9 +15,9 @@
     border-radius: 25px;
     flex-basis: 40%;
 }
-.loginCard >fieldset{
+/* .loginCard >fieldset{
     margin:5px;
-}
+} */
 
 .registerContainer{
     min-height: 700px;

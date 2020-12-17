@@ -22,7 +22,7 @@ function App() {
       <Route render={() => {
         // The user id is saved under the key app_user_id in local Storage. Change below if needed!
         if (localStorage.getItem("app_user_id")) {
-          if (parseInt(localStorage.getItem("userType")) === 1) {
+          if (parseInt(localStorage.getItem("userType")) === 1 ||  parseInt(localStorage.getItem("userType")) === 3){
             return (
               <>
                 <Route render={props => <TeacherNavBar {...props} />} />

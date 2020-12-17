@@ -100,7 +100,7 @@ export const CustomerTableList=()=>{
         }
 
     })
-    console.log("finalArray", finalArray)
+    // console.log("finalArray", finalArray)
     setFinalAddedArray(finalArray)
     }
 

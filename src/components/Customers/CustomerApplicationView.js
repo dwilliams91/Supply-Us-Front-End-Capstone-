@@ -38,23 +38,27 @@ export const CustomerApplicationView = () => {
                 </TeacherProvider>
             </ClassListSupplyItemProvider>
             </Row>
+            <Row>
             <TeacherProvider>
                 <ClassListSupplyItemProvider>
                     <ClassListProvider>
                         <UserClassesProvider>
-                            
+                        <Col lg="4">
                         <Route path="/customers/class:ClassListId(\d+)" render={
                                 props => <CustomerForm {...props} />
                             } />
+                            </Col>
+                            <Col lg="8">
                             <Route path="/customers/class:ClassListId(\d+)" render={
                                 props => <CustomerIndividualClassTableList {...props} />
                             } />
+                            </Col>
                            
                         </UserClassesProvider>
                     </ClassListProvider>
                 </ClassListSupplyItemProvider>
             </TeacherProvider>
-            
+            </Row>
             </div>
             
             <Route render={props => <Logout {...props} />} />  

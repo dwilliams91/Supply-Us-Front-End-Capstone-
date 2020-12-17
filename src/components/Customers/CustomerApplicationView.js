@@ -11,6 +11,7 @@ import { CustomerTableList } from "./CustomerTableList"
 export const CustomerApplicationView = () => {
     return (
         <>
+        <div className="customerBackground">
         <div className="CustomerContainer">
             <ClassListSupplyItemProvider>
                 <TeacherProvider>
@@ -44,7 +45,10 @@ export const CustomerApplicationView = () => {
             </TeacherProvider>
             </div>
 
-            <Route render={props => <Logout {...props} />} />        </>
+            <Route render={props => <Logout {...props} />} />  
+            </div>     
+             </>
+
     )
 }
 

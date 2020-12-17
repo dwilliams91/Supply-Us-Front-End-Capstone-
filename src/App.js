@@ -46,10 +46,12 @@ function App() {
       <UserTypeProvider>
       <Route path="/register" render={props => <Register {...props} />} />
       </UserTypeProvider>
-    </>
+    
+    <div className="footer">
 
+    </div>
 
-
+      </>
   );
 }
 

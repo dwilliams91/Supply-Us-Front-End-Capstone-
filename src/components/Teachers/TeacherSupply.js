@@ -10,7 +10,9 @@ export const TeacherSupply = (props) => {
 
     return (
         <>
-        <h1>{className}</h1>
+        <div className="h1Background">
+            <h1 >{className}</h1>
+            </div>
             <div className="TeacherSupplyContainer">
                 <Route path="/teachers/class:ClassListId(\d+)" render={
                     props => <TeacherSupplyForm {...props} />

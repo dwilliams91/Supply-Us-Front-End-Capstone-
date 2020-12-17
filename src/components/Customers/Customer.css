@@ -14,12 +14,12 @@
     min-height: 600px;
     padding: 20px 0 20px 0;
     background-color: #007cba;
-    margin: 0px 50px 0px 50px;
+    margin: 5px 50px 0px 50px;
     border-radius: 25px;
     display:flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    background: rgba(0, 124, 186, 0.6)
+    background: rgba(0, 124, 186, 0.9)
 }
 .CustomerForm{
     flex-basis: 30%;
@@ -49,6 +49,6 @@
 }
 .customerBackground{
     
-    background-size: cover;
+    background-size: contain;
     background-image: url("https://images.unsplash.com/photo-1588075592446-265fd1e6e76f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80/Supply.png");
 }

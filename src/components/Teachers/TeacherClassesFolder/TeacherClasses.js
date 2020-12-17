@@ -27,7 +27,9 @@ export const TeacherClasses = () => {
 
     return (
         <>
+            <div className="h1Background">
             <h1 >My Classes</h1>
+            </div>
             <div className="classCardContainer">
                 <div className="classCardFlex">
                     {filterClasses(classLists).map(singleClass => {

@@ -107,7 +107,9 @@ export const TeacherAddItem = (props) => {
 
     return (
         <>
-            <h1> Add or Edit an Item</h1>
+            <div className="h1Background">
+            <h1 >Add or Edit an Item</h1>
+            </div>
             <div className="AddItemContainer">
                 <div className="EditItemForm">
                     <div className="AddEditCard">

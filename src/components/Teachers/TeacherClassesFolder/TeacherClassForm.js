@@ -23,7 +23,9 @@ export const TeacherClassForm = (props) => {
     return (
         <>
 
-            <h1 > Add a class</h1>
+            <div className="h1Background">
+            <h1 >Add a Class</h1>
+            </div>
             <div className="addClassCardContainer">
                 <div className="addClassCard">
                 <form className="TeacherClassForm">

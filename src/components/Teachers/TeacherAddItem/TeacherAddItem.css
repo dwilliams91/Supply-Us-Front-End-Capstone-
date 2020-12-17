@@ -7,6 +7,8 @@
     display:flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    background: rgba(0, 124, 186, 0.9)
+
 }
 .AddEditCard{
     background-color: white;

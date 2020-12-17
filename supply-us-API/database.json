@@ -69,6 +69,13 @@
       "userType": 3,
       "name": "Daniella P",
       "id": 11
+    },
+    {
+      "email": "parent@parent.com",
+      "password": "123",
+      "userType": 2,
+      "name": "parent parent",
+      "id": 12
     }
   ],
   "userClasses": [
@@ -84,18 +91,13 @@
     },
     {
       "userId": 4,
-      "classListId": 10,
+      "classListId": 11,
       "id": 7
     },
     {
       "userId": 4,
-      "classListId": 12,
+      "classListId": 9,
       "id": 8
-    },
-    {
-      "userId": 4,
-      "classListId": 11,
-      "id": 9
     }
   ],
   "classLists": [
@@ -920,6 +922,20 @@
       "description": "to keep at school",
       "classListId": 13,
       "id": 102
+    },
+    {
+      "number": "2",
+      "supplyItemId": 1,
+      "description": "",
+      "classListId": 9,
+      "id": 103
+    },
+    {
+      "number": "1",
+      "supplyItemId": 9,
+      "description": "3 inch blue",
+      "classListId": 9,
+      "id": 104
     }
   ]
 }

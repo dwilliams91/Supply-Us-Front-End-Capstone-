@@ -28,7 +28,7 @@ export const Login = props => {
                     // The user id is saved under the key app_user_id in local Storage. Change below if needed!
                     localStorage.setItem("app_user_id", exists.id)
                     localStorage.setItem("userType", exists.userType)
-                    if (exists.userType===1){
+                    if (exists.userType===1 || exists.userType===3){
                         props.history.push("/teachers")
                     } else {
                         props.history.push("/customers")

@@ -7,6 +7,10 @@
     {
       "id": 2,
       "type": "customer"
+    },
+    {
+      "id": 3,
+      "type": "Admin"
     }
   ],
   "users": [
@@ -58,6 +62,13 @@
       "userType": 1,
       "name": "Alex Clapton",
       "id": 10
+    },
+    {
+      "email": "daniella@daniella.com",
+      "password": "password",
+      "userType": 3,
+      "name": "Daniella P",
+      "id": 11
     }
   ],
   "userClasses": [

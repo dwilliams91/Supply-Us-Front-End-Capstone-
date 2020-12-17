@@ -14,9 +14,15 @@ export const TeacherClasses = () => {
     // Goes through all the classes and returns only the ones with the userId that is the same as the logged in user
     const filterClasses = (allClasses) => {
         const user = parseInt(localStorage.getItem("app_user_id"))
-        const myClasses = allClasses.filter(singleClass => parseInt(singleClass.userId) === user)
-        console.log(myClasses)
-        return myClasses
+        const userType=parseInt(localStorage.getItem("userType"))
+        if (userType===1){
+            const myClasses = allClasses.filter(singleClass => parseInt(singleClass.userId) === user)
+            return myClasses
+        } else if (userType===3){
+            const myClasses=allClasses
+            return myClasses
+        }
+        // console.log(myClasses)
     }
 
     return (

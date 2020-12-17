@@ -16,9 +16,9 @@ import {TeacherSupply} from "./TeacherSupply"
 export const TeacherApplicationView = (props) => {
     const userType=parseInt(localStorage.getItem("userType"))
     console.log("userType", userType)
-    if (userType !==1){
-        props.history.push("/customers")
-    }
+    // if (userType ===2){
+    //     props.history.push("/customers")
+    // }
     return (
         <>
         <div className="flexLogoutButton">

@@ -12,13 +12,13 @@
 
 .CustomerContainer{
     min-height: 600px;
-    padding: 20px 0 20px 0;
+    padding: 20px 20px 20px 20px;
     background-color: #007cba;
     margin: 5px 50px 0px 50px;
     border-radius: 25px;
-    display:flex;
+    /* display:flex;
     justify-content: space-evenly;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
     background: rgba(0, 124, 186, 0.9)
 }
 .CustomerForm{
@@ -28,6 +28,7 @@
     padding:0px 10px 0px 10px;
     background-color: white;
     border-radius: 25px;
+    margin:2px;
     /* min-width: 50px; */
 
 }

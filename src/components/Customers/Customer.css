@@ -1,15 +1,17 @@
 .CustomerClassesCard{
+    color:white;
     border: 1px solid #00a5d4;
     margin-bottom: 5px;
     padding:5px;
     border-radius: 10px;
+    background-color: #00a5d4;
 }
 .CustomerClassesCard:hover{
     box-shadow: 2px 2px 0px 2px grey;
 }
 
 .CustomerContainer{
-    min-height: 500px;
+    min-height: 600px;
     padding: 20px 0 20px 0;
     background-color: #007cba;
     margin: 0px 50px 0px 50px;
@@ -25,6 +27,7 @@
     padding:0px 10px 0px 10px;
     background-color: white;
     border-radius: 25px;
+    /* min-width: 50px; */
 
 }
 .CustomerTable{
@@ -34,6 +37,8 @@
     overflow: scroll;
     background-color: white;
     border-radius: 25px;
+    padding:5px;
+    /* min-width: 100px; */
 }
 
 .CustomerTableHead{

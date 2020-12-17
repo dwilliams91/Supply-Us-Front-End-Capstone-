@@ -11,8 +11,8 @@
 }
 .SupplyFormContainer{
     flex-basis: 33%;
-    min-height: 450px;
-    max-height: 450px;
+    min-height: 500px;
+    max-height: 500px;
     background-color: white;
     border-radius: 25px;
     padding: 10px;
@@ -23,7 +23,7 @@
 .TeacherSupplyTableContainer{
     flex-basis: 60%;
     border:1px solid black;
-    max-height: 450px;
+    max-height: 500px;
     overflow: scroll;
     background-color: white;
     border-radius: 25px;

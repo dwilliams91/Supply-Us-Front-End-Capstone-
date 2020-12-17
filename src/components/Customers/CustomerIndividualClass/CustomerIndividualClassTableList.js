@@ -2,6 +2,7 @@ import React, {useContext, useEffect, useState} from "react"
 import { ClassListContext } from "../../DataProviders/ClassListProvider"
 import {ClassListSupplyItemContext} from "../../DataProviders/ClassListSupplyItemProvider"
 import {CustomerIndividualClassTable} from "./CustomerIndividualClassTable"
+import {Table} from "react-bootstrap"
 
 export const CustomerIndividualClassTableList=(props)=>{
 const {classListSupplyItem, getClassListSupplyItem}=useContext(ClassListSupplyItemContext)
@@ -22,7 +23,7 @@ const {classLists, getClassLists}=useContext(ClassListContext)
         {/* {console.log(thisSingleClass)} */}
         <div className="CustomerTable">
         <h2>{MyClass}</h2>
-            <table >
+            <Table striped bordered hover>
                 
                 <thead>
                     <tr>
@@ -45,7 +46,7 @@ const {classLists, getClassLists}=useContext(ClassListContext)
 
                 </tbody>
 
-            </table>
+            </Table>
             </div>
         </>
         

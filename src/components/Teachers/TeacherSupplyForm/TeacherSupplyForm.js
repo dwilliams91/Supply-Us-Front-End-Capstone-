@@ -141,7 +141,7 @@ export const TeacherSupplyForm = (props) => {
                         </Col>
                     </Row>
                     <Row>
-                        <Col sm="4">
+                        <Col sm="5">
                             <Form.Label> Search by Type</Form.Label>
                         </Col>
                         <Col sm="">
@@ -164,7 +164,7 @@ export const TeacherSupplyForm = (props) => {
                                 </div>
                 <Form.Group>
                     <Row className="addPadding">
-                        <Col sm="4">
+                        <Col sm="5">
                             <h5>Select an Item</h5> 
                             {/* <Form.Label ><strong>Select an Item</strong></Form.Label> */}
                         </Col>
@@ -184,7 +184,7 @@ export const TeacherSupplyForm = (props) => {
                 <div className="borderAround">
                 <Form.Group>
                     <Row>
-                        <Col sm="4">
+                        <Col sm="5">
                             <Form.Label>{packageType} {ItemName.name}</Form.Label>
                         </Col>
                         <Col sm="">

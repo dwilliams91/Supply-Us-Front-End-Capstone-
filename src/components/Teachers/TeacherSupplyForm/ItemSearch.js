@@ -6,7 +6,7 @@ export const ItemSearch = () => {
     return (
         <>
             {/* <Form.Group as={Row}> */}
-                <Col sm="4">
+                <Col sm="5">
                 <Form.Label>Search by Name</Form.Label>
                 </Col>
                 <Col sm="">

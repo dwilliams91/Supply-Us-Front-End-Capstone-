@@ -8,6 +8,7 @@ export const CustomerIndividualClassTableList=(props)=>{
 const {classListSupplyItem, getClassListSupplyItem}=useContext(ClassListSupplyItemContext)
 const {classLists, getClassLists}=useContext(ClassListContext)
 // const [classId, setClassId]=useState([])
+const [listToDisplay, setListToDisplay]=useState([])
     const classId=props.location.state.chosenClass.classListId
     const MyClass=props.location.state.chosenClassName
     // console.log("my class is", MyClass)
@@ -17,6 +18,18 @@ const {classLists, getClassLists}=useContext(ClassListContext)
         getClassLists().then(getClassListSupplyItem)
     }, [])
 
+    useEffect(()=>{
+        const onlyMyItems=classListSupplyItem.filter(singleItem=>singleItem.classList.id===parseInt(classId))
+        if (onlyMyItems){
+        onlyMyItems.sort(function(a, b) {
+            let firstItem = a.supplyItem.name.toUpperCase();
+            let secondItem = b.supplyItem.name.toUpperCase();
+            // if the first item is smaller, put it before. If the first item is bigger, put it after. 
+            return (firstItem < secondItem) ? -1 : (firstItem > secondItem) ? 1 : 0;
+        });
+    }
+        setListToDisplay(onlyMyItems)
+    },[classListSupplyItem, classId])
 
     return(
         <>
@@ -39,8 +52,8 @@ const {classLists, getClassLists}=useContext(ClassListContext)
                     </tr>
                 </thead>
                 <tbody>
-                    {/* {findClass()} */}
-                    {classListSupplyItem.filter(singleItem=>singleItem.classList.id===parseInt(classId)).map(singleItem=>{
+                    
+                    {listToDisplay.map(singleItem=>{
                         return <CustomerIndividualClassTable key={singleItem.id} myItem={singleItem}/>
                     })}
 

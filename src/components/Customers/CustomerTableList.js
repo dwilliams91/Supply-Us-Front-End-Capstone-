@@ -101,6 +101,17 @@ export const CustomerTableList=()=>{
 
     })
     // console.log("finalArray", finalArray)
+    // let sortedArray=finalArray.sort()
+    // console.log("sorted Array", sortedArray)
+
+    finalArray.sort(function(a, b) {
+        let firstItem = a.name.toUpperCase();
+        let secondItem = b.name.toUpperCase();
+        // if the first item is smaller, put it before. If the first item is bigger, put it after. 
+        return (firstItem < secondItem) ? -1 : (firstItem > secondItem) ? 1 : 0;
+    });
+    // console.log(finalArray)
+
     setFinalAddedArray(finalArray)
     }
 

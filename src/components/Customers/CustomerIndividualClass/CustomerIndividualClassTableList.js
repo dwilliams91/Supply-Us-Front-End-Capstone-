@@ -15,17 +15,21 @@ const [listToDisplay, setListToDisplay]=useState([])
     
     useEffect(() => {
         // setClassId(props.location.state.chosenClass.classListId)
-        getClassLists().then(()=>{
-            getClassListSupplyItem()
-
-        })
-        
+        getClassLists().then(getClassListSupplyItem)
     }, [])
 
     useEffect(()=>{
         const onlyMyItems=classListSupplyItem.filter(singleItem=>singleItem.classList.id===parseInt(classId))
+        if (onlyMyItems){
+        onlyMyItems.sort(function(a, b) {
+            let firstItem = a.supplyItem.name.toUpperCase();
+            let secondItem = b.supplyItem.name.toUpperCase();
+            // if the first item is smaller, put it before. If the first item is bigger, put it after. 
+            return (firstItem < secondItem) ? -1 : (firstItem > secondItem) ? 1 : 0;
+        });
+    }
         setListToDisplay(onlyMyItems)
-    },[classListSupplyItem])
+    },[classListSupplyItem, classId])
 
     return(
         <>
@@ -48,8 +52,8 @@ const [listToDisplay, setListToDisplay]=useState([])
                     </tr>
                 </thead>
                 <tbody>
-                    {console.log(listToDisplay)}
-                    {classListSupplyItem.filter(singleItem=>singleItem.classList.id===parseInt(classId)).map(singleItem=>{
+                    
+                    {listToDisplay.map(singleItem=>{
                         return <CustomerIndividualClassTable key={singleItem.id} myItem={singleItem}/>
                     })}
 

@@ -23,7 +23,7 @@
     min-height: 100px;
 }
 .classCard:hover{
-    box-shadow: 5px 5px 0px 5px #00a5d4;
+    box-shadow: 5px 5px 0px 0px #00a5d4;
 }
 .addClassCardContainer{
     min-height: 500px;

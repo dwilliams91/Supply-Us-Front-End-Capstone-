@@ -7,7 +7,7 @@
     background-color: #00a5d4;
 }
 .CustomerClassesCard:hover{
-    box-shadow: 2px 2px 0px 2px grey;
+    box-shadow: 2px 2px 0px 0px grey;
 }
 
 .CustomerContainer{

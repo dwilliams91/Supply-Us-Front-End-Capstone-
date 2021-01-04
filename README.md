@@ -1,9 +1,15 @@
 Overview:
+
 Supply Us is a single page application which allows teachers to upload supply lists for their classes and allows parents and students to see one single list with all the supplies they need. 
 
 By creating a standardized way for teachers to create their lists, items on lists can be added together to produce the total amount of an item needed. For example, if one teacher wants students to have 2 packs of mechanical pencils, and another teacher wants students to have 1 pack of pre-sharpened pencils, parents and students can see in one line that they need to buy 3 packs of pencils, with detials to show the specific breakdown. 
 
 Technologies:
+
 Supply Us is created through React.js. It is styled with Boostrap React and the database is a json file. 
 
 Demoing:
+
+After downloading, in your terminal, go to the supply-us-API directory. Within that directory, run the json server by typing in the command "json-server -p 8088 -w database.json". This starts the json server. Then from the root directory, type the command "npm run". From there it starts the App. 
+
+To view the teacher side of the app, create an account as a teacher. To view the parent side of the app, create an account as a parent. 

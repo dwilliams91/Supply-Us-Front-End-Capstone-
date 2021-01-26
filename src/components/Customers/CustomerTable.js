@@ -19,7 +19,9 @@ export const CustomerTable = ({ myItem, visibility }) => {
     setOpen(visibility)
    },[visibility])
 
-   
+   const handleStateChange=()=>{
+       setOpen(!open)
+   }
 
     return (
         <>
@@ -34,8 +36,8 @@ export const CustomerTable = ({ myItem, visibility }) => {
                 <td colSpan="6" className="tableColumn DeleteButton">
                     
                     <Button variant="outline-primary" size="sm"
-                        onClick={() => setOpen(!open)}
-                        aria-controls="example-fade-text"
+                        onClick={() => handleStateChange()}
+                        aria-controls="collapse"
                         aria-expanded={open}
                     >
                         see details for {myItem.name}
@@ -45,7 +47,7 @@ export const CustomerTable = ({ myItem, visibility }) => {
                         <ul>
                         {myItem.descriptions.map(singleDescription => <li key={singleDescription.id}><strong> {singleDescription.singleListNumber}</strong> {singleDescription.description} for <strong>{singleDescription.className}</strong> </li>)}
                     </ul>
-        </div>
+                        </div>
                     </Collapse>
                     {/* <ItemDetails visbilityCheck={visibility} myItem={myItem} /> */}
                 </td>

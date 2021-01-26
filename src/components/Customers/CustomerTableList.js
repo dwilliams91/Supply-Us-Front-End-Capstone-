@@ -3,7 +3,7 @@ import { ClassListSupplyItemContext } from "../DataProviders/ClassListSupplyItem
 import { UserClassesContext } from "../DataProviders/UserClassesProvider"
 import { CustomerTable } from "./CustomerTable"
 import "./Customer.css"
-import {Table} from "react-bootstrap"
+import {Table, Button} from "react-bootstrap"
 
 export const CustomerTableList=()=>{
     const {userClasses, getUserClasses}=useContext(UserClassesContext)
@@ -11,6 +11,7 @@ export const CustomerTableList=()=>{
     const {classListSupplyItem, getClassListSupplyItem}=useContext(ClassListSupplyItemContext)
     const [finalAddedArray, setFinalAddedArray]=useState([])
     const [OnlyMyClasses,setOnlyMyClasses]=useState([])
+    const [visibility, setVisibility]=useState(false)
 
     useEffect(()=>{
         getUserClasses().then(getClassListSupplyItem)
@@ -114,12 +115,16 @@ export const CustomerTableList=()=>{
 
     setFinalAddedArray(finalArray)
     }
+    useEffect(()=>{
+
+    },[visibility])
 
     return (
         <>
         {/* {console.log(finalAddedArray)} */}
         <div className="CustomerTable">
         <h2>Your Supply List</h2>
+        <Button onClick={() => setVisibility(!visibility)}>See all Details</Button>
         <Table striped bordered hover>
                 <thead>
                     <tr>
@@ -135,7 +140,7 @@ export const CustomerTableList=()=>{
                     </tr>
                 </thead>
                 <tbody>
-                    {finalAddedArray.map(singleItem=><CustomerTable key={singleItem.id} myItem={singleItem}></CustomerTable>)}
+                    {finalAddedArray.map(singleItem=><CustomerTable key={singleItem.id} myItem={singleItem} visibility={visibility}></CustomerTable>)}
 
                 </tbody>
 

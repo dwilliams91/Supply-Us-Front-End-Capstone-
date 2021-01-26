@@ -90,16 +90,6 @@
       "id": 6
     },
     {
-      "userId": 4,
-      "classListId": 11,
-      "id": 8
-    },
-    {
-      "userId": 4,
-      "classListId": 9,
-      "id": 9
-    },
-    {
       "userId": 12,
       "classListId": 11,
       "id": 10
@@ -108,6 +98,21 @@
       "userId": 12,
       "classListId": 9,
       "id": 11
+    },
+    {
+      "userId": 4,
+      "classListId": 12,
+      "id": 12
+    },
+    {
+      "userId": 4,
+      "classListId": 9,
+      "id": 13
+    },
+    {
+      "userId": 4,
+      "classListId": 10,
+      "id": 14
     }
   ],
   "classLists": [

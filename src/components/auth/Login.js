@@ -11,7 +11,7 @@ export const Login = props => {
     console.log("the app is running")
     const existingUserCheck = () => {
         // If your json-server URL is different, please change it below!
-        return fetch(`http://localhost:8088/users?email=${email.current.value}`)
+        return fetch(`https://supply-us-server.herokuapp.com/users?email=${email.current.value}`)
             .then(_ => _.json())
             .then(user => {
                 console.log("hi")

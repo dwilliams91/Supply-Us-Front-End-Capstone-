@@ -9,13 +9,13 @@ export const UserClassesProvider= (props) => {
 
 
     const getUserClasses = () => {
-        return fetch("http://localhost:8088/userClasses?_expand=classList")
+        return fetch("https://supply-us-server.herokuapp.com/userClasses?_expand=classList")
             .then(res => res.json())
             .then(setUserClasses)
     }
 
     const addUserClasses = userClasses => {
-        return fetch("http://localhost:8088/userClasses", {
+        return fetch("https://supply-us-server.herokuapp.com/userClasses", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

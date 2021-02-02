@@ -147,7 +147,7 @@ export const TeacherSupplyForm = (props) => {
                         <Col sm="">
                             <Form.Control className="Align-Left" size="sm" as="select" value={Type} id="SupplyType" onChange={TypeChangeField}>
                                 <option value="0">Select Type</option>
-                                {Sup==plyTypes.map(e => (
+                                {SupplyTypes.map(e => (
                                     <option key={e.id} value={e.id}>
                                         {e.type}
                                     </option>

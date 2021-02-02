@@ -10,13 +10,13 @@ export const SupplyItemsProvider = (props) => {
     const [searchTerms, setSearchTerms]=useState("")
 
     const getSupplyItems = () => {
-        return fetch("http://localhost:8088/supplyItems")
+        return fetch("https://supply-us-server.herokuapp.com/supplyItems")
             .then(res => res.json())
             .then(setSupplyItems)
     }
 
     const addSupplyItem = supplyItem => {
-        return fetch("http://localhost:8088/supplyItems", {
+        return fetch("https://supply-us-server.herokuapp.com/supplyItems", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -26,7 +26,7 @@ export const SupplyItemsProvider = (props) => {
             .then(getSupplyItems)
     }
     const updateItem = item => {
-        return fetch(`http://localhost:8088/supplyItems/${item.id}`, {
+        return fetch(`https://supply-us-server.herokuapp.com/supplyItems/${item.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"

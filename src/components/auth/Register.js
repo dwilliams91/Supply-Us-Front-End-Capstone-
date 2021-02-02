@@ -18,7 +18,7 @@ export const Register = (props) => {
     },[])
     const existingUserCheck = () => {
         // If your json-server URL is different, please change it below!
-        return fetch(`http://localhost:8088/users?email=${email.current.value}`)
+        return fetch(`https://supply-us-server.herokuapp.com/users?email=${email.current.value}`)
             .then(_ => _.json())
             .then(user => !!user.length)
     }
@@ -30,7 +30,7 @@ export const Register = (props) => {
                 .then((userExists) => {
                     if (!userExists) {
                         // If your json-server URL is different, please change it below!
-                        fetch("http://localhost:8088/users", {
+                        fetch("https://supply-us-server.herokuapp.com/users", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json"

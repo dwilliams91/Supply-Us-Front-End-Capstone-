@@ -9,12 +9,12 @@ export const SupplyTypeProvider = (props) => {
     const [SupplyTypes, setSupplyType] = useState([])
 
     const getSupplyTypes = () => {
-        return fetch("http://localhost:8088/supplyTypes")
+        return fetch("https://supply-us-server.herokuapp.com/supplyTypes")
             .then(res => res.json())
             .then(setSupplyType)
     }
     const addSupplyType = supplyType => {
-        return fetch("http://localhost:8088/supplyTypes", {
+        return fetch("https://supply-us-server.herokuapp.com/supplyTypes", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

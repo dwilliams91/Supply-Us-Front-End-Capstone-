@@ -27,7 +27,7 @@ export const UserClassesProvider= (props) => {
     
     const deleteUserClasses = userClasses => {
         console.log(userClasses)
-        return fetch(`http://localhost:8088/userClasses/${userClasses}`, {
+        return fetch(`https://supply-us-server.herokuapp.com/userClasses/${userClasses}`, {
             method: "DELETE"
         })
             .then(getUserClasses)

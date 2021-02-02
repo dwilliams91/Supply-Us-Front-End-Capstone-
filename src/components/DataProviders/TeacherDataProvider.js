@@ -11,7 +11,7 @@ export const TeacherProvider = (props) => {
 
     const getTeachers = () => {
         
-        return fetch("http://localhost:8088/users")
+        return fetch("https://supply-us-server.herokuapp.com/users")
             .then(res => res.json())
             .then(myArray=>myArray.filter(singleItem=>singleItem.userType===1))
             .then(setTeachers)

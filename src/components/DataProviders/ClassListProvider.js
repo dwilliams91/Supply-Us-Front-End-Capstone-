@@ -9,14 +9,14 @@ export const ClassListProvider = (props) => {
     const [classLists, setClassLists] = useState([])
 
     const getClassLists = () => {
-        return fetch("http://localhost:8088/classLists")
+        return fetch("https://supply-us-server.herokuapp.com/classLists")
             .then(res => res.json())
             .then(setClassLists)
     }
 
     const addClassList = classLists => {
         console.log(classLists)
-        return fetch("http://localhost:8088/classLists", {
+        return fetch("https://supply-us-server.herokuapp.com/classLists", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -27,7 +27,7 @@ export const ClassListProvider = (props) => {
     }
     const deleteClassList = classLists => {
         console.log(classLists)
-        return fetch(`http://localhost:8088/classLists/${classLists}`, {
+        return fetch(`https://supply-us-server.herokuapp.com/classLists/${classLists}`, {
             method: "DELETE"
         })
             .then(getClassLists)

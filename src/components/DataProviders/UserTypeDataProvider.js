@@ -9,7 +9,7 @@ export const UserTypeProvider= (props) => {
 
 
     const getUserTypes = () => {
-        return fetch("http://localhost:8088/userType")
+        return fetch("https://supply-us-server.herokuapp.com/userType")
             .then(res => res.json())
             .then(setUserType)
     }

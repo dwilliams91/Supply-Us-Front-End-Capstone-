@@ -8,7 +8,7 @@ export const Login = props => {
     const password = useRef()
     const existDialog = useRef()
     const passwordDialog = useRef()
-
+    console.log("the app is running")
     const existingUserCheck = () => {
         // If your json-server URL is different, please change it below!
         return fetch(`http://localhost:8088/users?email=${email.current.value}`)
